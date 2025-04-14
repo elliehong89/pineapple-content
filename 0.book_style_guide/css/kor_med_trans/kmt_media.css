@@ -91,6 +91,11 @@
   }
   .note-text-box > p {
     line-height: 1.6;
+    font-size: 15px;
+  }
+
+  .lesson-card-title {
+    font-size: 16px;
   }
 
   .lesson-card-title-group {
@@ -261,5 +266,19 @@
   .text-practice-inner-right {
     width: 100%;
     flex: 1;
+  }
+
+  .image-text-box-item .text-en {
+    font-size: 14px;
+  }
+  .image-text-box-item .text-ko {
+    font-size: 14px;
+  }
+
+  .text-conversation-row > div > p {
+    padding: 2px;
+  }
+  .text-practice-row > div > p {
+    padding: 2px;
   }
 }

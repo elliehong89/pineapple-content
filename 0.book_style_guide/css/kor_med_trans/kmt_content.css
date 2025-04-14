@@ -34,7 +34,7 @@
   /* Orange Series */
   --color-primary--orange-light: #fde2d6; /* 연한 주황색 */
   --color-primary--orange: #f8ac8b; /* 기본 주황색 */
-  --color-primary--orange-dark: #d29a87; /* 어두운 주황색 */
+  --color-primary--orange-dark: #F79C78; /* 어두운 주황색 */
 
   /* Yellow Series */
   --color-primary--yellow: #fed783; /* 기본 노란색 */
@@ -98,8 +98,8 @@ li {
 }
 
 section {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 /* wrap */
@@ -836,6 +836,8 @@ section {
   align-items: center;
   flex-direction: row;
   gap: 20px;
+  padding: 40px 20px 30px;
+  background-color: var(--color-primary--green-pale);
 }
 
 .lesson-section-title-group {
@@ -872,7 +874,7 @@ section {
 .lesson-middle-title-group-wrapper {
   position: relative;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .lesson-middle-title-group {
@@ -976,6 +978,7 @@ section {
   font-size: 14px;
   line-height: 1.5;
   color: var(--text-color, var(--color-primary--blue-dark));
+  font-weight: bold;
 }
 
 .lesson-title-item-goal-description > p {
@@ -1324,7 +1327,7 @@ textarea {
 
 .lesson-card-text-component-inner {
   height: 100%;
-  padding: 20px 10px;
+  padding: 20px 20px;
   background-color: var(--box-bg-color, var(--box-color));
 }
 
@@ -1347,6 +1350,7 @@ textarea {
   text-indent: 20px;
   padding-bottom: 40px;
   overflow-y: auto;
+  a
 }
 
 .lesson-card-text-component-textarea {
@@ -1470,11 +1474,11 @@ textarea {
 .text-conversation-inner {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .text-conversation-inner .text-translator {
-  color: #2d5748;
+  color: #2B6578;
 }
 
 .text-conversation-row > div > p {
@@ -1525,6 +1529,12 @@ textarea {
 }
 
 /* 연습 텍스트 컴포넌트 */
+.text-practice-row-group{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .text-practice-row {
   display: flex;
   flex-direction: row;
@@ -1549,6 +1559,7 @@ textarea {
 }
 
 .text-practice-textarea {
+  display: block;
   width: 100%;
   border: 1px solid var(--border-color, var(--color-primary--orange-dark));
   padding: 5px;
@@ -1610,6 +1621,8 @@ textarea {
 
 .image-box img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 .image-box-caption-item {
@@ -1641,7 +1654,9 @@ textarea {
   position: absolute;
   left: 0;
   top: 0;
-  width: 30%;
+  max-width: 30%;
+  width: 100%;
+  transform: translate(-50%, -50%);
 }
 
 .image-line {
