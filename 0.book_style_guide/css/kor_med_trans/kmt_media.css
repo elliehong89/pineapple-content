@@ -1,0 +1,253 @@
+/* Media Queries */
+/* 태블릿 디바이스 (~ 1024px) */
+@media screen and (max-width: 1024px) {
+  #content-sandbox {
+    max-width: 100%;
+    margin: 0 20px;
+  }
+}
+
+/* 태블릿 디바이스 (~ 768px) */
+@media screen and (max-width: 768px) {
+  .lesson-title-group {
+    flex-direction: column;
+    row-gap: 26px;
+    padding: 20px 20px 14px;
+  }
+
+  .lesson-title-item-title {
+    font-size: 28px;
+  }
+
+  .lesson-title-item-subtitle {
+    font-size: 16px;
+  }
+
+  .lesson-title-item-goal-description > p {
+    font-size: 13px;
+  }
+
+  .lesson-subtitle-group {
+    gap: 10px;
+  }
+
+  .lesson-title-item-subtitle-sm {
+    font-size: 14px;
+  }
+
+  .lesson-title-item-title-sm {
+    font-size: 20px;
+  }
+
+  .lesson-title-item-title-sm > span {
+    font-size: 20px;
+  }
+
+  .icon_box.width-30 {
+    width: 24px;
+    height: 24px;
+  }
+
+  .icon_box.width-40 {
+    width: 32px;
+    height: 32px;
+  }
+
+  .icon_box.width-50 {
+    width: 36px;
+  }
+
+  .icon_box.width-60 {
+    width: 48px;
+  }
+
+  .lesson-title-item-title-sm.ft-20 {
+    font-size: 18px;
+  }
+
+  .lesson-title-item-title-sm > span {
+    font-size: 18px;
+  }
+
+  .lesson-title-item.pd-0-60 {
+    padding: 0 10px 0 30px;
+  }
+
+  .icon_box {
+    width: 30px;
+  }
+
+  .lesson-middle-title-group {
+    padding: 8px 14px;
+  }
+
+  .lesson-middle-title-group-description {
+    min-height: 100px;
+    padding: 64px 8px 14px;
+  }
+
+  .note-text-box {
+    padding: 0 10px;
+  }
+  .note-text-box > p {
+    line-height: 1.6;
+  }
+
+  .lesson-card-title-group {
+    padding: 8px 14px;
+    margin: 0 8px;
+    font-size: 16px;
+  }
+
+  .lesson-card-text-component-wrapper {
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .lesson-card-text-component-wrapper > div {
+    width: 100%;
+  }
+
+  .lesson-card-text-component {
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .lesson-card-text-component-inner {
+    height: 100%;
+  }
+
+  .lesson-card-text-component-textarea {
+    height: 100%;
+    min-height: 300px;
+  }
+
+  .lesson-card-component-inner {
+    padding: 14px;
+  }
+
+  .step-title-box {
+    padding: 10px 6px;
+    font-size: 14px;
+  }
+  .lesson-card-component-step-title-box.dp-flex-justify-start {
+    font-size: 14px;
+  }
+
+  .dp-grid-row-62px-1fr-62px-responsive {
+    grid-template-columns: 22px 1fr 22px;
+  }
+
+  .dp-grid-row-62px-1fr-responsive {
+    grid-template-columns: 49px 1fr;
+  }
+
+  .dp-grid-row-62px-1fr-62px-768 > div {
+    padding: 0 10px;
+  }
+
+  .qa-text-box {
+    padding: 5px 10px;
+  }
+
+  .qa-type-box {
+    font-size: 16px;
+    padding: 5px;
+    width: 22px;
+    height: 22px;
+  }
+
+  /* 번역 카드 컴포넌트 */
+  .lesson-translation-card-component-inner-text-box {
+    padding: 16px;
+    flex-direction: column;
+  }
+  .lesson-translation-card-component-inner-text-box > p {
+    width: 100%;
+    height: unset;
+  }
+
+  .lesson-translation-card-component-inner-text-box
+    > p.translation-card-text-box-left {
+    flex: none;
+    height: 400px;
+    border-right: none;
+    border-bottom: 4px solid #d1d2d4;
+    padding-bottom: 20px;
+  }
+
+  .lesson-translation-card-component-inner-text-box
+    > p.translation-card-text-box-right {
+    flex: none;
+    height: 300px;
+  }
+
+  .qa-type-box-translation {
+    width: 50px;
+    height: 50px;
+  }
+
+  .qa-type-box-translation > span {
+    font-size: 20px;
+  }
+  /* 문장 텍스트 컴포넌트 */
+
+  .text-conversation-inner-left {
+    flex: 1;
+  }
+
+  .text-conversation-inner-right {
+    flex: 8;
+  }
+
+  /* 연습 텍스트 컴포넌트 */
+  .text-sentence-inner-content {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* 연습 텍스트 컴포넌트 */
+  .text-practice-inner-left {
+    flex: 1;
+  }
+
+  .text-practice-inner-right {
+    flex: 8;
+  }
+
+  .text-culture-inner-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .text-culture-inner-content
+    > div.text-culture-inner-content-left
+    > div:last-child {
+    border-bottom: 1px solid var(--border-color, var(--color-primary--brown));
+  }
+
+  .text-culture-inner-content > div:not(:last-child) {
+    padding-right: 0;
+    border-right: none;
+  }
+}
+
+/* 모바일 디바이스 (~ 480px) */
+@media screen and (max-width: 480px) {
+  #content-sandbox {
+    max-width: 100%;
+    margin: 0 10px;
+  }
+
+  .text-conversation-row {
+    flex-direction: column;
+  }
+
+  .text-practice-row {
+    flex-direction: column;
+  }
+  .text-practice-inner-right {
+    width: 100%;
+    flex: 1;
+  }
+}

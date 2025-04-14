@@ -1,0 +1,160 @@
+/* 애니타임코리아 네비게이션 CSS */
+.anytimekorea-style-guide-nav {
+  height: auto;
+  min-height: 86px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: #fff;
+  border-bottom: 2px solid #333;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+  padding: 20px;
+}
+
+/* 스크롤 관련 스타일 */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 106px; /* 네비게이션 바 높이 + 여백 */
+}
+
+.anytimekorea-style-guide-nav a {
+  transition: color 0.3s ease;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+.anytimekorea-style-guide-nav a:hover {
+  color: blueviolet;
+  border-color: blueviolet;
+}
+
+.anytimekorea-style-guide-nav a.active {
+  color: blueviolet;
+  font-weight: bold;
+  border-color: blueviolet;
+}
+
+.anytimekorea-style-guide-title {
+  position: relative;
+  transition: all 0.3s ease;
+  border: 3px solid blueviolet;
+  padding: 10px;
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  color: blueviolet;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.anytimekorea-style-guide-title.active {
+  color: #fff;
+  border-color: blueviolet;
+  background-color: blueviolet;
+}
+
+.anytimekorea-style-guide-wrapper {
+  overflow: hidden;
+}
+
+.anytimekorea-style-guide-content {
+  margin-top: 86px;
+  padding-top: 20px;
+}
+
+.anytimekorea-style-guide-title-sub {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .anytimekorea-style-guide-nav {
+    height: auto;
+    min-height: 120px;
+  }
+
+  .anytimekorea-style-guide-content {
+    margin-top: 120px;
+  }
+
+  html {
+    scroll-padding-top: 140px; /* 모바일에서 네비게이션 바 높이 + 여백 */
+  }
+}
+
+/* primary-color-box */
+.primary-color-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+}
+.primary-color-box > p {
+  display: flex;
+  padding: 10px;
+  width: calc(100% / 4 - 8px);
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-color-white {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.primary-color-black {
+  background-color: #000;
+  color: #fff;
+}
+
+.primary-color-green {
+  background-color: #23b24b;
+  color: #fff;
+}
+
+.primary-color-blue {
+  background-color: #009fdf;
+  color: #fff;
+}
+
+.primary-color-blue-02 {
+  background-color: #1890ff;
+  color: #fff;
+}
+
+.primary-color-pink-light {
+  background-color: #fcd9d3;
+  color: #000;
+}
+
+.primary-color-pink-deep {
+  background-color: #ef4d5f;
+  color: #fff;
+}
+
+.primary-color-orange {
+  background-color: #fec66a;
+  color: #000;
+}
+
+.primary-color-brown {
+  background-color: #b09071;
+  color: #fff;
+}

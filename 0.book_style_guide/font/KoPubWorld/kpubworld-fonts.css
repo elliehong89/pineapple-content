@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "KoPubWorldDotum";
+  src: url("fonts/KoPubWorldDotumBold.woff2") format("woff2"),
+    url("fonts/KoPubWorldDotumBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KoPubWorldDotum";
+  src: url("fonts/KoPubWorldDotumLight.woff2") format("woff2"),
+    url("fonts/KoPubWorldDotumLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KoPubWorldBatang";
+  src: url("fonts/KoPubWorldBatangMedium.woff2") format("woff2"),
+    url("fonts/KoPubWorldBatangMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KoPubWorldDotum";
+  src: url("fonts/KoPubWorldDotumMedium.woff2") format("woff2"),
+    url("fonts/KoPubWorldDotumMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KoPubWorldBatang";
+  src: url("fonts/KoPubWorldBatangBold.woff2") format("woff2"),
+    url("fonts/KoPubWorldBatangBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KoPubWorldBatang";
+  src: url("fonts/KoPubWorldBatangLight.woff2") format("woff2"),
+    url("fonts/KoPubWorldBatangLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
