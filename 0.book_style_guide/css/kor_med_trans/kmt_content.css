@@ -1,63 +1,44 @@
-/* content common css */
-
 /* Theme Variables */
 :root {
-  /* Primary Colors - Main Theme Colors */
-  /* White & Black */
-  --color-primary--white: #ffffff; /* 흰색 */
-  --color-primary--black: #000000; /* 검정색 */
-
-  /* Blue Series */
-  --color-primary--blue-light: #6bcff6; /* 밝은 파란색 */
-  --color-primary--blue: #2b8fb9; /* 기본 파란색 */
-  --color-primary--blue-pale: #bad9ea; /* 연한 파란색 */
-  --color-primary--blue-deep: #7aacd4; /* 진한 파란색 */
-  --color-primary--blue-dark: #2786b9; /* 어두운 파란색 */
-
-  /* Green Series */
-  --color-primary--green: #71bf44; /* 기본 초록색 */
-  --color-primary--green-light: #e3f2e7; /* 연한 초록색 */
-  --color-primary--green-pale: #d3e5a1; /* 연한 초록색 */
-  --color-primary--green-teal: #24bb9d; /* 청록색 */
-  --color-primary--green-mint: #cae7dd; /* 민트색 */
-
-  /* Purple Series */
-  --color-primary--purple-light: #e4e3f1; /* 연한 보라색 */
-  --color-primary--purple-pale: #dbd9ec; /* 연한 보라색 */
-  --color-primary--purple: #8781bd; /* 기본 보라색 */
-
-  /* Pink Series */
-  --color-primary--pink-light: #fce9f1; /* 연한 분홍색 */
-  --color-primary--pink-pale: #fadbe8; /* 연한 분홍색 */
-  --color-primary--pink: #db81b5; /* 기본 분홍색 */
-
-  /* Orange Series */
-  --color-primary--orange-light: #fde2d6; /* 연한 주황색 */
-  --color-primary--orange: #f8ac8b; /* 기본 주황색 */
-  --color-primary--orange-dark: #F79C78; /* 어두운 주황색 */
-
-  /* Yellow Series */
-  --color-primary--yellow: #fed783; /* 기본 노란색 */
-  --color-primary--yellow-pale: #fff79a; /* 연한 노란색 */
-
-  /* Brown Series */
-  --color-primary--brown: #bd9e7e; /* 기본 갈색 */
-  --color-primary--brown-pale: #f3ede5; /* 연한 갈색 */
-
-  /* Gray Series */
-  --color-primary--gray-light: #f9f9f9; /* 연한 회색 */
-  --color-primary--gray-dark: #576661; /* 어두운 회색 */
+  /* Primary Colors */
+  --color-primary--white: #ffffff;
+  --color-primary--black: #000000;
+  --color-primary--blue: #2b8fb9;
+  --color-primary--blue-light: #6bcff6;
+  --color-primary--blue-pale: #bad9ea;
+  --color-primary--blue-deep: #7aacd4;
+  --color-primary--blue-dark: #2786b9;
+  --color-primary--green: #71bf44;
+  --color-primary--green-light: #e3f2e7;
+  --color-primary--green-pale: #d3e5a1;
+  --color-primary--green-teal: #24bb9d;
+  --color-primary--green-mint: #cae7dd;
+  --color-primary--purple: #8781bd;
+  --color-primary--purple-light: #e4e3f1;
+  --color-primary--purple-pale: #dbd9ec;
+  --color-primary--pink: #db81b5;
+  --color-primary--pink-light: #fce9f1;
+  --color-primary--pink-pale: #fadbe8;
+  --color-primary--orange: #f8ac8b;
+  --color-primary--orange-light: #fde2d6;
+  --color-primary--orange-dark: #f79c78;
+  --color-primary--yellow: #fed783;
+  --color-primary--yellow-pale: #fff79a;
+  --color-primary--brown: #bd9e7e;
+  --color-primary--brown-pale: #f3ede5;
+  --color-primary--gray-light: #f9f9f9;
+  --color-primary--gray-dark: #576661;
 
   /* Text Colors */
-  --color-text--primary: #333; /* 기본 텍스트 */
-  --color-text--secondary: #666; /* 보조 텍스트 */
-  --color-text--tertiary: #999; /* 3차 텍스트 */
+  --color-text--primary: #333;
+  --color-text--secondary: #666;
+  --color-text--tertiary: #999;
 
   /* Background Colors */
-  --color-background--light: #f9f9f9; /* 밝은 배경 */
-  --color-background--pale: #f4f9e8; /* 연한 배경 */
+  --color-background--light: #f9f9f9;
+  --color-background--pale: #f4f9e8;
 
-  /* Current Theme (기본값은 Theme A) */
+  /* Current Theme */
   --theme-primary: var(--color-primary--blue);
   --theme-primary-light: var(--color-primary--blue-light);
   --theme-primary-dark: var(--color-primary--blue-dark);
@@ -65,6 +46,7 @@
   --theme-background: var(--color-background--light);
 }
 
+/* Base Styles */
 * {
   box-sizing: border-box;
   word-break: keep-all;
@@ -72,14 +54,21 @@
   font-family: "KoPubWorldDotum", sans-serif;
 }
 
-h4 {
-  display: block;
+body,
+html {
+  font-size: 16px;
 }
 
-div,
-p {
-  margin: 0;
-  padding: 0;
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  max-lines: 1;
+  text-overflow: ellipsis;
 }
 
 h3 > span {
@@ -92,17 +81,11 @@ strong {
   font-size: 16px;
 }
 
-ul,
-li {
-  list-style-type: none;
-}
-
 section {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin: 100px 0;
 }
 
-/* wrap */
+/* Layout */
 #content-sandbox {
   margin: 0 auto;
   max-width: 1024px;
@@ -113,179 +96,337 @@ section {
   margin: 40px 0;
 }
 
-/* text-decoration */
+/* Text Decoration */
 .td-underline {
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-underline-offset: 2px;
 }
 
-/* text-decoration colors */
+/* Text Decoration Colors */
 .td-blue {
   text-decoration-color: #009fdf;
-  -webkit-text-decoration-color: #009fdf;
 }
-
-.tb-black {
+.td-black {
   text-decoration-color: #333;
-  -webkit-text-decoration-color: #333;
 }
-
 .td-blue-02 {
   text-decoration-color: #1890ff;
-  -webkit-text-decoration-color: #1890ff;
 }
-
 .td-green {
   text-decoration-color: #23b24b;
-  -webkit-text-decoration-color: #23b24b;
 }
-
 .td-pink {
   text-decoration-color: #ef4d5f;
-  -webkit-text-decoration-color: #ef4d5f;
 }
 
-/* text-decoration styles */
+/* Text Decoration Styles */
 .td-solid {
   text-decoration-style: solid;
 }
-
 .td-dashed {
   text-decoration-style: dashed;
 }
-
 .td-dotted {
   text-decoration-style: dotted;
 }
-
 .td-double {
   text-decoration-style: double;
 }
 
-/* text-decoration offset */
+/* Text Decoration Offset */
 .td-offset-1 {
   text-underline-offset: 1px;
 }
-
 .td-offset-2 {
   text-underline-offset: 2px;
 }
-
 .td-offset-3 {
   text-underline-offset: 3px;
 }
-
 .td-offset-4 {
   text-underline-offset: 4px;
 }
 
-/* text-align */
+/* Text Alignment */
 .ta-l {
   text-align: left;
 }
-
 .ta-r {
   text-align: right;
 }
-
 .ta-c {
   text-align: center;
 }
 
-/* vertical-align */
+/* Vertical Alignment */
 .va-m {
   vertical-align: middle;
 }
-
 .va-t {
   vertical-align: top;
 }
 
-/* word-break */
-.word-break-all {
-  word-break: break-all;
-}
-
-/* font-size */
+/* Font Sizes */
 .ft-10 {
   font-size: 10px;
 }
-
 .ft-11 {
   font-size: 11px;
 }
-
 .ft-12 {
   font-size: 12px;
 }
-
 .ft-14 {
   font-size: 14px;
 }
-
 .ft-15 {
   font-size: 15px;
 }
-
 .ft-16 {
   font-size: 16px;
 }
-
 .ft-18 {
   font-size: 18px;
 }
-
 .ft-20 {
   font-size: 20px;
 }
-
 .ft-22 {
   font-size: 22px;
 }
-
 .ft-28 {
   font-size: 28px;
 }
-
 .ft-30 {
   font-size: 30px;
 }
 
-/* height-fit */
-.height-fit {
-  height: fit-content;
+/* Font Weights */
+.ft-weight-bold {
+  font-weight: bold;
+}
+.ft-weight-normal {
+  font-weight: normal;
+}
+.ft-weight-light {
+  font-weight: lighter;
 }
 
-.min-height-fit {
-  min-height: fit-content;
+/* Width & Height */
+.w-80 {
+  width: 80%;
+}
+.w-90 {
+  width: 90%;
+}
+.w-94 {
+  width: 94%;
+}
+.w-95 {
+  width: 95%;
+}
+.w-96 {
+  width: 96%;
+}
+.w-97 {
+  width: 97%;
+}
+.w-98 {
+  width: 98%;
+}
+.w-100 {
+  width: 100%;
 }
 
-/* margin */
+.h-1 {
+  height: 1px;
+}
+.h-72 {
+  height: 72px;
+}
+.h-90 {
+  height: 90%;
+}
+.h-100 {
+  height: 100%;
+}
+
+/* Display */
+.dp-grid {
+  display: grid;
+}
+.dp-flex {
+  display: flex;
+}
+.dp-inline-flex {
+  display: inline-flex;
+}
+
+/* Flex Direction */
+.dp-flex-row {
+  flex-direction: row;
+}
+.dp-flex-column {
+  flex-direction: column;
+}
+
+/* Flex Wrap */
+.dp-flex-wrap {
+  flex-wrap: wrap;
+}
+.dp-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+/* Flex Justify */
+.dp-flex-justify-start {
+  justify-content: flex-start;
+}
+.dp-flex-justify-end {
+  justify-content: flex-end;
+}
+.dp-flex-justify-center {
+  justify-content: center;
+}
+.dp-flex-justify-between {
+  justify-content: space-between;
+}
+.dp-flex-justify-around {
+  justify-content: space-around;
+}
+
+/* Flex Align */
+.dp-flex-align-start {
+  align-items: flex-start;
+}
+.dp-flex-align-end {
+  align-items: flex-end;
+}
+.dp-flex-align-center {
+  align-items: center;
+}
+.dp-flex-align-baseline {
+  align-items: baseline;
+}
+.dp-flex-align-stretch {
+  align-items: stretch;
+}
+
+/* Flex Self */
+.dp-flex-align-self-start {
+  align-self: flex-start;
+}
+.dp-flex-align-self-end {
+  align-self: flex-end;
+}
+.dp-flex-align-self-center {
+  align-self: center;
+}
+.dp-flex-align-self-baseline {
+  align-self: baseline;
+}
+.dp-flex-align-self-stretch {
+  align-self: stretch;
+}
+.dp-flex-align-self-auto {
+  align-self: auto;
+}
+
+/* Flex Grow */
+.flex-0 {
+  flex: 0;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-2 {
+  flex: 2;
+}
+.flex-3 {
+  flex: 3;
+}
+.flex-4 {
+  flex: 4;
+}
+.flex-5 {
+  flex: 5;
+}
+.flex-6 {
+  flex: 6;
+}
+
+/* Gap */
+.gap-0 {
+  gap: 0;
+}
+.gap-5 {
+  gap: 5px;
+}
+.gap-10 {
+  gap: 10px;
+}
+.gap-20 {
+  gap: 20px;
+}
+.gap-30 {
+  gap: 30px;
+}
+.gap-40 {
+  gap: 40px;
+}
+.gap-50 {
+  gap: 50px;
+}
+.gap-60 {
+  gap: 60px;
+}
+
+/* Row Gap */
+.row-gap-0 {
+  row-gap: 0;
+}
+.row-gap-5 {
+  row-gap: 5px;
+}
+.row-gap-10 {
+  row-gap: 10px;
+}
+.row-gap-20 {
+  row-gap: 20px;
+}
+.row-gap-30 {
+  row-gap: 30px;
+}
+.row-gap-40 {
+  row-gap: 40px;
+}
+.row-gap-50 {
+  row-gap: 50px;
+}
+.row-gap-60 {
+  row-gap: 60px;
+}
+
+/* Margins */
 .mg-00 {
   margin: 0;
 }
-
 .mg-05 {
   margin: 5px;
 }
-
 .mg-10 {
   margin: 10px;
 }
-
 .mg-20 {
   margin: 20px;
 }
-
 .mg-30 {
   margin: 30px;
 }
-
 .mg-40 {
   margin: 40px;
 }
-
 .mg-50 {
   margin: 50px;
 }
@@ -293,15 +434,12 @@ section {
 .mg-10-0 {
   margin: 10px 0;
 }
-
 .mg-20-0 {
   margin: 20px 0;
 }
-
 .mg-30-0 {
   margin: 30px 0;
 }
-
 .mg-40-0 {
   margin: 40px 0;
 }
@@ -309,39 +447,30 @@ section {
 .mgb-00 {
   margin-bottom: 0;
 }
-
 .mgb-05 {
   margin-bottom: 5px;
 }
-
 .mgb-10 {
   margin-bottom: 10px;
 }
-
 .mgb-20 {
   margin-bottom: 20px;
 }
-
 .mgb-30 {
   margin-bottom: 30px;
 }
-
 .mgb-40 {
   margin-bottom: 40px;
 }
-
 .mgb-50 {
   margin-bottom: 50px;
 }
-
 .mgb-60 {
   margin-bottom: 60px;
 }
-
 .mgb-70 {
   margin-bottom: 70px;
 }
-
 .mgb-80 {
   margin-bottom: 80px;
 }
@@ -349,28 +478,20 @@ section {
 .mgt-10 {
   margin-top: 10px;
 }
-
 .mgt-20 {
   margin-top: 20px;
 }
-
-.mgt-20 {
-  margin-top: 20px;
-}
-
 .mgt-30 {
   margin-top: 30px;
 }
-
 .mgt-40 {
   margin-top: 40px;
 }
-
 .mgt-50 {
   margin-top: 50px;
 }
 
-/* padding */
+/* Padding */
 .pd-00 {
   padding: 0;
 }
@@ -402,19 +523,15 @@ section {
 .pd-0-30 {
   padding: 0 30px;
 }
-
 .pd-0-40 {
   padding: 0 40px;
 }
-
 .pd-0-50 {
   padding: 0 50px;
 }
-
 .pd-0-60 {
   padding: 0 60px;
 }
-
 .pd-0-70 {
   padding: 0 70px;
 }
@@ -432,344 +549,76 @@ section {
   padding-left: 70px;
 }
 
-/* border */
+/* Borders */
 .border-1 {
-  border: 1px solid var(--border-color, var(--color-primary--green-teal));
+  border: 1px solid;
 }
-
 .border-2 {
-  border: 2px solid var(--border-color, var(--color-primary--green-teal));
+  border: 2px solid;
 }
-
 .border-left-1 {
-  border-left: 1px solid var(--border-color, var(--color-primary--green-teal));
-}
-
-.border-left-2 {
-  border-left: 2px solid var(--border-color, var(--color-primary--green-teal));
+  border-left: 1px solid;
 }
 .border-right-1 {
-  border-right: 1px solid var(--border-color, var(--color-primary--green-teal));
-}
-.border-right-2 {
-  border-right: 2px solid var(--border-color, var(--color-primary--green-teal));
+  border-right: 1px solid;
 }
 .border-top-1 {
-  border-top: 1px solid var(--border-color, var(--color-primary--green-teal));
-}
-.border-top-2 {
-  border-top: 2px solid var(--border-color, var(--color-primary--green-teal));
+  border-top: 1px solid;
 }
 .border-bottom-1 {
-  border-bottom: 1px solid var(--border-color, var(--color-primary--green-teal));
+  border-bottom: 1px solid;
+}
+.border-left-2 {
+  border-left: 2px solid;
+}
+.border-right-2 {
+  border-right: 2px solid;
+}
+.border-top-2 {
+  border-top: 2px solid;
 }
 .border-bottom-2 {
-  border-bottom: 2px solid var(--border-color, var(--color-primary--green-teal));
+  border-bottom: 2px solid;
 }
 
-/* box-color */
-.box-color {
-  background-color: var(--theme-background-box);
-}
-
-/* color */
-.primary-white {
-  color: var(--color-primary--white);
-}
-
-.primary-black {
-  color: var(--color-primary--black);
-}
-
-/* border-radius */
+/* Border Radius */
 .border-radius-10 {
   border-radius: 10px;
 }
 
-/* text-basic */
-.text-basic {
-  line-height: 1.8;
-  color: #333;
+/* Font Families */
+.font-ko-pub-world-batang {
+  font-family: "KoPubWorldBatang";
 }
-
-/* font-weight */
-.ft-weight-bold {
-  font-weight: bold;
+.font-ko-pub-world-dotum {
+  font-family: "KoPubWorldDotum";
 }
-
-.ft-weight-normal {
-  font-weight: normal;
+.font-noto-sans-kr {
+  font-family: "NotoSansKR";
 }
-
-.ft-weight-light {
-  font-weight: light;
+.font-noto-sans-kr-bold {
+  font-family: "NotoSansKR-Bold";
 }
-
-/* width */
-.w-80 {
-  width: 80%;
+.font-noto-sans-kr-medium {
+  font-family: "NotoSansKR-Medium";
 }
-
-.w-90 {
-  width: 90%;
+.font-noto-sans-kr-regular {
+  font-family: "NotoSansKR-Regular";
 }
-
-.w-94 {
-  width: 94%;
+.font-noto-sans-kr-light {
+  font-family: "NotoSansKR-Light";
 }
-
-.w-95 {
-  width: 95%;
+.font-noto-sans-kr-thin {
+  font-family: "NotoSansKR-Thin";
 }
-
-.w-96 {
-  width: 96%;
+.font-noto-sans-kr-black {
+  font-family: "NotoSansKR-Black";
 }
-
-.w-97 {
-  width: 97%;
+.font-noto-sans-kr-medium-cjk {
+  font-family: "NotoSansKR-MediumCJK";
 }
-
-.w-98 {
-  width: 98%;
-}
-
-.w-100 {
-  width: 100%;
-}
-
-/* height */
-.h-1 {
-  height: 1px;
-}
-.h-72 {
-  height: 72px;
-}
-.h-90 {
-  height: 90px;
-}
-.h-100 {
-  height: 100%;
-}
-
-/* display grid */
-.dp-grid {
-  display: grid;
-}
-
-.dp-grid-row-1fr-62px {
-  grid-template-columns: 1fr 62px;
-}
-.dp-grid-row-62px-1fr {
-  grid-template-columns: 62px 1fr;
-}
-
-.dp-grid-row-62px-1fr-62px {
-  grid-template-columns: 62px 1fr 62px;
-}
-
-.dp-grid-row-1fr-34px {
-  grid-template-columns: 1fr 34px;
-}
-
-.dp-grid-row-34px-1fr {
-  grid-template-columns: 34px 1fr;
-}
-
-.dp-grid-column-1fr-1fr {
-  grid-template-columns: 1fr 1fr;
-}
-
-/* display flex */
-.dp-flex {
-  display: flex;
-}
-.dp-inline-flex {
-  display: inline-flex;
-}
-
-.dp-flex-row {
-  flex-direction: row;
-}
-
-.dp-flex-column {
-  flex-direction: column;
-}
-
-.dp-flex-wrap {
-  flex-wrap: wrap;
-}
-
-.dp-flex-nowrap {
-  flex-wrap: nowrap;
-}
-
-.dp-flex-justify-start {
-  justify-content: flex-start;
-}
-
-.dp-flex-justify-end {
-  justify-content: flex-end;
-}
-
-.dp-flex-justify-center {
-  justify-content: center;
-}
-
-.dp-flex-justify-between {
-  justify-content: space-between;
-}
-
-.dp-flex-justify-around {
-  justify-content: space-around;
-}
-
-.dp-flex-align-start {
-  align-items: flex-start;
-}
-
-.dp-flex-align-end {
-  align-items: flex-end;
-}
-
-.dp-flex-align-center {
-  align-items: center;
-}
-
-.dp-flex-align-baseline {
-  align-items: baseline;
-}
-
-.dp-flex-align-stretch {
-  align-items: stretch;
-}
-
-.dp-flex-align-self-start {
-  align-self: flex-start;
-}
-
-.dp-flex-align-self-end {
-  align-self: flex-end;
-}
-
-.dp-flex-align-self-center {
-  align-self: center;
-}
-
-.dp-flex-align-self-baseline {
-  align-self: baseline;
-}
-
-.dp-flex-align-self-stretch {
-  align-self: stretch;
-}
-
-.dp-flex-align-self-auto {
-  align-self: auto;
-}
-
-.dp-flex-align-self-baseline {
-  align-self: baseline;
-}
-
-.dp-flex-align-self-stretch {
-  align-self: stretch;
-}
-
-/* flex */
-
-.flex-0 {
-  flex: 0;
-}
-
-.flex-1 {
-  flex: 1;
-}
-
-.flex-2 {
-  flex: 2;
-}
-
-.flex-3 {
-  flex: 3;
-}
-
-.flex-4 {
-  flex: 4;
-}
-
-.flex-5 {
-  flex: 5;
-}
-
-.flex-6 {
-  flex: 6;
-}
-
-/* gap */
-.gap-0 {
-  gap: 0;
-}
-
-.gap-5 {
-  gap: 5px;
-}
-
-.gap-10 {
-  gap: 10px;
-}
-
-.gap-20 {
-  gap: 20px;
-}
-
-.gap-30 {
-  gap: 30px;
-}
-
-.gap-40 {
-  gap: 40px;
-}
-
-.gap-50 {
-  gap: 50px;
-}
-
-.gap-60 {
-  gap: 60px;
-}
-
-/* row-gap */
-.row-gap-0 {
-  row-gap: 0;
-}
-
-.row-gap-5 {
-  row-gap: 5px;
-}
-
-.row-gap-10 {
-  row-gap: 10px;
-}
-
-.row-gap-20 {
-  row-gap: 20px;
-}
-
-.row-gap-30 {
-  row-gap: 30px;
-}
-
-.row-gap-40 {
-  row-gap: 40px;
-}
-
-.row-gap-50 {
-  row-gap: 50px;
-}
-
-.row-gap-60 {
-  row-gap: 60px;
+.font-noto-sans-kr-regular-cjk {
+  font-family: "NotoSansKR-RegularCJK";
 }
 
 /* Theme Classes */
@@ -978,8 +827,8 @@ section {
 .lesson-title-item-goal-description > span {
   font-size: 14px;
   line-height: 1.5;
-  color: var(--text-color, var(--color-primary--blue-dark));
-  font-weight: bold;
+  font-weight: 600;
+  color: var(--text-color, var(--color-text--primary));
 }
 
 .lesson-title-item-goal-description > p {
@@ -1023,9 +872,6 @@ section {
 }
 
 /* ===== Card Components ===== */
-.lesson-card-component-wrapper {
-}
-
 .lesson-card-component-wrapper.dp-flex-row {
   display: flex;
   flex-direction: row;
@@ -1056,9 +902,6 @@ section {
   flex-direction: row;
   gap: 10px;
   align-items: flex-start;
-}
-
-.qa-list-row-question {
 }
 
 .qa-list-row-question.row-reverse {
@@ -1113,12 +956,14 @@ section {
 }
 
 .qa-text-box {
-  /* width: 500px; */
+  color: var(--color-text--primary);
+}
+
+.qa-text-box-normal {
   width: 70%;
   background-color: #fff;
   border-radius: 18px;
   padding: 10px 20px;
-  color: var(--color-text--primary);
   box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px,
     rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
 }
@@ -1131,6 +976,10 @@ section {
   width: 100%;
 }
 
+.qa-text-box.w-70 {
+  width: 70%;
+}
+
 textarea {
   border: none;
   outline: none;
@@ -1139,6 +988,7 @@ textarea {
 }
 
 .qa-text-box-textarea {
+  display: block;
   width: 100%;
   height: 100%;
   border: none;
@@ -1148,6 +998,20 @@ textarea {
   min-height: 120px;
   max-height: 120px;
   line-height: 30px;
+  padding: 10px 20px;
+  border-radius: 18px;
+  background-color: #fff;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px,
+    rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+  transition: all 0.3s ease;
+}
+
+.qa-text-box-textarea:focus {
+  background-color: #f9f9f9;
+}
+
+.qa-text-box-textarea:hover {
+  background-color: #f9f9f9;
 }
 
 .qa-text-box-textarea.h-none {
@@ -1162,7 +1026,8 @@ textarea {
 
 .qa-text-box-textarea::placeholder {
   font-size: 16px;
-  color: var(--color-text--secondary);
+  color: var(--color-text--tertiary);
+  vertical-align: middle;
 }
 
 .step-title-box {
@@ -1207,9 +1072,6 @@ textarea {
 }
 
 /* ===== Note Components ===== */
-.lesson-note-component-wrapper {
-}
-
 .lesson-note-component-inner {
   background-color: var(--box-bg-color, var(--box-color));
   border-radius: 20px;
@@ -1301,6 +1163,7 @@ textarea {
 .tb-normal td {
   border: 1px solid #d3e5a1;
   background-color: #fff;
+  font-family: "KoPubWorldBatang";
 }
 
 .tb-normal td:last-child {
@@ -1351,7 +1214,7 @@ textarea {
   text-indent: 20px;
   padding-bottom: 40px;
   overflow-y: auto;
-  a
+  font-family: "KoPubWorldBatang";
 }
 
 .lesson-card-text-component-textarea {
@@ -1365,6 +1228,7 @@ textarea {
   transition: all 0.3s ease;
   background-color: transparent;
   padding: 20px 10px;
+  font-family: "KoPubWorldBatang";
 }
 
 .lesson-card-text-component-textarea:hover {
@@ -1381,9 +1245,6 @@ textarea {
 }
 
 /* 번역 카드 컴포넌트 */
-.lesson-translation-card-component-wrapper {
-}
-
 .qa-type-box-translation {
   width: 60px;
   height: 60px;
@@ -1435,6 +1296,10 @@ textarea {
   overflow-y: auto;
 }
 
+.translation-card-text-box-left.font-ko-pub-world-batang {
+  font-family: "KoPubWorldBatang";
+}
+
 .translation-card-text-box-right {
   flex: 1;
 }
@@ -1452,12 +1317,16 @@ textarea {
   padding: 10px;
 }
 
+.translation-card-text-box-textarea.font-ko-pub-world-batang {
+  font-family: "KoPubWorldBatang";
+}
+
 .translation-card-text-box-textarea:focus {
-  background-color: #fce9f1;
+  background-color: #eee;
 }
 
 .translation-card-text-box-textarea:hover {
-  background-color: #fce9f1;
+  background-color: #eee;
 }
 
 .translation-card-text-box-textarea::placeholder {
@@ -1465,7 +1334,6 @@ textarea {
 }
 
 /* 대화 텍스트 컴포넌트 */
-
 .text-conversation-row {
   display: flex;
   flex-direction: row;
@@ -1479,7 +1347,7 @@ textarea {
 }
 
 .text-conversation-inner .text-translator {
-  color: #2B6578;
+  color: #2b6578;
 }
 
 .text-conversation-row > div > p {
@@ -1493,13 +1361,13 @@ textarea {
 .text-conversation-inner-right {
   flex: 9;
 }
+.text-conversation-inner-right > p {
+  font-family: "KoPubWorldBatang";
+}
 
 /* 문장 텍스트 컴포넌트 */
 .text-sentence .lesson-title-item-title-sm.ft-20 {
   color: var(--text-color, var(--text-color));
-}
-
-.text-sentence-title {
 }
 
 .text-indent-20 {
@@ -1509,7 +1377,7 @@ textarea {
 .text-sentence-inner {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
 }
 
 .text-sentence-inner-content {
@@ -1527,10 +1395,11 @@ textarea {
 
 .text-sentence-inner-content > div > p {
   text-align: justify;
+  font-family: "KoPubWorldBatang";
 }
 
 /* 연습 텍스트 컴포넌트 */
-.text-practice-row-group{
+.text-practice-row-group {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -1559,6 +1428,10 @@ textarea {
   flex: 9;
 }
 
+.text-practice-inner-right > p {
+  font-family: "KoPubWorldBatang";
+}
+
 .text-practice-textarea {
   display: block;
   width: 100%;
@@ -1575,11 +1448,9 @@ textarea {
   background-color: #fde2d6;
 }
 
-
-.text-culture-inner{
+.text-culture-inner {
   margin: 0 4px;
 }
-
 
 .text-culture-inner-content {
   display: flex;
@@ -1587,7 +1458,7 @@ textarea {
   gap: 20px;
   padding: 40px 20px;
   box-shadow: rgba(189, 158, 126, 0.7) 0px 1px 3px 0px,
-   rgba(189, 158, 126, 0.06) 0px 1px 2px 0px;
+    rgba(189, 158, 126, 0.06) 0px 1px 2px 0px;
 }
 
 .text-culture-inner-content > div:not(:last-child) {
@@ -1616,6 +1487,7 @@ textarea {
   > div:last-child {
   border-bottom: none;
 }
+
 .text-culture-inner-content
   > div.text-culture-inner-content-right
   > div:last-child {
@@ -1692,23 +1564,22 @@ textarea {
 
 .image-text-box-item .text-ko {
   color: var(--color-primary--black);
+  font-family: "KoPubWorldBatang";
 }
 
-
-.qr-code-number{
+.qr-code-number {
   width: 64px;
   height: 38px;
   position: relative;
 }
 
-.qr-code-area-inner{
+.qr-code-area-inner {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-
-.qr-code-number .qr-code-text{
+.qr-code-number .qr-code-text {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -1727,18 +1598,18 @@ textarea {
 }
 
 /* QR 코드 영역 */
-.qr-code-area{
+.qr-code-area {
   margin-top: 40px;
   display: flex;
   justify-content: flex-end;
 }
 
-.qr-code-code{
+.qr-code-code {
   width: 64px;
   height: 64px;
 }
 
-.qr-code-code >img{
+.qr-code-code > img {
   display: block;
   width: 100%;
   height: 100%;
