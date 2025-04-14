@@ -1,5 +1,5 @@
 /* Import all CSS files */
-@import "../common.css";
+/* @import "../common.css"; */
 @import "./kmt_content.css";
 @import "./kmt_media.css";
 @import "./kmt_nav.css";

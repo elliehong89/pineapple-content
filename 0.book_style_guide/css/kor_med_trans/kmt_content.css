@@ -52,6 +52,8 @@
   word-break: keep-all;
   color: var(--color-text--primary);
   font-family: "KoPubWorldDotum", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body,
@@ -59,22 +61,7 @@ html {
   font-size: 16px;
 }
 
-/* Typography */
-h1,
-h2,
-h3,
-h4 {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 0;
-  max-lines: 1;
-  text-overflow: ellipsis;
-}
-
-h3 > span {
-  font-size: 15px;
-}
-
+div,
 p,
 span,
 strong {
@@ -1137,6 +1124,7 @@ textarea {
 
 .tb-responsive .responsive-table {
   min-width: 600px;
+  width: 100%;
 }
 
 .tb-normal {
