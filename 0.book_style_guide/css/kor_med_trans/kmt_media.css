@@ -95,7 +95,7 @@
 
   .lesson-card-title-group {
     padding: 8px 14px;
-    margin: 0 8px;
+    margin: 0 8px 20px;
     font-size: 16px;
   }
 
@@ -147,14 +147,19 @@
   }
 
   .qa-text-box {
+    font-size: 15px;
     padding: 5px 10px;
   }
 
   .qa-type-box {
     font-size: 16px;
     padding: 5px;
-    width: 22px;
-    height: 22px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .qa-text-box-textarea {
+    font-size: 15px;
   }
 
   /* 번역 카드 컴포넌트 */
@@ -229,6 +234,13 @@
   .text-culture-inner-content > div:not(:last-child) {
     padding-right: 0;
     border-right: none;
+  }
+
+  .image-text-box-item .text-en {
+    font-size: 15px;
+  }
+  .image-text-box-item .text-ko {
+    font-size: 15px;
   }
 }
 
