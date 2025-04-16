@@ -1,0 +1,13 @@
+/* Noto Sans KR 폰트 임포트 */
+@import "../font/NotoSansKR/notosans-font.css";
+
+/* KoPubWorld 폰트 임포트 */
+@import "../font/KoPubWorld/kpubworld-fonts.css";
+
+/* 폰트 최적화를 위한 기본 설정 */
+body {
+  font-family: "KoPubWorldDotum", "Noto Sans KR";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

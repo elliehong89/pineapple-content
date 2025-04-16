@@ -3,10 +3,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/common.css" />
-  <link rel="stylesheet" href="css/anytimekorea/anytimekorea_content.css" />
-  <link rel="stylesheet" href="css/anytimekorea/anytimekorea_media.css" />
-  <link rel="stylesheet" href="css/anytimekorea/anytimekorea_nav.css" />
+  <link rel="stylesheet" href="css/anytimekorea/anytimekorea_main.css" />
   <style>
     /* 만화이미지 말풍선 개별 위치값 CSS */
     .speech-bubble-1 {
@@ -529,7 +526,7 @@
                     <div class="grid-cell flex-01">
                       <p class="dp-inline-flex dp-direction-column dp-gap-5">
                         <span class="td-underline ta-c">브라이언</span>
-                        <span class="ta-c ft-12 primary-black">Subject</span>
+                        <span class="ta-c ft-14 primary-black">Subject</span>
                       </p><strong class="primary-blue">이</strong> 학생이에요.
                     </div>
                     <div class="grid-cell flex-01 primary-gray">
@@ -572,7 +569,7 @@
                   <div class="dp-flex dp-direction-row responsive-dp-direction-row-480 responsive-row-gap-05-480">
                     <div class="grid-cell flex-01">
                       영화(를)<strong class="tb-black primary-blue">봐요</strong>.
-                      <p class="ft-14">movie <strong class="primary-blue ft-14">watch</strong></p>
+                      <p class="ft-15">movie <strong class="primary-blue ft-14">watch</strong></p>
                     </div>
                     <div class="grid-cell flex-01 primary-gray">
                       (I) <strong class="primary-blue">watch</strong> a movie.
@@ -654,13 +651,13 @@
                     <div class="grid-cell flex-01">
                       <p class="dp-inline-flex dp-direction-column dp-gap-5">
                         <span class="td-underline ta-c">브라이언</span>
-                        <span class="ta-c ft-12 primary-black">Subject</span>
+                        <span class="ta-c ft-14 primary-black">Subject</span>
                       </p><strong class="primary-blue">이</strong> 학생이에요.
                     </div>
                     <div class="grid-cell flex-01 primary-gray">
                       <p class="dp-inline-flex dp-direction-column dp-gap-5">
                         <span class="td-underline ta-c">Brian</span>
-                        <span class="ta-c ft-12 primary-black">Subject</span>
+                        <span class="ta-c ft-14 primary-black">Subject</span>
                       </p><strong class="primary-blue"></strong> is a student..
                     </div>
                   </div>
@@ -695,21 +692,87 @@
             </div>
 
             <!-- 대화 스타일 3개 2 -->
-            <div class="qa-list-row mgb-20">
-              <div class="grid-cell">Question: Who is that person?</div>
-              <div class="grid-row grid-row-auto-1fr dp-grid-items-start mgb-10">
-                <div class="grid-cell whitespace-nowrap">
-                  Answer 1:
+            <div class="box-color pd-20 mgb-20">
+              <div class="qa-list-row mgb-20">
+                <div class="grid-cell mgb-20">Question: Who is that person?</div>
+                <div class="grid-row grid-row-92px-1fr dp-grid-items-start">
+                  <div class="grid-cell whitespace-nowrap">
+                    Answer 1:
+                  </div>
+                  <div class="dp-flex responsive-dp-direction-row-768">
+                    <div class="grid-cell flex-01 whitespace-nowrap">
+                      김민준<strong class="primary-blue">이에요</strong>.
+                    </div>
+                    <div class="grid-cell flex-01 whitespace-nowrap primary-gray">
+                      (He) is Kim Minjoon
+                    </div>
+                    <div class="grid-cell flex-01">
+                      [Sentence-form answer]
+                    </div>
+                  </div>
                 </div>
-                <div class="dp-flex responsive-dp-direction-row-768">
-                  <div class="grid-cell flex-01 whitespace-nowrap">
-                    김민준<strong class="primary-blue">이에요</strong>.
+                <div class="grid-row grid-row-92px-1fr dp-grid-items-start mgb-20">
+                  <div class="grid-cell whitespace-nowrap">
+                    Answer 2:
                   </div>
-                  <div class="grid-cell flex-01 whitespace-nowrap primary-gray">
-                    (He) is Kim Minjoon
+                  <div class="dp-flex responsive-dp-direction-row-768">
+                    <div class="grid-cell flex-01 whitespace-nowrap">
+                      김민준<strong class="primary-blue">이요</strong>.
+                    </div>
+                    <div class="grid-cell flex-01 whitespace-nowrap primary-gray">
+                      Kim Minjoon.
+                    </div>
+                    <div class="grid-cell flex-01">
+                      [Simplest answer with NOUN]
+                    </div>
                   </div>
-                  <div class="grid-cell flex-01 whitespace-nowrap">
-                    [Sentence-form answer]
+                </div>
+                <div class="grid-row grid-row-92px-1fr dp-grid-items-start mgb-20">
+                  <div class="grid-cell whitespace-nowrap">
+                    Question:
+                  </div>
+                  <div class="dp-flex responsive-dp-direction-row-768">
+                    <div class="grid-cell flex-01 whitespace-nowrap">
+                      성함이?
+                    </div>
+                    <div class="grid-cell flex-01 whitespace-nowrap primary-gray">
+                      Your name (is)?
+                    </div>
+                    <div class="grid-cell flex-01 whitespace-nowrap">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid-row grid-row-92px-1fr dp-grid-items-start ">
+                  <div class="grid-cell whitespace-nowrap">
+                    Answer 1:
+                  </div>
+                  <div class="dp-flex responsive-dp-direction-row-768">
+                    <div class="grid-cell flex-01 whitespace-nowrap">
+                      에이미<strong class="primary-blue">예요</strong>.
+                    </div>
+                    <div class="grid-cell flex-01 whitespace-nowrap primary-gray">
+                      (I) am Amy.
+                    </div>
+                    <div class="grid-cell flex-01">
+                      [Sentence-form answer]
+                    </div>
+                  </div>
+                </div>
+                <div class="grid-row grid-row-92px-1fr dp-grid-items-start">
+                  <div class="grid-cell whitespace-nowrap">
+                    Answer 2:
+                  </div>
+                  <div class="dp-flex responsive-dp-direction-row-768">
+                    <div class="grid-cell flex-01 whitespace-nowrap">
+                      에이미<strong class="primary-blue">요</strong>.
+                    </div>
+                    <div class="grid-cell flex-01 whitespace-nowrap primary-gray">
+                      Amy.
+                    </div>
+                    <div class="grid-cell flex-01">
+                      [Simplest answer with NOUN]
+                    </div>
                   </div>
                 </div>
               </div>
@@ -786,22 +849,64 @@
                         src="https://api.pineapple.ac/textbook/textbookContents/images/9781635190151/김지호.jpg"
                         width="300px">
                     </p>
-                    <p class="caption">린다 존슨</p>
                   </div>
                 </div>
                 <div class="numbered-image__content">
                   <div>
-                    <p>A: <span class="td-underline">누구</span>예요?</p>
-                    <p>Who is this?</p>
+                    <p class="dp-grid dp-grid-cols-22-1fr ">
+                      <span>A:</span> <span><span class="td-underline">누구</span>예요?</span>
+                    </p>
+                    <p class="primary-gray dp-grid dp-grid-cols-22-1fr ">
+                      <span></span>
+                      <span><span class="td-underline">Who</span> is this?</span>
+                    </p>
                   </div>
                   <div>
-                    <p>B: <span class="td-underline">지호</span><strong class="primary-blue">요</strong>.</p>
-                    <p class="primary-gray">
-                      <span class="td-underline">Jiho</span>.
+                    <p class="dp-grid dp-grid-cols-22-1fr ">
+                      <span>B:</span> <span><span class="td-underline">지호</span><strong
+                          class="primary-blue">요</strong>.</span>
+                    </p>
+                    <p class="primary-gray dp-grid dp-grid-cols-22-1fr ">
+                      <span></span>
+                      <span class="td-underline">Jiho.</span>
                     </p>
                   </div>
                 </div>
               </div>
+              <div class="numbered-image mgb-20">
+                <div class="numbered-image__image">
+                  <span class="numbered-image__number">2.</span>
+                  <div class="img-area-box">
+                    <p class="img-area-box-img">
+                      <img alt="마이클"
+                        src="https://api.pineapple.ac/textbook/textbookContents/images/9781635190151/마이클.jpg"
+                        width="300px">
+                    </p>
+                  </div>
+                </div>
+                <div class="numbered-image__content">
+                  <div>
+                    <p class="dp-grid dp-grid-cols-22-1fr ">
+                      <span>A:</span> <span><span class="td-underline">누구</span>예요?</span>
+                    </p>
+                    <p class="primary-gray dp-grid dp-grid-cols-22-1fr ">
+                      <span></span>
+                      <span><span class="td-underline">Who</span> is this?</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p class="dp-grid dp-grid-cols-22-1fr ">
+                      <span>B:</span> <span><span class="td-underline">마이클</span><strong
+                          class="primary-blue">이요</strong>.</span>
+                    </p>
+                    <p class="primary-gray dp-grid dp-grid-cols-22-1fr ">
+                      <span></span>
+                      <span class="td-underline">Michael.</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
             <div class="numbered-image-list">
@@ -2831,7 +2936,7 @@
                 <div class="pd-20">
                   <div class="dialog-box mgb-20">
                     <div class="dialog-flex">
-                      <div class="dp-flex dp-direction-row dp-gap-10">
+                      <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                         <sup class="numb ft-12">01</sup>
                         <div class="dialog-name">
                           <p class="">민준</p>
@@ -2841,7 +2946,7 @@
                       <p class="dialog-content">안녕하세요?</p>
                     </div>
                     <div class="dialog-flex">
-                      <div class="dp-flex dp-direction-row dp-gap-10">
+                      <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                         <sup class="numb ft-12">02</sup>
                         <div class="dialog-name">
                           <p class="">에이미</p>
@@ -2851,7 +2956,7 @@
                       <p class="dialog-content">안녕하세요?</p>
                     </div>
                     <div class="dialog-flex">
-                      <div class="dp-flex dp-direction-row dp-gap-10">
+                      <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                         <sup class="numb ft-12">03</sup>
                         <div class="dialog-name">
                           <p class="">민준</p>
@@ -2861,7 +2966,7 @@
                       <p class="dialog-content">인턴이세요?</p>
                     </div>
                     <div class="dialog-flex">
-                      <div class="dp-flex dp-direction-row dp-gap-10">
+                      <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                         <sup class="numb ft-12">04</sup>
                         <div class="dialog-name">
                           <p class="">에이미</p>
@@ -2871,7 +2976,7 @@
                       <p class="dialog-content">네.</p>
                     </div>
                     <div class="dialog-flex">
-                      <div class="dp-flex dp-direction-row dp-gap-10">
+                      <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                         <sup class="numb ft-12">05</sup>
                         <div class="dialog-name">
                           <p class="">민준</p>
@@ -2881,7 +2986,7 @@
                       <p class="dialog-content">아~ 성함이 어떻게 되세요?<sup class="primary-gray ft-12">Ⅱ.3</sup></p>
                     </div>
                     <div class="dialog-flex">
-                      <div class="dp-flex dp-direction-row dp-gap-10">
+                      <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                         <sup class="numb ft-12">06</sup>
                         <div class="dialog-name">
                           <p class="">에이미</p>
@@ -2891,7 +2996,7 @@
                       <p class="dialog-content">에이미예요.<sup class="primary-gray ft-12">Ⅱ.1</sup></p>
                     </div>
                     <div class="dialog-flex">
-                      <div class="dp-flex dp-direction-row dp-gap-10">
+                      <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                         <sup class="numb ft-12">07</sup>
                         <div class="dialog-name">
                           <p class="">민준</p>
@@ -2901,7 +3006,7 @@
                       <p class="dialog-content">에임 ... ?</p>
                     </div>
                     <div class="dialog-flex">
-                      <div class="dp-flex dp-direction-row dp-gap-10">
+                      <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                         <sup class="numb ft-12">08</sup>
                         <div class="dialog-name">
                           <p class="">에이미</p>
@@ -2911,7 +3016,7 @@
                       <p class="dialog-content">에이미요.<sup class="primary-gray ft-12">Ⅱ.2</sup></p>
                     </div>
                     <div class="dialog-flex">
-                      <div class="dp-flex dp-direction-row dp-gap-10">
+                      <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                         <sup class="numb ft-12">09</sup>
                         <div class="dialog-name">
                           <p class="">민준</p>
@@ -2921,7 +3026,7 @@
                       <p class="dialog-content">아~ 에이미! 반갑습니다. 김민준이에요.</p>
                     </div>
                     <div class="dialog-flex">
-                      <div class="dp-flex dp-direction-row dp-gap-10">
+                      <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                         <sup class="numb ft-12">10</sup>
                         <div class="dialog-name">
                           <p class="">에이미</p>
@@ -2956,7 +3061,7 @@
 
                 <div class="desc-box pd-20">
                   <div class="dialog-flex">
-                    <div class="dp-flex dp-direction-row dp-gap-10">
+                    <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                       <sup class="primary-gray ft-12">01</sup>
                       <div class="dialog-name">
                         <p class="primary-gray">Minjoon</p>
@@ -2966,7 +3071,7 @@
                     <p class="dialog-content primary-gray">Hi!</p>
                   </div>
                   <div class="dialog-flex">
-                    <div class="dp-flex dp-direction-row dp-gap-10">
+                    <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                       <sup class="primary-gray ft-12">02</sup>
                       <div class="dialog-name">
                         <p class="primary-gray">Amy</p>
@@ -2976,7 +3081,7 @@
                     <p class="dialog-content primary-gray">Hi!</p>
                   </div>
                   <div class="dialog-flex">
-                    <div class="dp-flex dp-direction-row dp-gap-10">
+                    <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                       <sup class="primary-gray ft-12">03</sup>
                       <div class="dialog-name">
                         <p class="primary-gray">Minjoon</p>
@@ -2986,7 +3091,7 @@
                     <p class="dialog-content primary-gray">Are you an intern?</p>
                   </div>
                   <div class="dialog-flex">
-                    <div class="dp-flex dp-direction-row dp-gap-10">
+                    <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                       <sup class="primary-gray ft-12">04</sup>
                       <div class="dialog-name">
                         <p class="primary-gray">Amy</p>
@@ -2996,7 +3101,7 @@
                     <p class="dialog-content primary-gray">Yes.</p>
                   </div>
                   <div class="dialog-flex">
-                    <div class="dp-flex dp-direction-row dp-gap-10">
+                    <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                       <sup class="primary-gray ft-12">05</sup>
                       <div class="dialog-name">
                         <p class="primary-gray">Minjoon</p>
@@ -3006,7 +3111,7 @@
                     <p class="dialog-content primary-gray">Ah~ May I have your name?</p>
                   </div>
                   <div class="dialog-flex">
-                    <div class="dp-flex dp-direction-row dp-gap-10">
+                    <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                       <sup class="primary-gray ft-12">06</sup>
                       <div class="dialog-name">
                         <p class="primary-gray">Amy</p>
@@ -3016,7 +3121,7 @@
                     <p class="dialog-content primary-gray">I am Amy.</p>
                   </div>
                   <div class="dialog-flex">
-                    <div class="dp-flex dp-direction-row dp-gap-10">
+                    <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                       <sup class="primary-gray ft-12">07</sup>
                       <div class="dialog-name">
                         <p class="primary-gray">Minjoon</p>
@@ -3026,7 +3131,7 @@
                     <p class="dialog-content primary-gray">Aim ...?</p>
                   </div>
                   <div class="dialog-flex">
-                    <div class="dp-flex dp-direction-row dp-gap-10">
+                    <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                       <sup class="primary-gray ft-12">08</sup>
                       <div class="dialog-name">
                         <p class="primary-gray">Amy</p>
@@ -3036,7 +3141,7 @@
                     <p class="dialog-content primary-gray">Amy.</p>
                   </div>
                   <div class="dialog-flex">
-                    <div class="dp-flex dp-direction-row dp-gap-10">
+                    <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                       <sup class="primary-gray ft-12">09</sup>
                       <div class="dialog-name">
                         <p class="primary-gray">Minjoon</p>
@@ -3046,7 +3151,7 @@
                     <p class="dialog-content primary-gray">Oh~ Amy! Nice to meet you. I am Kim Minjoon.</p>
                   </div>
                   <div class="dialog-flex">
-                    <div class="dp-flex dp-direction-row dp-gap-10">
+                    <div class="dp-flex dp-direction-row dp-gap-10 responsive-gap-05">
                       <sup class="primary-gray ft-12">10</sup>
                       <div class="dialog-name">
                         <p class="primary-gray">Amy</p>

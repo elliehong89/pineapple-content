@@ -10,23 +10,30 @@
 
 /* 태블릿 디바이스 (~ 768px) */
 @media screen and (max-width: 768px) {
-  :root {
-    --font-size-base-small: 20px;
-    --font-size-base-medium: 2.2vw;
-    --font-size-base-large: 22px;
-
-    --font-size-small-small: 12px;
-    --font-size-small-medium: 1.2vw;
-    --font-size-small-large: 14px;
-  }
-
   p,
   span,
   strong,
   div,
   td,
   th {
-    font-size: 15px;
+    font-size: 16px;
+  }
+
+  h3 > span {
+    font-size: 17px;
+  }
+
+  #content-sandbox {
+    margin: 0 14px;
+  }
+
+  .lesson-title-description {
+    font-size: 16px;
+    padding-left: 12px;
+  }
+
+  .lesson-title-inner-box {
+    padding: 10px;
   }
 
   .dp-grid-cols-22-1fr-responsive-768 {
@@ -107,13 +114,23 @@
     padding: 10px;
   }
 
-  .title-section {
+  .title-sub {
+    font-size: 15px;
     padding: 10px;
   }
 
-  .title-sub {
+  .icon-txt-round {
     font-size: 14px;
+    padding: 4px 10px 6px;
+  }
+  .icon-txt-normal {
+    font-size: 14px;
+    padding: 4px 10px 6px;
+  }
+
+  .toons-caption {
     padding: 10px;
+    font-size: 16px;
   }
 
   /* TOC 모바일 스타일 */
@@ -193,6 +210,11 @@
 
   .img-area-box {
     width: 100%;
+    padding: 6px;
+  }
+
+  .numbered-image__image {
+    gap: 5px;
   }
 
   .numbered-image__content {
@@ -201,7 +223,7 @@
 
   .numbered-image__content > div {
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 6px;
   }
 
   .img-area-box-img {
@@ -259,17 +281,17 @@
 
   .word-list-term {
     flex: 4;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .word-list-definition {
     flex: 6;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .word-list-title > strong,
   .word-list-term > strong {
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .left-list.word-list-column {
@@ -313,20 +335,27 @@
   .img-grid-cols-4 {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .button_audio_text > button {
+    width: 24px;
+    height: 24px;
+  }
+
+  .title-icons {
+    gap: 5px;
+  }
+
+  .title-main-wrapper.mgb-10 {
+    margin-bottom: 8px;
+  }
+
+  .title-section.bg-blue {
+    padding: 10px;
+  }
 }
 
 /* 모바일 디바이스 (~ 480px) */
 @media screen and (max-width: 480px) {
-  :root {
-    --font-size-base-small: 16px;
-    --font-size-base-medium: 2.5vw;
-    --font-size-base-large: 20px;
-
-    --font-size-small-small: 12px;
-    --font-size-small-medium: 1.5vw;
-    --font-size-small-large: 12px;
-  }
-
   p,
   span,
   strong,
@@ -334,7 +363,7 @@
   td,
   th,
   em {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .mgb-00-responsive-480 {
@@ -393,12 +422,11 @@
   }
 
   .title-sub {
-    font-size: 15px;
-    padding: 8px 15px;
+    padding: 8px 10px;
   }
 
   .title-section {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .row-gap-05 {
@@ -633,12 +661,30 @@
   .grammar-dots {
     display: none;
   }
+
+  .word-list-title > strong,
+  .word-list-term > strong {
+    font-size: 16px;
+  }
+
+  .word-list-definition {
+    font-size: 15px;
+  }
+
+  .title-section.bg-blue {
+    padding: 6px 10px;
+  }
+
+  .img-box-position-text {
+    padding: 5px 10px;
+  }
 }
 
-@media screen and (max-width: 456px) {
+/* 기본 설정 */
+@media screen and (max-width: 375px) {
   :root {
     --font-size-base-small: 14px;
-    --font-size-base-medium: 2.8vw;
+    --font-size-base-medium: 3vw;
     --font-size-base-large: 16px;
 
     --font-size-small-small: 10px;
@@ -647,14 +693,67 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+/* 태블릿 (375px ~ 456px) */
+@media (min-width: 375px) and (max-width: 456px) {
   :root {
-    --font-size-base-small: 8px;
+    --font-size-base-small: 18px;
     --font-size-base-medium: 3vw;
-    --font-size-base-large: 14px;
+    --font-size-base-large: 22px;
 
-    --font-size-small-small: 8px;
+    --font-size-small-small: 10px;
     --font-size-small-medium: 1.8vw;
-    --font-size-small-large: 10px;
+    --font-size-small-large: 12px;
+  }
+}
+
+/* 태블릿(456px ~ 480px) */
+@media (min-width: 456px) and (max-width: 480px) {
+  :root {
+    --font-size-base-small: 22px;
+    --font-size-base-medium: 2.8vw;
+    --font-size-base-large: 26px;
+
+    --font-size-small-small: 12px;
+    --font-size-small-medium: 1.8vw;
+    --font-size-small-large: 14px;
+  }
+}
+
+/* 태블릿 (480px ~ 768px) */
+@media (min-width: 480px) and (max-width: 768px) {
+  :root {
+    --font-size-base-small: 26px;
+    --font-size-base-medium: 1.8vw;
+    --font-size-base-large: 28px;
+
+    --font-size-small-small: 14px;
+    --font-size-small-medium: 1.8vw;
+    --font-size-small-large: 16px;
+  }
+}
+
+/* 태블릿 (768px ~ 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    --font-size-base-small: 28px;
+    --font-size-base-medium: 2vw;
+    --font-size-base-large: 30px;
+
+    --font-size-small-small: 16px;
+    --font-size-small-medium: 1.2vw;
+    --font-size-small-large: 18px;
+  }
+}
+
+/* 데스크톱 (1024px 이상) */
+@media (min-width: 1025px) {
+  :root {
+    --font-size-base-small: 30px;
+    --font-size-base-medium: 2.2vw;
+    --font-size-base-large: 32px;
+
+    --font-size-small-small: 26px;
+    --font-size-small-medium: 1.2vw;
+    --font-size-small-large: 28px;
   }
 }
