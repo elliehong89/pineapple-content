@@ -239,14 +239,11 @@ table.border_brown td {
   background-color: transparent;
   margin-top: -2px;
 }
-.audio svg {
-  width: 20px;
-  height: 20px;
+
+.audio svg path {
   fill: var(--theme-accent);
 }
-.audio svg path {
-  fill: #f7d033;
-}
+
 .point {
   width: fit-content;
   font-size: 13pt;
