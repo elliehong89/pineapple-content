@@ -28,6 +28,7 @@
   --color-primary--brown-pale: #f3ede5;
   --color-primary--gray-light: #f9f9f9;
   --color-primary--gray-dark: #576661;
+  --color-primary--gray-dark-pale: #d3d3d3;
 
   /* Text Colors */
   --color-text--primary: #333;
@@ -666,6 +667,23 @@ section {
   gap: 10px;
   background-color: var(--color-primary--yellow-pale);
   padding: 40px 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lesson-title-group::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 0 16px 16px 0;
+  border-style: solid;
+  border-color: var(--color-primary--white) var(--color-primary--white)
+    var(--color-primary--yellow) var(--color-primary--yellow);
+  background-color: var(--color-primary--yellow);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.2);
+  display: block;
+  width: 0;
 }
 
 .lesson-subtitle-group {
@@ -1171,7 +1189,7 @@ textarea {
 }
 
 .lesson-card-text-component {
-  border: 1px solid var(--color-primary--gray-dark);
+  border: 1px solid var(--color-primary--gray-dark-pale);
   border-radius: 2px;
   height: 360px;
   min-height: 360px;

@@ -6,6 +6,13 @@
     max-width: 100%;
     margin: 0 20px;
   }
+  .responsive-dp-direction-row-1024 {
+    flex-direction: column;
+  }
+
+  .responsive-dp-direction-column-1024 {
+    flex-direction: row;
+  }
 }
 
 /* 태블릿 디바이스 (~ 768px) */
@@ -60,6 +67,10 @@
     grid-template-columns: 1fr;
   }
 
+  .grid-row.grid-row-22px-1fr.responsive-grid-row-22px-1fr-768 {
+    grid-template-columns: 1fr;
+  }
+
   .mgb-00-responsive-768 {
     margin-bottom: 0;
   }
@@ -93,8 +104,8 @@
     padding: 14px;
   }
 
-  .speech-bubble {
-    padding: 6px;
+  .speech-content {
+    padding: 8px;
   }
 
   .step-title-box {
@@ -221,6 +232,10 @@
     row-gap: 20px;
   }
 
+  .numbered-image__content.responsive-gap-10 {
+    row-gap: 10px;
+  }
+
   .numbered-image__content > div {
     flex-direction: column;
     row-gap: 6px;
@@ -228,6 +243,10 @@
 
   .img-area-box-img {
     height: auto;
+  }
+
+  .dp-grid-cols-4-responsive {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   /* 이미지 그리드 */
@@ -352,6 +371,58 @@
   .title-section.bg-blue {
     padding: 10px;
   }
+
+  .draw-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .draw-box .left-content {
+    text-align: center;
+  }
+  .draw-box .right-content {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .draw-box .bottom-box {
+    width: 100%;
+  }
+
+  .draw-box .line-box {
+    width: 51%;
+  }
+
+  .draw-box .text-content > div {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .draw-box .text-content > div > strong {
+    font-size: 14px;
+  }
+
+  .draw-box .text-box {
+    font-size: 14px;
+    flex: 1;
+  }
+
+  .draw-box .text-box > strong {
+    font-size: 14px;
+  }
+
+  .draw-box .left-content {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .draw-box .left-content > strong {
+    font-size: 14px;
+  }
+
+  .pattern-example-box-content.h-34 {
+    height: auto;
+  }
 }
 
 /* 모바일 디바이스 (~ 480px) */
@@ -405,10 +476,6 @@
 
   .speech-content {
     gap: 2px;
-  }
-
-  .speech-bubble {
-    padding: 6px;
   }
 
   #content-sandbox {
@@ -559,9 +626,19 @@
     font-size: 14px;
   }
 
+  .dp-grid-cols-4-responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   /* 이미지 그리드 반응형 */
   .img-grid {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .img-grid-numb-type .numb {
+    background-color: #47ad64;
+    padding: 8px 10px;
+    color: #fff;
   }
 
   .img-grid-numb-type-wrap {
@@ -637,7 +714,7 @@
 
   /* note-box */
   .note-box {
-    padding: 10px;
+    padding: 14px;
   }
 
   /* pattern-cell */
@@ -678,9 +755,33 @@
   .img-box-position-text {
     padding: 5px 10px;
   }
+
+  .grammar-rule-item {
+    flex-direction: column;
+  }
+
+  .grammar-rule-description {
+    flex: 1;
+  }
+
+  .grammar-rule-example-box.flex-02.dp-gap-00 {
+    flex-direction: column;
+  }
+
+  .imgs-text-box .content-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .imgs-text-box .img-box {
+    width: 100%;
+  }
+  .imgs-text-box .text-column {
+    row-gap: 0px;
+  }
 }
 
-/* 기본 설정 */
+/* 만화 말풍선 기본 설정 */
 @media screen and (max-width: 375px) {
   :root {
     --font-size-base-small: 14px;
