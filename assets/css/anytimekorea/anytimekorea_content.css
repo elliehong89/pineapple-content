@@ -1692,8 +1692,16 @@ section {
   border: 2px solid #c5a47e !important;
 }
 
+.th-border-gray {
+  border: 1px solid #333 !important;
+  background-color: #d1d2d4;
+}
+
 .td-border-gray {
   border: 1px solid #333 !important;
+}
+.td-bg-gray {
+  background-color: #d1d2d4;
 }
 
 .tb-editable.td-border-gray {
@@ -2515,6 +2523,11 @@ section {
   position: relative;
 }
 
+.td-item.w-112px {
+  width: 112px;
+  height: 112px;
+}
+
 .tb-img-cell-box {
   display: inline-flex;
   gap: 2px;
@@ -2549,10 +2562,26 @@ section {
   font-size: 14px;
 }
 
+.tb-img-cell-arrow-box {
+  position: relative;
+  display: flex;
+}
+
 .tb-img-cell-arrow {
   color: #ef4d5f;
   line-height: 1;
   font-size: 14px;
+}
+
+.tb-img-cell-arrow-box .tb-img-cell-arrow {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.tb-img-cell-arrow-box .arrow-down {
+  top: 6px;
+  left: -6px;
 }
 
 .tb-img-cell-box.flex-direction-column-reverse {
@@ -3243,6 +3272,10 @@ input.tb-editable-textarea::placeholder {
   width: 100%;
 }
 
+.tb-normal.tb-normal-gray {
+  border: 1px solid #333;
+}
+
 .tb-basic {
   border: 1px solid #333;
   border-collapse: collapse;
@@ -3308,6 +3341,22 @@ input.tb-editable-textarea::placeholder {
 }
 
 .tb-normal td {
+  background-color: #fff;
+}
+
+.tb-normal th.td-border-gray,
+.tb-normal td.td-border-gray {
+  border: 1px solid #333 !important;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.tb-normal th.td-border-gray {
+  background-color: #d1d2d4;
+  border-bottom: 1px solid #333 !important;
+}
+
+.tb-normal td.td-border-gray {
   background-color: #fff;
 }
 
@@ -4883,7 +4932,7 @@ input.tb-editable-textarea::placeholder {
 
 /* vowel-box */
 .vowel-box-wrapper-scroll {
-  overflow-x: scroll;
+  overflow-x: auto;
   width: 100%;
   -webkit-overflow-scrolling: touch;
 }
@@ -4984,6 +5033,14 @@ input.tb-editable-textarea::placeholder {
   border: 1px solid #333;
   border-left: none;
   flex-shrink: 0;
+}
+
+.vowel-box.dp-justify-content-end {
+  justify-content: flex-end;
+}
+
+.vowel-box-line.height-110px {
+  height: 110px;
 }
 
 .vowel-box-line.vowel-box-line-2 {
