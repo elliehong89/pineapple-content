@@ -5129,3 +5129,89 @@ input.tb-editable-textarea::placeholder {
 }
 
 /* vowel-type-box */
+.vowel-type-box {
+  display: flex;
+  gap: 10px;
+}
+
+.vowel-type-box.flex-direction-column {
+  flex-direction: column;
+}
+
+.vowel-type-box.flex-direction-row {
+  flex-direction: row;
+}
+
+.vowel-type-box-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.vowel-type-box-row.gap-0 {
+  gap: 0;
+}
+.vowel-type-box-column.gap-0 {
+  gap: 0;
+}
+
+.vowel-type-box-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 170px;
+}
+
+.vowel-type-box-column .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vowel-type-box-row .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vowel-type-box-row .text.bg-gray {
+  width: 80px;
+  height: 140px;
+  background-color: #d1d2d4;
+  font-size: 30px;
+}
+
+.vowel-type-box-row .text.bg-white {
+  width: 80px;
+  background-color: #fff;
+  font-size: 50px;
+}
+
+.vowel-type-box-column .text.bg-gray {
+  width: 140px;
+  height: 80px;
+  background-color: #d1d2d4;
+  font-size: 30px;
+}
+
+.vowel-type-box-row .text.bg-gray.height-100 {
+  height: 100%;
+}
+
+.vowel-type-box-column .text.bg-white {
+  width: 120px;
+  height: 80px;
+  background-color: #fff;
+  font-size: 50px;
+}
+
+.vowel-type-box-column .text.bg-white.w-80px {
+  width: 80px;
+}
+
+.vowel-type-box-column .text.bg-white.w-auto {
+  width: auto;
+}
+.vowel-type-box-row .text.bg-white.w-auto {
+  width: auto;
+}
