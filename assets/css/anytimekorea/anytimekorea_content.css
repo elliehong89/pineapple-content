@@ -247,7 +247,7 @@ section {
 
 /* Font Weight */
 .fw-bold {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .fw-normal {
@@ -2603,7 +2603,7 @@ section {
   border: none;
   resize: none;
   transition: all 0.2s ease;
-  font-size: 50px;
+  font-size: 45px;
   text-align: center;
   vertical-align: middle;
 }
@@ -4974,6 +4974,11 @@ input.tb-editable-textarea::placeholder {
   flex-shrink: 0;
 }
 
+.vowel-box .vowel-box-div > p.w-82 {
+  width: 82px;
+  height: 82px;
+}
+
 .vowel-box > p {
   display: flex;
   flex-direction: column;
@@ -4987,9 +4992,14 @@ input.tb-editable-textarea::placeholder {
   flex-shrink: 0;
 }
 
+.vowel-box > p.bg-orange {
+  background-color: #fdcc81;
+}
+
 .vowel-box > p.bg-blue {
   background-color: #c7d4f0;
 }
+
 .vowel-box > p.bg-primary-white {
   background-color: #fff;
 }
@@ -5002,6 +5012,12 @@ input.tb-editable-textarea::placeholder {
 .vowel-box > p.w-100 {
   width: 100px;
   height: 100px;
+  gap: 5px;
+}
+
+.vowel-box > p.w-82 {
+  width: 82px;
+  height: 82px;
   gap: 5px;
 }
 
@@ -5020,11 +5036,10 @@ input.tb-editable-textarea::placeholder {
 .vowel-box-letter {
   font-size: 40px;
   line-height: 1;
-  color: ;
 }
 
-.vowel-box-letter-description {
-  line-height: 1;
+.vowel-box-letter.ft-30 {
+  font-size: 30px;
 }
 
 .vowel-box-line {
@@ -5033,6 +5048,10 @@ input.tb-editable-textarea::placeholder {
   border: 1px solid #333;
   border-left: none;
   flex-shrink: 0;
+}
+
+.vowel-box-line.height-82px {
+  height: 82px;
 }
 
 .vowel-box.dp-justify-content-end {
@@ -5056,6 +5075,10 @@ input.tb-editable-textarea::placeholder {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   justify-items: center;
+}
+
+.write-box-wrapper.justify-items-flex-start {
+  justify-items: flex-start;
 }
 
 .write-box-wrapper.repeat-2 {
@@ -5097,4 +5120,5 @@ input.tb-editable-textarea::placeholder {
 
 .write-box-input input::placeholder {
   font-size: 40px;
+  vertical-align: middle;
 }
