@@ -5081,6 +5081,10 @@ input.tb-editable-textarea::placeholder {
   justify-items: flex-start;
 }
 
+.write-box-wrapper.repeat-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
 .write-box-wrapper.repeat-2 {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -5096,6 +5100,7 @@ input.tb-editable-textarea::placeholder {
 .write-box-item {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   gap: 5px;
 }
 
@@ -5122,3 +5127,5 @@ input.tb-editable-textarea::placeholder {
   font-size: 40px;
   vertical-align: middle;
 }
+
+/* vowel-type-box */

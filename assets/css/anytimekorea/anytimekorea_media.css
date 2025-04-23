@@ -454,6 +454,10 @@
   .write-box-wrapper.repeat-4 {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .write-box-wrapper.repeat-2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /* 모바일 디바이스 (~ 480px) */
