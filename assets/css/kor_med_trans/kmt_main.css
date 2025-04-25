@@ -1,7 +1,6 @@
 /* Import all CSS files */
-
 @import "../fonts.css";
-@import "./kmt_content.css";
-@import "./kmt_media.css";
+@import "./nav.css";
 
-@import "./kmt_nav.css";
+@import "./content.css";
+@import "./media.css";

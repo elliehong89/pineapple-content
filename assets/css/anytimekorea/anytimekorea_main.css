@@ -1,9 +1,6 @@
 /* Import all CSS files */
-
 @import "../fonts.css";
-@import "../common.css";
+@import "./nav.css";
 
-@import "./anytimekorea_content.css";
-@import "./anytimekorea_media.css";
-
-@import "./anytimekorea_nav.css";
+@import "./content.css";
+@import "./media.css";

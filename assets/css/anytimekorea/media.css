@@ -458,6 +458,10 @@
   .write-box-wrapper.repeat-2 {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  .dp-wrap-wrap-responsive-768 {
+    flex-wrap: wrap;
+  }
 }
 
 /* 모바일 디바이스 (~ 480px) */
