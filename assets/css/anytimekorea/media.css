@@ -33,6 +33,20 @@
   #content-sandbox {
     margin: 0 14px;
   }
+  .icon-mic > p > i,
+  .icon-point > p > i,
+  .icon-settings > p > i,
+  .icon-pen > p > i {
+    font-size: 22px;
+  }
+
+  .icon-point > i {
+    font-size: 26px;
+  }
+
+  .icon-dots > i {
+    font-size: 26px;
+  }
 
   .lesson-title-description {
     font-size: 16px;
@@ -133,7 +147,7 @@
   .title-main {
     font-size: 18px;
     display: inline-flex;
-    padding: 10px;
+    padding: 10px 14px;
   }
 
   .title-sub {
@@ -461,6 +475,15 @@
 
   .dp-wrap-wrap-responsive-768 {
     flex-wrap: wrap;
+  }
+
+  .speech-bubble2 {
+    /* width: 30%; */
+    padding: 10px;
+  }
+  .speech-bubble2 > p {
+    font-size: 14px;
+    padding: 10px;
   }
 }
 
@@ -860,6 +883,16 @@
 
   .write-box-input input::placeholder {
     font-size: 30px;
+  }
+
+  .speech-bubble2 {
+    width: 50%;
+    top: 0;
+  }
+
+  .speech-bubble2 > p {
+    font-size: 12px;
+    padding: 5px;
   }
 }
 

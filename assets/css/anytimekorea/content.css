@@ -1,7 +1,6 @@
 /* =============================================
    Common CSS
    ============================================= */
-
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +16,7 @@ h1,
 h2,
 h3,
 h4 {
-  display: flex;
+  /*display: flex;*/
   align-items: center;
   padding: 0.5rem 0;
   max-lines: 1;
@@ -235,19 +234,26 @@ table.border_brown td {
   height: 24px;
 }
 .audio {
-  margin-left: 6pt;
+  /* margin-left: 6pt;*/
   border: none;
   border-radius: 100%;
   cursor: pointer;
   aspect-ratio: 1/1;
   background-color: transparent;
   margin-top: -2px;
+  position: relative;
+  top: 2px;
 }
-
-.audio svg path {
+.audio svg {
+  width: 32px;
+  height: 32px;
+  /*
   fill: var(--theme-accent);
+  */
 }
-
+.audio svg path {
+  fill: #f7d033;
+}
 .point {
   width: fit-content;
   font-size: 13pt;
@@ -315,7 +321,7 @@ input[type="radio"] {
   border-radius: 20px;
   background-color: #fff;
   overflow: hidden;
-  border: 4px solid #f7d033;
+  border: 3px solid #f7d033;
   padding: 0;
 }
 
@@ -355,7 +361,7 @@ input[type="radio"] {
 }
 
 .grid-check + label {
-  border: 4px solid #ccc;
+  border: 3px solid #ccc;
   display: inline-block;
   width: 100%;
   aspect-ratio: 4/3;
@@ -370,7 +376,7 @@ input[type="radio"] {
 }
 
 .grid-check:checked + label {
-  border: 4px solid #f7d033;
+  border: 3px solid #f7d033;
 }
 
 .multiple-container {
@@ -397,7 +403,7 @@ input[type="radio"] {
 }
 
 .multiple-check + label {
-  border: 4px solid #ccc;
+  border: 3px solid #ccc;
   display: inline-block;
   border-radius: 20px;
   overflow: hidden;
@@ -412,7 +418,7 @@ input[type="radio"] {
 }
 
 .multiple-check:checked + label {
-  border: 4px solid #f7d033;
+  border: 3px solid #f7d033;
 }
 
 .multiple-container .numbering {
@@ -420,7 +426,7 @@ input[type="radio"] {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  background-color: #ddd;
+  background-color: #eee;
   width: 28px;
   height: 28px;
   font-size: 12px;
@@ -438,7 +444,7 @@ input[type="radio"] {
   display: flex;
   justify-content: space-between;
   position: relative;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .game_problems,
@@ -468,9 +474,17 @@ input[type="radio"] {
 .game_problem {
   border: 2px solid #97c69b;
 }
+.game_problem:focus,
+.game_problem:active {
+  background: rgb(206, 228, 208);
+}
 
 .game_answer {
   border: 2px solid #f7d033;
+}
+.game_answer:focus,
+.game_answer:active {
+  background: rgb(255, 246, 208);
 }
 
 canvas {
@@ -489,13 +503,20 @@ canvas {
 .question {
   padding: 0;
   margin-bottom: 10pt;
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: flex-end; */
+  /* gap: 10px; */
+}
+.question > span {
+  /* display: flex; */
+  /* align-items: center; */
+  /* gap: 10px; */
 }
 .options {
   display: flex;
   flex-direction: column;
   gap: 10pt;
+  line-height: 28px;
 }
 .options p {
   padding: 5pt;
@@ -504,11 +525,9 @@ canvas {
   padding: 0;
 }
 .answer_blank .options > div {
-  display: flex;
-  align-items: center;
   padding: 0;
-  flex-wrap: wrap;
-  gap: 5px;
+  line-height: 28px;
+  vertical-align: middle;
 }
 .options .numbering {
   color: #666;
@@ -574,20 +593,41 @@ canvas {
 }
 .answer_txtarea {
   background-color: #efefef;
-  display: inline-block;
-  padding: 7pt !important;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  padding: 5px 6px !important;
   border-radius: 5px;
+  margin: 2px;
+  height: 30px;
+  line-height: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .answer_txtarea input {
   background: transparent;
   border: none;
   width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  vertical-align: middle;
+  box-sizing: border-box;
 }
 
 .answer_txtarea input[type="text"] {
-  font-size: 16px; /* 원하는 폰트 크기 */
-  box-sizing: border-box;
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
   width: calc(1ch * 20);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.answer_txtarea input[type="text"]:focus {
+  height: 20px;
+  line-height: 20px;
+  margin: 0;
 }
 
 .answer_txtarea input[size="1"] {
@@ -605,10 +645,10 @@ canvas {
 
 .answer,
 .answer_blank {
-  border: 3px dashed;
+  border: 3px dashed #ddd;
   border-radius: 10px;
   padding: 1rem;
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 100px;
 }
 
 .answer .answer_blank {
@@ -750,6 +790,71 @@ input[type="text"]::placeholder {
   color: #fff;
 }
 
+/* 250331 추가 */
+.multiple-check:checked + label {
+  background: #fffcef;
+}
+
+.error-check:checked + label {
+  border: 3px solid red; /* ❌ 오답 선택 시 빨간 테두리 */
+  background-color: #ffe5e5;
+}
+
+.correct-answer .multiple-check:checked + label {
+  border: 3px solid green; /* ✅ 정답 선택 시 초록 테두리 */
+  background-color: #e5ffe5;
+}
+
+.co_answer_check {
+  cursor: pointer;
+  margin: 15px 0 5px;
+  font-size: 14px;
+  background-color: #f7d033;
+  color: #fff;
+  border-radius: 5px;
+  width: fit-content;
+  font-weight: 500;
+  padding: 0.3rem 0.5rem;
+}
+.co_answer {
+  background: #f3f3f3;
+  border-radius: 5px;
+  font-size: 13px;
+  display: none;
+  padding: 0.3rem 0.5rem;
+}
+
+.grid-container,
+.line-container,
+.multiple-container {
+  position: relative;
+}
+
+.game-wrong {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.game-wrong div {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-weight: 500;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+
+.game_answer_wrong {
+  border: 2px solid red;
+}
+
+.themeB .game_problem:focus,
+.themeB_game_problem:focus,
+.themeB .game_problem:active,
+.themeB_game_problem:active {
+  background: rgb(205, 225, 246);
+}
+
 /* =============================================
    Variables and Theme Settings
    ============================================= */
@@ -850,9 +955,9 @@ section.mbt-0 {
   line-height: 1;
 }
 
-.audio svg path {
+/* .audio svg path {
   fill: var(--theme-accent);
-}
+} */
 
 /* Text Styles */
 .text-basic {
@@ -2096,7 +2201,9 @@ section.mbt-0 {
   color: var(--theme-accent);
 }
 
-.icon-mic {
+.icon-mic,
+.icon-settings,
+.icon-pen {
   width: 62px;
   height: 62px;
   display: flex;
@@ -2105,13 +2212,17 @@ section.mbt-0 {
   justify-content: center;
   border: 3px solid #333;
   border-radius: 10px;
+  flex-shrink: 0;
 }
 
-.icon-mic > p > i {
+.icon-mic > p > i,
+.icon-settings > p > i,
+.icon-pen > p > i {
   font-size: 28px;
 }
-
-.icon-mic > span {
+.icon-mic > span,
+.icon-settings > span,
+.icon-pen > span {
   font-size: 10px;
   color: #333;
   font-weight: 600;
@@ -2120,6 +2231,12 @@ section.mbt-0 {
 .icon-dots {
   transform: scaleX(-1);
 }
+
+.icon-point {
+  transform: rotate(90deg);
+  margin-left: 4px;
+}
+
 /* button_audio_text */
 .button_audio_text {
   display: inline-flex;
@@ -2194,6 +2311,11 @@ section.mbt-0 {
   padding: 0;
 }
 
+.title-section.dp-flex {
+  display: flex;
+  align-items: center;
+}
+
 .title-section.bg-blue {
   background-color: #c3d0e0;
   border-radius: 12px;
@@ -2202,7 +2324,7 @@ section.mbt-0 {
 
 .title-icons {
   display: flex;
-  gap: 5px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -3034,6 +3156,7 @@ section.mbt-0 {
 }
 
 .img-area-box-line img {
+  width: auto;
   height: 100%;
 }
 
@@ -4013,9 +4136,15 @@ input.tb-editable-textarea::placeholder {
   align-items: center;
 }
 
+.ask-answer-wrap .image-item > p {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
 .ask-answer-wrap .image-item img {
   display: block;
-  width: 300px;
+  width: 100%;
 }
 
 .ask-answer-wrap .answer-section {
@@ -4710,6 +4839,9 @@ input.tb-editable-textarea::placeholder {
 }
 
 .img-area-box-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 140px;
   overflow: hidden;
@@ -5648,11 +5780,6 @@ input.tb-editable-textarea::placeholder {
   align-items: center;
 }
 
-.ask-answer-wrap .image-item img {
-  display: block;
-  width: 300px;
-}
-
 .ask-answer-wrap .answer-section {
   display: flex;
   flex-direction: column;
@@ -6160,4 +6287,37 @@ input.tb-editable-textarea::placeholder {
 
 .consonant-type-box .text.color-yellow {
   color: #feee4c;
+}
+
+.img-king {
+  position: relative;
+}
+
+.speech-bubble2 {
+  position: absolute;
+  top: 5%;
+  right: 4%;
+  background: #fff;
+  border: 2px solid #333;
+  width: 40%;
+  padding: 20px;
+  border-radius: 50px;
+}
+.speech-bubble2 > p {
+  border-radius: 100px;
+  padding: 20px;
+}
+.speech-bubble2:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 29px solid transparent;
+  border-right-color: #ffffff;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: -14.5px;
+  margin-left: -29px;
 }
