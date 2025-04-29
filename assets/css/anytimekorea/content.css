@@ -2613,7 +2613,9 @@ section.mbt-0 {
 
 .tb-layout-img figure {
   width: 120px;
+  height: 100px;
   margin: 0 auto;
+  overflow: hidden;
 }
 .tb-layout-img figure.mgb-0 {
   margin: 0;
@@ -2621,6 +2623,9 @@ section.mbt-0 {
 
 .tb-layout-img figure > img {
   display: block;
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
 }
 
 /* 텍스트 줄바꿈 옵션 */
@@ -3083,6 +3088,10 @@ section.mbt-0 {
   background-repeat: no-repeat;
   border-radius: 10px;
   background-size: cover;
+}
+
+.note-box.flex-row {
+  flex-direction: row;
 }
 
 .note-text {
@@ -6320,4 +6329,25 @@ input.tb-editable-textarea::placeholder {
   border-bottom: 0;
   margin-top: -14.5px;
   margin-left: -29px;
+}
+
+.imgs-grid-area {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.imgs-grid-area img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-grid-item-height {
+  height: 150px;
+  overflow: hidden;
 }
