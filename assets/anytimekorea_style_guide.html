@@ -1,55 +1,68 @@
+<!DOCTYPE html>
+<html>
+
 <head>
   <title>anytimekorea style guide</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/anytimekorea/anytimekorea_main.css" />
-  <style>
-    .speech-bubble-1 {
-      top: 20.7%;
-      left: 34%;
-    }
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('.anytimekorea-style-guide-nav a');
+      const sections = document.querySelectorAll('.anytimekorea-style-guide-section');
 
-    .speech-bubble-2 {
-      top: 20.9%;
-      left: 72%;
-    }
+      // 첫 번째 탭을 활성화
+      navLinks[0].classList.add('active');
+      sections[0].classList.add('active');
 
-    .speech-bubble-2-1 {
-      top: 23.6%;
-      left: 89%;
-    }
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
 
-    .speech-bubble-3 {
-      top: 33%;
-      left: 44%;
-    }
+          // 모든 탭과 섹션에서 active 클래스 제거
+          navLinks.forEach(l => l.classList.remove('active'));
+          sections.forEach(s => s.classList.remove('active'));
 
-    .speech-bubble-4 {
-      top: 49.6%;
-      left: 28%;
-    }
+          // 클릭한 탭과 해당 섹션에 active 클래스 추가
+          this.classList.add('active');
+          const targetId = this.getAttribute('href').substring(1);
+          document.getElementById(targetId).classList.add('active');
+        });
+      });
 
-    .speech-bubble-5 {
-      top: 50%;
-      left: 70%;
-    }
+      // 코드 복사 기능
+      const codeCopyElements = document.querySelectorAll('.code-copy');
 
-    .speech-bubble-6 {
-      top: 69.8%;
-      left: 43.5%;
-    }
+      codeCopyElements.forEach(element => {
+        element.addEventListener('click', function () {
+          // code-copy의 바로 자식 요소의 HTML을 가져옴
+          const childElement = this.firstElementChild;
+          if (!childElement) return;
 
-    .speech-bubble-7 {
-      top: 81.3%;
-      left: 71%;
-    }
+          // 자식 요소의 HTML을 가져와서 정리
+          const html = childElement.outerHTML
+            .replace(/>\s+</g, '><') // 불필요한 공백 제거
+            .replace(/\s+/g, ' ') // 연속된 공백을 하나로
+            .trim();
 
-    .speech-bubble-8 {
-      top: 91.9%;
-      left: 32%;
-    }
-  </style>
+          // 클립보드에 복사
+          navigator.clipboard.writeText(html)
+            .then(() => {
+              // 복사 성공 시 UI 피드백
+              this.classList.add('copied');
+              setTimeout(() => {
+                this.classList.remove('copied');
+              }, 2000);
+            })
+            .catch(err => {
+              console.error('코드 복사 실패:', err);
+              alert('코드 복사에 실패했습니다. 다시 시도해주세요.');
+            });
+        });
+      });
+    });
+  </script>
 </head>
 
 <body style="margin: 0; padding: 0">
@@ -82,7 +95,7 @@
       <div id="content-sandbox">
         <div class="section-wrapper">
           <!-- ++++ 폰트  -->
-          <div id="FONT">
+          <div id="FONT" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 폰트</h2>
             <h3 class="anytimekorea-style-guide-title-sub">1. 폰트 사이즈</h3>
             <p class="ft-10">폰트 사이즈 ft-10</p>
@@ -101,7 +114,7 @@
           </div>
 
           <!-- ++++ 색상  -->
-          <div id="COLOR">
+          <div id="COLOR" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 색상</h2>
             <h3 class="anytimekorea-style-guide-title-sub">1. primary-color</h3>
             <div class="primary-color-box">
@@ -137,7 +150,7 @@
                 primary-color-orange<br>
                 #fec66a
               </p>
-              <p class="primary-color-brown">
+              <p class="primary-color-brown" style="color:#fff;">
                 primary-color-brown<br>
                 #b09071
               </p>
@@ -145,388 +158,461 @@
           </div>
 
           <!-- ++++ 버튼  -->
-          <div id="BUTTON">
+          <div id="BUTTON" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 버튼</h2>
             <h3 class="anytimekorea-style-guide-title-sub">1. 오디오 플레이 버튼 - 기본</h3>
-            <button type="button" class="audio theme-a" class="audio" alt="음성파일">
-              <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <path clip-rule="evenodd"
-                  d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
-                  fill="white" fill-rule="evenodd" />
-              </svg>
-            </button>
-
-            <h3 class="anytimekorea-style-guide-title-sub">2. 오디오 플레이 버튼 - 플레이 버튼 텍스트 포함</h3>
-            <div class="button_audio_text theme-b">
-              <button type="button" class="audio" class="audio" alt="음성파일">
+            <div class="code-copy">
+              <button type="button" class="audio theme-a" class="audio" alt="음성파일">
                 <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                   <path clip-rule="evenodd"
                     d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
                     fill="white" fill-rule="evenodd" />
                 </svg>
               </button>
-              <span class="text icon-text ft-14">16</span>
+            </div>
+
+            <h3 class="anytimekorea-style-guide-title-sub">2. 오디오 플레이 버튼 - 플레이 버튼 텍스트 포함</h3>
+            <div class="code-copy">
+              <div class="button_audio_text theme-b">
+                <button type="button" class="audio" class="audio" alt="음성파일">
+                  <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                      d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
+                      fill="white" fill-rule="evenodd" />
+                  </svg>
+                </button>
+                <span class="text icon-text ft-14">16</span>
+              </div>
             </div>
 
             <h3 class="anytimekorea-style-guide-title-sub">3. 설정 아이콘</h3>
-            <div class="icon-settings icon-only">
-              <p><i class="fa-solid fa-gears"></i></p>
+            <div class="code-copy">
+              <div class="icon-settings">
+                <p><i class="fa-solid fa-gears"></i></p>
+              </div>
             </div>
 
             <h3 class="anytimekorea-style-guide-title-sub">4. 마이크 아이콘</h3>
-            <div class="icon-mic icon-only">
-              <p><i class="fa-solid fa-microphone-lines"></i></p>
-              <span>Exercise 25</span>
+            <div class="code-copy">
+              <div class="icon-mic">
+                <p><i class="fa-solid fa-microphone-lines"></i></p>
+                <span>Exercise 25</span>
+              </div>
             </div>
 
             <h3 class="anytimekorea-style-guide-title-sub">5. 펜 아이콘</h3>
-            <div class="icon-pen icon-only">
-              <p><i class="fa-solid fa-pen"></i></p><span>Exercise 25</span>
+            <div class="code-copy">
+              <div class="icon-pen">
+                <p><i class="fa-solid fa-pen"></i></p><span>Exercise 25</span>
+              </div>
             </div>
 
           </div>
 
           <!-- ++++ 배지  -->
-          <div id="BADGE">
+          <div id="BADGE" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 배지</h2>
             <h3 class="anytimekorea-style-guide-title-sub">1. 배지 기본</h3>
             <!-- icon text normal -->
-            <div class="icon-txt-normal mgb-10">Usage</div>
+            <div class="code-copy">
+              <div class="icon-txt-normal mgb-10">Usage</div>
+            </div>
+
 
             <h3 class="anytimekorea-style-guide-title-sub">2. 배지 라운드</h3>
             <!-- icon text round -->
-            <div class="icon-txt-round mgb-10">meaning</div>
+            <div class="code-copy">
+              <div class="icon-txt-round mgb-10">meaning</div>
+            </div>
           </div>
 
           <!-- ++++ 타이틀  -->
-          <div id="TITLE">
+          <div id="TITLE" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 타이틀</h2>
             <h3 class="anytimekorea-style-guide-title-sub">1. 타이틀 레슨</h3>
-            <div class="lesson-title-group theme-a">
-              <div class="lesson-title">
-                <div class="lesson-title-inner-box">
-                  <div class="lesson-title-text">
-                    <h3 class="ft-28 dp-flex dp-direction-column dp-gap-02 primary-white">
-                      무슨 일 하세요?
-                      <span>What do you do for work?</span>
-                    </h3>
-                    <p class="lesson-title-description">Hi</p>
+            <div class="code-copy">
+              <div class="lesson-title-group theme-a">
+                <div class="lesson-title">
+                  <div class="lesson-title-inner-box">
+                    <div class="lesson-title-text">
+                      <h3 class="ft-28 dp-flex dp-direction-column dp-gap-02 primary-white">
+                        무슨 일 하세요?
+                        <span>What do you do for work?</span>
+                      </h3>
+                      <p class="lesson-title-description">Hi</p>
+                    </div>
                   </div>
                 </div>
-
+                <h4 class="toons-caption mgb-10">
+                  <i class="fa-solid fa-circle-play"></i>
+                  Exchanging greetings
+                </h4>
               </div>
-              <h4 class="toons-caption mgb-10">
-                <i class="fa-solid fa-circle-play"></i>
-                Exchanging greetings
-              </h4>
             </div>
+
+
+
+
+
+
 
             <h3 class="anytimekorea-style-guide-title-sub">2. 타이틀 대제목</h3>
             <!-- 타이틀 대제목 -->
-            <div class="title-main-wrapper mgb-10">
-              <h2 class="title-main">I. New Words &amp; Expressions</h2>
+            <div class="code-copy">
+              <div class="title-main-wrapper mgb-10">
+                <h2 class="title-main">I. New Words &amp; Expressions</h2>
+              </div>
             </div>
 
             <h3 class="anytimekorea-style-guide-title-sub">3. 타이틀 부제목</h3>
             <!-- 타이틀 부제목 -->
-            <div class="title-sub-wrapper">
-              <h3 class="title-sub">Scrip</h3>
+            <div class="code-copy">
+              <div class="title-sub-wrapper">
+                <h3 class="title-sub">Scrip</h3>
+              </div>
             </div>
 
             <h3 class="anytimekorea-style-guide-title-sub">4. 타이틀 그룹</h3>
             <!-- 타이틀 그룹 -->
-            <div class="title-group-wrapper">
-              <div class="title-main-wrapper mgb-10">
-                <h2 class="title-main">I. New Words &amp; Expressions</h2>
-              </div>
-              <div class="title-sub-wrapper">
-                <h3 class="title-sub">3-UsingSino-Koreannumerals</h3>
+            <div class="code-copy">
+              <div class="title-group-wrapper">
+                <div class="title-main-wrapper mgb-10">
+                  <h2 class="title-main">I. New Words &amp; Expressions</h2>
+                </div>
+                <div class="title-sub-wrapper">
+                  <h3 class="title-sub">3-UsingSino-Koreannumerals</h3>
+                </div>
               </div>
             </div>
 
             <h3 class="anytimekorea-style-guide-title-sub">5. 타이틀 섹션</h3>
             <!-- 타이틀 섹션 -->
-            <h4 class="title-section mgb-10">Here are more examples.</h4>
+            <div class="code-copy">
+              <h4 class="title-section mgb-10">Here are more examples.</h4>
+            </div>
 
 
             <h3 class="anytimekorea-style-guide-title-sub">6. 타이틀 섹션 - 배경색</h3>
             <!-- 타이틀 섹션 배경색 -->
-            <h4 class="title-section bg-blue mgb-10">English loan words that are frequently used in Korean</h4>
+            <div class="code-copy">
+              <h4 class="title-section bg-blue mgb-10">English loan words that are frequently used in Korean</h4>
+            </div>
 
             <h3 class="anytimekorea-style-guide-title-sub">7. 타이틀섹션 + 버튼 (섹션제목)</h3>
-
             <!-- 타이틀 섹션 + 버튼 -->
-            <div class="title-icons theme-a">
-              <h4 class="title-section">The basic stroke order is left to</h4>
-              <div class="button_audio_text">
-                <button type="button" class="audio" class="audio" alt="음성파일">
-                  <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                    <path clip-rule="evenodd"
-                      d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
-                      fill="white" fill-rule="evenodd" />
-                  </svg>
-                </button>
-                <span class="text icon-text ft-14">16</span>
-              </div>
-            </div>
-
-            <!-- 타이틀 섹션 + 버튼 -->
-            <div class="title-icons mgb-20">
-              <div class="icon-mic">
-                <p><i class="fa-solid fa-microphone-lines"></i></p>
-                <span>Exercise 2</span>
-              </div>
-              <h4 class="title-section">ddddddddddddd</h4>
-            </div>
-
-            <!-- 타이틀 섹션 + 버튼 -->
-            <div class="title-icons mgb-20">
-              <div class="icon-pen">
-                <p><i class="fa-solid fa-pen"></i></p>
-                <span>Exercise 25</span>
-              </div>
-              <h4 class="title-section">ccccccccccccccc</h4>
-            </div>
-
-            <!-- 타이틀 섹션 + 버튼 -->
-            <div class="title-icons mgb-10">
-              <div class="icon-mic">
-                <p><i class="fa-solid fa-gears"></i></p>
-                <span>TYPE 1</span>
-              </div>
-              <h4 class="title-section">A consonant appears on the left of a vowel.</h4>
-            </div>
-
-            <!-- 타이틀 섹션 + 버튼 -->
-            <div class="title-icons flex-start mgb-10 theme-a">
-              <div class="icon-dots">
-                <i class="fa-solid fa-comment-dots fa-2x"></i>
-              </div>
-              <h4 class="title-section">The following is a list of useful expressions that are commonly used in daily
-                conversation. Listen to the audio and repeat after each sentence.
+            <div class="code-copy">
+              <div class="title-icons theme-a">
+                <h4 class="title-section">The basic stroke order is left to</h4>
                 <div class="button_audio_text">
-                  <button type="button" class="audio" alt="음성파일">
+                  <button type="button" class="audio" class="audio" alt="음성파일">
                     <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                       <path clip-rule="evenodd"
                         d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
                         fill="white" fill-rule="evenodd" />
                     </svg>
                   </button>
-                  <span class="text icon-text ft-14">100</span>
+                  <span class="text icon-text ft-14">16</span>
                 </div>
-              </h4>
+              </div>
             </div>
 
-
+            <h3 class="anytimekorea-style-guide-title-sub">7-1. 타이틀섹션 + 아이콘</h3>
             <!-- 타이틀 섹션 + 버튼 -->
-            <div class="title-icons theme-a mgb-10">
-              <div class="icon-point">
-                <i class="fa-regular fa-hand-pointer fa-2x"></i>
+            <div class="code-copy">
+              <div class="title-icons mgb-20">
+                <div class="icon-mic">
+                  <p><i class="fa-solid fa-microphone-lines"></i></p>
+                  <span>Exercise 2</span>
+                </div>
+                <h4 class="title-section">ddddddddddddd</h4>
               </div>
-              <h4 class="title-section dp-flex">Study the words and expressions with the audio.
+            </div>
+
+            <h3 class="anytimekorea-style-guide-title-sub">7-2. 타이틀섹션 + 아이콘</h3>
+            <!-- 타이틀 섹션 + 버튼 -->
+            <div class="code-copy">
+              <div class="title-icons mgb-20">
+                <div class="icon-pen">
+                  <p><i class="fa-solid fa-pen"></i></p>
+                  <span>Exercise 25</span>
+                </div>
+                <h4 class="title-section">ccccccccccccccc</h4>
+              </div>
+            </div>
+
+            <h3 class="anytimekorea-style-guide-title-sub">7-3. 타이틀섹션 + 아이콘</h3>
+            <!-- 타이틀 섹션 + 버튼 -->
+            <div class="code-copy">
+              <div class="title-icons mgb-10">
+                <div class="icon-mic">
+                  <p><i class="fa-solid fa-gears"></i></p>
+                  <span>TYPE 1</span>
+                </div>
+                <h4 class="title-section">A consonant appears on the left of a vowel.</h4>
+              </div>
+            </div>
+
+            <h3 class="anytimekorea-style-guide-title-sub">7-4. 타이틀섹션 + 아이콘</h3>
+            <!-- 타이틀 섹션 + 버튼 -->
+            <div class="code-copy">
+              <div class="title-icons flex-start mgb-10 theme-a">
+                <div class="icon-dots">
+                  <i class="fa-solid fa-comment-dots fa-2x"></i>
+                </div>
+                <h4 class="title-section">The following is a list of useful expressions that are commonly used in daily
+                  conversation. Listen to the audio and repeat after each sentence.
+                  <div class="button_audio_text">
+                    <button type="button" class="audio" alt="음성파일">
+                      <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd"
+                          d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
+                          fill="white" fill-rule="evenodd" />
+                      </svg>
+                    </button>
+                    <span class="text icon-text ft-14">100</span>
+                  </div>
+                </h4>
+              </div>
+            </div>
+
+            <h3 class="anytimekorea-style-guide-title-sub">7-5. 타이틀섹션 + 아이콘</h3>
+            <!-- 타이틀 섹션 + 버튼 -->
+            <div class="code-copy">
+              <div class="title-icons theme-a mgb-10">
+                <div class="icon-point">
+                  <i class="fa-regular fa-hand-pointer fa-2x"></i>
+                </div>
+                <h4 class="title-section dp-flex">Study the words and expressions with the audio.
+                  <div class="button_audio_text">
+                    <button type="button" class="audio" alt="음성파일">
+                      <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd"
+                          d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
+                          fill="white" fill-rule="evenodd" />
+                      </svg>
+                    </button>
+                    <span class="text icon-text ft-14">100</span>
+                  </div>
+                </h4>
+              </div>
+            </div>
+
+            <h3 class="anytimekorea-style-guide-title-sub">7-6. 타이틀섹션 + 아이콘</h3>
+            <div class="code-copy">
+              <div class="title-icons mgb-20 theme-a">
+                <div class="icon-mic">
+                  <p><i class="fa-solid fa-microphone-lines"></i></p>
+                  <span>Exercise 10</span>
+                </div>
+                <h4 class="title-section">Write what you hear in the boxes.
+                  <div class="button_audio_text">
+                    <button type="button" class="audio" alt="음성파일">
+                      <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd"
+                          d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
+                          fill="white" fill-rule="evenodd" />
+                      </svg>
+                    </button>
+                    <span class="text icon-text ft-14">62</span>
+                  </div>
+                </h4>
+              </div>
+            </div>
+
+
+            <h3 class="anytimekorea-style-guide-title-sub">7-7. 타이틀섹션 + 아이콘</h3>
+            <div class="code-copy">
+              <div class="title-icons mgb-20 theme-a">
+                <div class="icon-pen">
+                  <p><i class="fa-solid fa-pen"></i></p><span>Exercise 1</span>
+                </div>
+                <h4 class="title-section">Write what you hear in the boxes.
+                  <div class="button_audio_text">
+                    <button type="button" class="audio" alt="음성파일">
+                      <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd"
+                          d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
+                          fill="white" fill-rule="evenodd" />
+                      </svg>
+                    </button>
+                    <span class="text icon-text ft-14">62</span>
+                  </div>
+                </h4>
+              </div>
+            </div>
+
+
+
+
+            <h3 class="anytimekorea-style-guide-title-sub">8. 타이틀섹션 + 버튼 (대제목)</h3>
+            <div class="code-copy">
+              <div class="title-icons theme-a">
+                <div class="title-main-wrapper mgb-10">
+                  <h2 class="title-main">IV. Listen & Discuss</h2>
+                </div>
                 <div class="button_audio_text">
-                  <button type="button" class="audio" alt="음성파일">
+                  <button type="button" class="audio" class="audio" alt="음성파일">
                     <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                       <path clip-rule="evenodd"
                         d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
                         fill="white" fill-rule="evenodd" />
                     </svg>
                   </button>
-                  <span class="text icon-text ft-14">100</span>
+                  <span class="text icon-text ft-14">16</span>
                 </div>
-              </h4>
-            </div>
-
-
-            <div class="title-icons mgb-20 theme-a">
-              <div class="icon-mic">
-                <p><i class="fa-solid fa-microphone-lines"></i></p>
-                <span>Exercise 10</span>
-              </div>
-              <h4 class="title-section">Write what you hear in the boxes.
-                <div class="button_audio_text">
-                  <button type="button" class="audio" alt="음성파일">
-                    <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                      <path clip-rule="evenodd"
-                        d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
-                        fill="white" fill-rule="evenodd" />
-                    </svg>
-                  </button>
-                  <span class="text icon-text ft-14">62</span>
-                </div>
-              </h4>
-            </div>
-
-            <div class="title-icons mgb-20 theme-a">
-              <div class="icon-pen">
-                <p><i class="fa-solid fa-pen"></i></p><span>Exercise 1</span>
-              </div>
-              <h4 class="title-section">Write what you hear in the boxes.
-                <div class="button_audio_text">
-                  <button type="button" class="audio" alt="음성파일">
-                    <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                      <path clip-rule="evenodd"
-                        d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
-                        fill="white" fill-rule="evenodd" />
-                    </svg>
-                  </button>
-                  <span class="text icon-text ft-14">62</span>
-                </div>
-              </h4>
-            </div>
-
-
-
-
-            <h3 class="anytimekorea-style-guide-title-sub">7. 타이틀섹션 + 버튼 (대제목)</h3>
-            <div class="title-icons theme-a">
-              <div class="title-main-wrapper mgb-10">
-                <h2 class="title-main">IV. Listen & Discuss</h2>
-              </div>
-              <div class="button_audio_text">
-                <button type="button" class="audio" class="audio" alt="음성파일">
-                  <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                    <path clip-rule="evenodd"
-                      d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
-                      fill="white" fill-rule="evenodd" />
-                  </svg>
-                </button>
-                <span class="text icon-text ft-14">16</span>
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">8. 타이틀 스텝 - 테마</h3>
+            <h3 class="anytimekorea-style-guide-title-sub">9. 타이틀 스텝 - 테마</h3>
             <!-- 타이틀 스텝 테마a -->
-            <h3 class="step-title-box theme-a">
-              <i class="fa-solid fa-pen"></i> STEP 1.
-            </h3>
+            <div class="code-copy">
+              <h3 class="step-title-box theme-a">
+                <i class="fa-solid fa-pen"></i> STEP 1.
+              </h3>
+            </div>
             <!-- 타이틀 스텝 테마b -->
-            <h3 class="step-title-box theme-b">
-              <i class="fa-solid fa-pen"></i> STEP 2.
-            </h3>
+            <div class="code-copy">
+              <h3 class="step-title-box theme-b">
+                <i class="fa-solid fa-pen"></i> STEP 2.
+              </h3>
+            </div>
           </div>
 
           <!-- ++++ 텍스트  -->
-          <div id="TEXT">
+          <div id="TEXT" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 텍스트</h2>
             <h3 class="anytimekorea-style-guide-title-sub">1. 텍스트 기본</h3>
 
-            <p class="text-basic">
-              If [name + <strong class="primary-blue">씨</strong>] form is used to a person who is older than you, you
-              may
-              sound rude.
-              Instead, refer to them as [their job title + <strong class="primary-blue">님</strong>].
-            </p>
+            <div class="code-copy">
+              <p class="text-basic">
+                If [name + <strong class="primary-blue">씨</strong>] form is used to a person who is older than you, you
+                may
+                sound rude.
+                Instead, refer to them as [their job title + <strong class="primary-blue">님</strong>].
+              </p>
+            </div>
 
             <h3 class="anytimekorea-style-guide-title-sub">2. 텍스트 형태</h3>
-            <p class="dp-inline-flex dp-direction-column dp-gap-5">
-              <span class="td-underline ta-c">음식</span>
-              <span class="ta-c ft-14">NOUN</span>
-            </p>
+            <div class="code-copy">
+              <p class="dp-inline-flex dp-direction-column dp-gap-5">
+                <span class="td-underline ta-c">음식</span>
+                <span class="ta-c ft-14">NOUN</span>
+              </p>
+            </div>
 
 
             <h3 class="anytimekorea-style-guide-title-sub">3. 텍스트 문장</h3>
-            <p class="mgb-20 text-desc-p">
-              "NOUN<strong class="primary-blue">이에요</strong>/<strong class="primary-blue">예요</strong>" is used to
-              identify
-              someone or something.
-            </p>
+            <div class="code-copy">
+              <p class="mgb-20 text-desc-p">
+                "NOUN<strong class="primary-blue">이에요</strong>/<strong class="primary-blue">예요</strong>" is used to
+                identify
+                someone or something.
+              </p>
+            </div>
           </div>
 
           <!-- ++++ 대화 스타일  -->
-          <div id="DIALOGUE">
+          <div id="DIALOGUE" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 대화 스타일</h2>
             <h3 class="anytimekorea-style-guide-title-sub">1. 대화 스타일 - (grid)</h3>
-            <div class="grid-style-normal dp-flex dp-direction-column dp-gap-05 mgb-20">
-              <div class="grid-row">
-                <div class="grid-numb-type-box">
-                  <div class="grid-cell">=</div>
-                </div>
-                <div class="grid-text-box">
-                  <div class="grid-cell">
-                    저는 샤오밍이에요.
-                  </div>
-                  <div class="grid-cell">(O) appropriate</div>
-                </div>
-              </div>
-
-              <div class="grid-row">
-                <div class="grid-numb-type-box">
-                  <div class="grid-cell">=</div>
-                </div>
-                <div class="grid-text-box">
-                  <div class="grid-cell">
-                    <strong class="primary-blue">그렇게</strong> 바빠요?
-                  </div>
-                  <div class="grid-cell">(O) appropriate</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="pd-20 box-color mgb-20 theme-a">
-              <div class="grid-style-normal dp-flex dp-direction-column dp-gap-05 responsive-gap-20">
-                <div class="grid-row grid-row-1fr-1fr responsive-grid-row-1fr-1fr-768">
+            <div class="code-copy">
+              <div class="grid-style-normal dp-flex dp-direction-column dp-gap-05 mgb-20">
+                <div class="grid-row">
                   <div class="grid-numb-type-box">
-                    <div class="grid-cell">
-                      성함이 어떻게 되세요?
-                    </div>
+                    <div class="grid-cell">=</div>
                   </div>
                   <div class="grid-text-box">
-                    <div class="grid-cell primary-gray">
-                      May I have your name? (formal)
+                    <div class="grid-cell">
+                      저는 샤오밍이에요.
                     </div>
+                    <div class="grid-cell">(O) appropriate</div>
                   </div>
                 </div>
 
-                <div class="grid-row grid-row-1fr-1fr responsive-grid-row-1fr-1fr-768">
+                <div class="grid-row">
                   <div class="grid-numb-type-box">
-                    <div class="grid-cell">
-                      이름이 뭐예요?
-                    </div>
+                    <div class="grid-cell">=</div>
                   </div>
                   <div class="grid-text-box">
-                    <div class="grid-cell primary-gray">
-                      What is your name? (informal)
+                    <div class="grid-cell">
+                      <strong class="primary-blue">그렇게</strong> 바빠요?
                     </div>
+                    <div class="grid-cell">(O) appropriate</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="pd-20 box-color mgb-20 theme-a">
-              <div class="grid-style-normal dp-flex dp-direction-column responsive-gap-20">
-                <div class="grid-row grid-row-1fr-1fr responsive-grid-row-1fr-1fr-768">
-                  <div class="grid-numb-type-box">
-                    <div class="grid-cell">
-                      <strong class="primary-blue">뭐</strong>(를) 먹어요?
+            <h3 class="anytimekorea-style-guide-title-sub">1-1. 대화 스타일 - (grid)</h3>
+            <div class="code-copy">
+              <div class="pd-20 box-color mgb-20 theme-a">
+                <div class="grid-style-normal dp-flex dp-direction-column dp-gap-05 responsive-gap-20">
+                  <div class="grid-row grid-row-1fr-1fr responsive-grid-row-1fr-1fr-768">
+                    <div class="grid-numb-type-box">
+                      <div class="grid-cell">
+                        성함이 어떻게 되세요?
+                      </div>
+                    </div>
+                    <div class="grid-text-box">
+                      <div class="grid-cell primary-gray">
+                        May I have your name? (formal)
+                      </div>
                     </div>
                   </div>
-                  <div class="grid-text-box">
-                    <div class="grid-cell primary-gray">
-                      <strong class="primary-blue">What</strong> are you eating?
+
+                  <div class="grid-row grid-row-1fr-1fr responsive-grid-row-1fr-1fr-768">
+                    <div class="grid-numb-type-box">
+                      <div class="grid-cell">
+                        이름이 뭐예요?
+                      </div>
+                    </div>
+                    <div class="grid-text-box">
+                      <div class="grid-cell primary-gray">
+                        What is your name? (informal)
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <div class="grid-row grid-row-1fr-1fr responsive-grid-row-1fr-1fr-768">
-                  <div class="grid-numb-type-box">
-                    <div class="grid-cell">
-                      <strong class="primary-blue">무슨</strong>
-                      <p class="dp-inline-flex dp-direction-column dp-gap-5">
-                        <span class="td-underline ta-c">음식</span>
-                        <span class="ta-c ft-14">NOUN</span>
-                      </p>
-                      <span>(을) 먹어요?</span>
+            <h3 class="anytimekorea-style-guide-title-sub">1-2. 대화 스타일 - (grid)</h3>
+            <div class="code-copy">
+              <div class="pd-20 box-color mgb-20 theme-a">
+                <div class="grid-style-normal dp-flex dp-direction-column responsive-gap-20">
+                  <div class="grid-row grid-row-1fr-1fr responsive-grid-row-1fr-1fr-768">
+                    <div class="grid-numb-type-box">
+                      <div class="grid-cell">
+                        <strong class="primary-blue">뭐</strong>(를) 먹어요?
+                      </div>
+                    </div>
+                    <div class="grid-text-box">
+                      <div class="grid-cell primary-gray">
+                        <strong class="primary-blue">What</strong> are you eating?
+                      </div>
                     </div>
                   </div>
-                  <div class="grid-text-box">
-                    <div class="grid-cell primary-gray">
-                      <strong class="primary-blue">What</strong>
-                      <p class="dp-inline-flex dp-direction-column dp-gap-5">
-                        <span class="td-underline ta-c">food</span>
-                        <span class="ta-c ft-14 primary-black">NOUN</span>
-                      </p>
-                      <span>are you eating?</span>
+
+                  <div class="grid-row grid-row-1fr-1fr responsive-grid-row-1fr-1fr-768">
+                    <div class="grid-numb-type-box">
+                      <div class="grid-cell">
+                        <strong class="primary-blue">무슨</strong>
+                        <p class="dp-inline-flex dp-direction-column dp-gap-5">
+                          <span class="td-underline ta-c">음식</span>
+                          <span class="ta-c ft-14">NOUN</span>
+                        </p>
+                        <span>(을) 먹어요?</span>
+                      </div>
+                    </div>
+                    <div class="grid-text-box">
+                      <div class="grid-cell primary-gray">
+                        <strong class="primary-blue">What</strong>
+                        <p class="dp-inline-flex dp-direction-column dp-gap-5">
+                          <span class="td-underline ta-c">food</span>
+                          <span class="ta-c ft-14 primary-black">NOUN</span>
+                        </p>
+                        <span>are you eating?</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -534,66 +620,74 @@
             </div>
 
             <h3 class="anytimekorea-style-guide-title-sub">2. 대화 스타일 - (flex)</h3>
-            <div class="flex-style-normal mgb-20">
-              <div class="flex-row">
-                <div class="flex-cell">
-                  <p class="mgb-05 mgb-05-responsive-768">
-                    <strong class="primary-blue">그렇게</strong> 좋아요?
-                  </p>
-                  <p>
-                    Mr. Xiaoming <strong class="primary-blue">as for</strong>
-                  </p>
-                </div>
-                <div class="flex-cell">
-                  <p>
-                    <strong class="primary-blue">What about</strong> t (you), Xiaoming?
-                  </p>
+            <div class="code-copy">
+              <div class="flex-style-normal mgb-20">
+                <div class="flex-row">
+                  <div class="flex-cell">
+                    <p class="mgb-05 mgb-05-responsive-768">
+                      <strong class="primary-blue">그렇게</strong> 좋아요?
+                    </p>
+                    <p>
+                      Mr. Xiaoming <strong class="primary-blue">as for</strong>
+                    </p>
+                  </div>
+                  <div class="flex-cell">
+                    <p>
+                      <strong class="primary-blue">What about</strong> t (you), Xiaoming?
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="flex-style-normal mgb-20">
-              <div class="flex-row">
-                <div class="flex-cell">
-                  <p class="mgb-05 mgb-05-responsive-768">
-                    여기 <strong class="primary-blue">보세요</strong>
-                  </p>
-                </div>
-                <div class="flex-cell">
-                  <p class="primary-gray">
-                    Please look here.
-                  </p>
+            <h3 class="anytimekorea-style-guide-title-sub">2-1. 대화 스타일 - (flex)</h3>
+            <div class="code-copy">
+              <div class="flex-style-normal mgb-20">
+                <div class="flex-row">
+                  <div class="flex-cell">
+                    <p class="mgb-05 mgb-05-responsive-768">
+                      여기 <strong class="primary-blue">보세요</strong>
+                    </p>
+                  </div>
+                  <div class="flex-cell">
+                    <p class="primary-gray">
+                      Please look here.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="flex-style-normal mgb-20">
-              <div class="flex-row">
-                <div class="flex-cell dp-flex dp-direction-row dp-gap-10">
-                  <div class="dp-flex dp-direction-column">
-                    <div class="grid-cell flex-01 pd-00">
-                      전화번호<strong class="primary-blue">가</strong>
+            <h3 class="anytimekorea-style-guide-title-sub">2-2. 대화 스타일 - (flex)</h3>
+            <div class="code-copy">
+              <div class="flex-style-normal mgb-20">
+                <div class="flex-row">
+                  <div class="flex-cell dp-flex dp-direction-row dp-gap-10">
+                    <div class="dp-flex dp-direction-column">
+                      <div class="grid-cell flex-01 pd-00">
+                        전화번호<strong class="primary-blue">가</strong>
+                      </div>
+                      <div class="grid-cell flex-01 primary-gray pd-00">
+                        phone number
+                      </div>
                     </div>
-                    <div class="grid-cell flex-01 primary-gray pd-00">
-                      phone number
+                    <div class="dp-flex dp-direction-column">
+                      <div class="grid-cell flex-01 pd-00">
+                        <strong class="primary-blue"><span class="td-underline tb-black">뭐예요</span></strong>?
+                      </div>
+                      <div class="grid-cell flex-01 primary-gray pd-00">
+                        what is
+                      </div>
                     </div>
                   </div>
-                  <div class="dp-flex dp-direction-column">
-                    <div class="grid-cell flex-01 pd-00">
-                      <strong class="primary-blue"><span class="td-underline tb-black">뭐예요</span></strong>?
-                    </div>
-                    <div class="grid-cell flex-01 primary-gray pd-00">
-                      what is
-                    </div>
+                  <div class="flex-cell">
+                    <p>
+                      (Direct question)
+                    </p>
                   </div>
                 </div>
-                <div class="flex-cell">
-                  <p>
-                    (Direct question)
-                  </p>
-                </div>
+                <div class="flex-cell primary-gray ft-14">what is (your) phone number?</div>
               </div>
-              <div class="flex-cell primary-gray ft-14">what is (your) phone number?</div>
             </div>
 
             <h3 class="anytimekorea-style-guide-title-sub">3. 대화 스타일 2개 - (grid + flex 너비 자동 / 넘버,타입,텍스트)</h3>
@@ -1822,7 +1916,7 @@
           </div>
 
           <!-- ++++ 테이블 -->
-          <div id="TABLE">
+          <div id="TABLE" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 테이블</h2>
             <h3 class="anytimekorea-style-guide-title-sub">1. 목차 테이블 스타일</h3>
 
@@ -2496,7 +2590,7 @@
           </div>
 
           <!-- ++++ 노트  -->
-          <div id="NOTE">
+          <div id="NOTE" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 노트</h2>
 
             <h3 class="anytimekorea-style-guide-title-sub">1. 노트 스타일 1 (기본)</h3>
@@ -2587,7 +2681,7 @@
           </div>
 
           <!-- ++++ 이미지  -->
-          <div id="IMAGE">
+          <div id="IMAGE" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 이미지</h2>
 
             <h3 class="anytimekorea-style-guide-title-sub">1. 이미지 스타일 (기본)</h3>
@@ -2779,7 +2873,7 @@
           </div>
 
           <!-- ++++ 이미지 답변 -->
-          <div id="IMAGE-ANSWER">
+          <div id="IMAGE-ANSWER" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 이미지 답변</h2>
 
             <ul class="form-list-answer-img dp-flex dp-direction-column dp-gap-20">
@@ -2921,13 +3015,13 @@
           </div>
 
           <!-- ++++ 텍스트 영역 -->
-          <div id="TEXTAREA">
+          <div id="TEXTAREA" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 텍스트 영역</h2>
             <textarea class="text-area-textarea theme-a"></textarea>
           </div>
 
           <!-- ++++ RULE -->
-          <div id="RULE">
+          <div id="RULE" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ RULE</h2>
             <h3 class="anytimekorea-style-guide-title-sub">1. 규칙 스타일1</h3>
             <div class="rule-box text-basic theme-a">
@@ -2959,7 +3053,7 @@
           </div>
 
           <!-- ++++ 유용한 표현 -->
-          <div id="USEFUL_EXPRESSIONS">
+          <div id="USEFUL_EXPRESSIONS" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 유용한 표현</h2>
             <h3 class="anytimekorea-style-guide-title-sub">1. 유용한 표현 스타일1</h3>
 
@@ -3137,7 +3231,7 @@
           </div>
 
           <!-- ++++ NEW_WORDS -->
-          <div id="NEW_WORDS">
+          <div id="NEW_WORDS" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ NEW_WORDS</h2>
             <h3 class="anytimekorea-style-guide-title-sub">1. 새로운 단어 스타일</h3>
 
@@ -3422,7 +3516,7 @@
           </div>
 
           <!-- ++++ Patterns, Expressions & Practice -->
-          <div id="PATTERNS_EXPRESSIONS_PRACTICE">
+          <div id="PATTERNS_EXPRESSIONS_PRACTICE" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ PATTERNS_EXPRESSIONS_PRACTICE</h2>
 
 
@@ -3455,7 +3549,7 @@
           </div>
 
           <!-- ++++ CULTURE  -->
-          <div id="CULTURE">
+          <div id="CULTURE" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ CULTURE</h2>
 
             <section class="section">
@@ -3477,7 +3571,7 @@
 
 
           <!-- ++++ LISTEN_DISCUSS -->
-          <div id="LISTEN_DISCUSS">
+          <div id="LISTEN_DISCUSS" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ LISTEN_DISCUSS</h2>
             <h3 class="anytimekorea-style-guide-title-sub">1. 듣기 토론하기 스타일</h3>
 
@@ -3557,16 +3651,14 @@
 
             </section>
 
-
-
           </div>
 
 
           <!-- ++++ 스크립트 -->
-          <div id="SCRIPT">
+          <div id="SCRIPT" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 스크립트</h2>
 
-            <section class="section28 theme-a">
+            <section class="section theme-a">
               <!-- 타이틀 부제목 -->
               <div class="title-sub-wrapper">
                 <h3 class="title-sub">Script</h3>
@@ -3814,7 +3906,7 @@
           </div>
 
           <!-- ++++ GUIDED_CONVERSATION -->
-          <div id="GUIDED_CONVERSATION">
+          <div id="GUIDED_CONVERSATION" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ GUIDED_CONVERSATION</h2>
 
             <section class="section theme-a">
@@ -4225,7 +4317,7 @@
 
 
           <!-- ++++ SPONTANEOUS_CONVERSATION -->
-          <div id="SPONTANEOUS_CONVERSATION">
+          <div id="SPONTANEOUS_CONVERSATION" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ SPONTANEOUS_CONVERSATION</h2>
 
             <section class="section theme-a">
@@ -4275,7 +4367,7 @@
           </div>
 
           <!-- ++++ 만화 이미지  -->
-          <div id="COMIC">
+          <div id="COMIC" class="anytimekorea-style-guide-section">
             <h2 class="anytimekorea-style-guide-title">▶ 만화 이미지</h2>
             <div class="section1 theme-b">
               <!-- section1 -->
@@ -4426,135 +4518,6 @@
       </div>
     </div>
   </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const sections = document.querySelectorAll('div[id]');
-      const navLinks = document.querySelectorAll('.anytimekorea-style-guide-nav a');
-      const titles = document.querySelectorAll('.anytimekorea-style-guide-title');
-      const nav = document.querySelector('.anytimekorea-style-guide-nav');
-
-      // 헤더 높이를 동적으로 계산하는 함수
-      function getNavHeight() {
-        return nav.offsetHeight;
-      }
-
-      // 스크롤 위치 계산 함수
-      function calculateScrollPosition(targetElement) {
-        const navHeight = getNavHeight();
-        const extraMargin = window.innerWidth <= 768 ? 40 : 20;
-        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-        return targetPosition - navHeight - extraMargin;
-      }
-
-      // 네비게이션 링크 클릭 이벤트 처리
-      navLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          const targetSection = document.querySelector(targetId);
-          const targetTitle = targetSection.querySelector('.anytimekorea-style-guide-title');
-
-          if (targetTitle) {
-            const scrollPosition = calculateScrollPosition(targetTitle);
-            window.scrollTo({
-              top: scrollPosition,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-
-      function updateActiveSection() {
-        const navHeight = getNavHeight();
-        const scrollPosition = window.scrollY + navHeight + 20;
-
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - navHeight;
-          const sectionHeight = section.offsetHeight;
-
-          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-              link.classList.remove('active');
-              if (link.getAttribute('href') === '#' + section.id) {
-                link.classList.add('active');
-              }
-            });
-
-            titles.forEach(title => {
-              title.classList.remove('active');
-              if (title.closest('div[id]') === section) {
-                title.classList.add('active');
-              }
-            });
-          }
-        });
-      }
-
-      // 리사이즈 이벤트 추가
-      window.addEventListener('resize', function () {
-        updateActiveSection();
-      });
-
-      // 스크롤 이벤트에 디바운스 적용
-      let scrollTimeout;
-      window.addEventListener('scroll', function () {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(updateActiveSection, 100);
-      });
-
-      // 초기 실행
-      updateActiveSection();
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.body.addEventListener('click', function (event) {
-        // 클릭된 요소가 .title-icons 또는 .icon-only인지 확인
-        const clickedElement = event.target.closest('.title-icons, .icon-only, .lesson-title-group, .title-main-wrapper, .title-sub-wrapper');
-        if (clickedElement) {
-          console.log('클릭 이벤트 감지됨:', clickedElement);
-
-          // 요소를 복제하여 수정
-          const clone = clickedElement.cloneNode(true);
-
-          if (clickedElement.classList.contains('icon-only')) {
-            // .icon-only 요소 자체를 클릭한 경우
-            const html = clone.outerHTML;
-            const code = html.replace(/>\s+</g, '><');
-            console.log('복사할 코드:', code);
-
-            navigator.clipboard.writeText(code)
-              .then(() => {
-                console.log('복사 성공');
-                alert('코드가 클립보드에 복사되었습니다!');
-              })
-              .catch(err => {
-                console.error('복사 실패:', err);
-                alert('코드 복사에 실패했습니다: ' + err.message);
-              });
-          } else {
-            // .title-icons 요소를 클릭한 경우
-            const iconOnlyElements = clone.querySelectorAll('.icon-only');
-            iconOnlyElements.forEach(element => {
-              const html = element.innerHTML;
-              element.innerHTML = html.replace(/>\s+</g, '><');
-            });
-
-            const code = clone.outerHTML;
-            console.log('복사할 코드:', code);
-
-            navigator.clipboard.writeText(code)
-              .then(() => {
-                console.log('복사 성공');
-                alert('코드가 클립보드에 복사되었습니다!');
-              })
-              .catch(err => {
-                console.error('복사 실패:', err);
-                alert('코드 복사에 실패했습니다: ' + err.message);
-              });
-          }
-        }
-      });
-    });
-  </script>
 </body>
+
+</html>

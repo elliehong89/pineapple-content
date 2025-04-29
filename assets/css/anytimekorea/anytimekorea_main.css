@@ -4,3 +4,36 @@
 
 @import "./content.css";
 @import "./media.css";
+
+/* 코드 복사 스타일 */
+.code-copy {
+  cursor: pointer;
+  position: relative;
+}
+
+.code-copy::after {
+  display: inline-block;
+  content: "클릭하여 코드 복사";
+  position: absolute;
+  top: -30px;
+  left: 0;
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 9999;
+  text-align: center;
+  width: 150px;
+}
+
+.code-copy:hover::after {
+  opacity: 1;
+}
+
+.code-copy.copied::after {
+  content: "코드가 복사되었습니다!";
+  background: #23b24b;
+}
