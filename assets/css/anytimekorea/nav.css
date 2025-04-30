@@ -1,4 +1,6 @@
-/* 애니타임코리아 네비게이션 CSS */
+/* =============================================
+   애니타임코리아 네비게이션 CSS
+   ============================================= */
 .anytimekorea-style-guide-nav {
   height: auto;
   min-height: 86px;
@@ -8,7 +10,7 @@
   width: 100%;
   z-index: 9999;
   background-color: #fff;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid rgb(51, 51, 51);
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -19,23 +21,17 @@
 /* 스크롤 관련 스타일 */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 106px; /* 네비게이션 바 높이 + 여백 */
 }
 
 .anytimekorea-style-guide-nav a {
   transition: color 0.3s ease;
   text-decoration: none;
-  color: #000;
+  color: #333;
   font-size: 14px;
   font-weight: 600;
   padding: 5px 10px;
   border: 2px solid #000;
   border-radius: 5px;
-}
-
-.anytimekorea-style-guide-nav a:hover {
-  color: blueviolet;
-  border-color: blueviolet;
 }
 
 .anytimekorea-style-guide-nav a.active {
@@ -59,18 +55,11 @@ html {
   z-index: 1;
 }
 
-.anytimekorea-style-guide-title.active {
-  color: #fff;
-  border-color: blueviolet;
-  background-color: blueviolet;
-}
-
 .anytimekorea-style-guide-wrapper {
   overflow: hidden;
 }
 
 .anytimekorea-style-guide-content {
-  margin-top: 86px;
   padding-top: 20px;
 }
 
@@ -87,14 +76,6 @@ html {
     height: auto;
     min-height: 120px;
   }
-
-  .anytimekorea-style-guide-content {
-    margin-top: 120px;
-  }
-
-  html {
-    scroll-padding-top: 140px; /* 모바일에서 네비게이션 바 높이 + 여백 */
-  }
 }
 
 /* primary-color-box */
@@ -104,6 +85,7 @@ html {
   flex-direction: row;
   gap: 10px;
 }
+
 .primary-color-box > p {
   display: flex;
   padding: 10px;
@@ -160,43 +142,6 @@ html {
 }
 
 /* 탭 스타일 */
-.anytimekorea-style-guide-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-.anytimekorea-style-guide-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 15px;
-  background: #f5f5f5;
-  border-bottom: 1px solid #ddd;
-}
-
-.anytimekorea-style-guide-nav a {
-  padding: 8px 16px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #333;
-  cursor: pointer;
-}
-
-.anytimekorea-style-guide-nav a.active {
-  background: #009fdf;
-  color: #fff;
-  border-color: #009fdf;
-}
-
-.anytimekorea-style-guide-content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 20px;
-}
-
 .anytimekorea-style-guide-section {
   display: none;
   position: relative;
@@ -204,4 +149,44 @@ html {
 
 .anytimekorea-style-guide-section.active {
   display: block;
+}
+
+/* 코드 복사 스타일 */
+.code-copy {
+  cursor: pointer;
+  position: relative;
+  border: 4px solid transparent;
+  transition: opacity 0.3s;
+}
+
+.code-copy::after {
+  display: inline-block;
+  content: "클릭하여 코드 복사";
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: #333;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 9999;
+  text-align: center;
+  width: 150px;
+}
+
+.code-copy:hover::after {
+  opacity: 1;
+}
+
+.code-copy.copied::after {
+  content: "코드가 복사되었습니다!";
+  background: #23b24b;
+}
+
+.code-copy:hover {
+  border: 4px solid rgb(98, 247, 93);
+  box-sizing: border-box;
 }
