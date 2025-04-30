@@ -1,6 +1,6 @@
 /* Import all CSS files */
 @import "../fonts.css";
-@import "./nav.css";
+@import "../nav.css";
 
 @import "./content.css";
 @import "./media.css";

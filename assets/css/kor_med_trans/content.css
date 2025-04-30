@@ -1202,9 +1202,6 @@ textarea {
   background-color: var(--box-bg-color, var(--box-color));
 }
 
-.lesson-card-text-component-inner {
-}
-
 .lesson-card-text-component-title {
   color: var(--color-primary--blue-dark);
 }

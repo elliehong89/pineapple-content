@@ -131,8 +131,7 @@ table.border_brown td {
 }
 
 /* answer */
-.answer {
-}
+
 .question {
   padding: 0;
 }
@@ -503,11 +502,7 @@ canvas {
   /* align-items: flex-end; */
   /* gap: 10px; */
 }
-.question > span {
-  /* display: flex; */
-  /* align-items: center; */
-  /* gap: 10px; */
-}
+
 .options {
   display: flex;
   flex-direction: column;
@@ -661,14 +656,7 @@ input[type="text"]::placeholder {
 }
 
 /* 테마 A - 대표컬러 green */
-.themeA {
-}
-.themeA h1,
-.themeA_h1 {
-}
-.themeA h2,
-.themeA_h2 {
-}
+
 .themeA h3,
 .themeA_h3 {
   background-color: #000 !important;
@@ -721,14 +709,7 @@ input[type="text"]::placeholder {
 }
 
 /* 테마 B - 대표컬러 blue */
-.themeB {
-}
-.themeB h1,
-.themeB_h1 {
-}
-.themeB h2,
-.themeB_h2 {
-}
+
 .themeB h3,
 .themeB_h3 {
   background-color: #000 !important;

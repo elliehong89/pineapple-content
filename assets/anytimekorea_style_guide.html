@@ -7,12 +7,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/anytimekorea/anytimekorea_main.css" />
+  <style>
+    .speech-bubble-1 {
+      top: 17.3%;
+      left: 36%;
+    }
+
+    .speech-bubble-2 {
+      top: 28.4%;
+      left: 67.6%;
+    }
+
+    .speech-bubble-3 {
+      top: 34.4%;
+      left: 38%;
+    }
+
+    .speech-bubble-4 {
+      top: 45%;
+      left: 66%;
+    }
+
+    .speech-bubble-5 {
+      top: 52%;
+      left: 31%;
+    }
+
+    .speech-bubble-6 {
+      top: 61.6%;
+      left: 65.5%;
+    }
+
+    .speech-bubble-7 {
+      top: 67.6%;
+      left: 34%;
+    }
+
+    .speech-bubble-8 {
+      top: 78.3%;
+      left: 73%;
+    }
+
+    .speech-bubble-9 {
+      top: 86%;
+      left: 33%;
+    }
+
+    .speech-bubble-10 {
+      top: 96.4%;
+      left: 65%;
+    }
+  </style>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const navLinks = document.querySelectorAll('.anytimekorea-style-guide-nav a');
-      const sections = document.querySelectorAll('.anytimekorea-style-guide-section');
-      const content = document.querySelector('.anytimekorea-style-guide-content');
-      const nav = document.querySelector('.anytimekorea-style-guide-nav');
+      const navLinks = document.querySelectorAll('.style-guide-nav a');
+      const sections = document.querySelectorAll('.style-guide-section');
+      const content = document.querySelector('.style-guide-content');
+      const nav = document.querySelector('.style-guide-nav');
 
       // 네비게이션 높이에 따라 콘텐츠 마진 조정
       function updateContentMargin() {
@@ -37,7 +88,7 @@
 
       // localStorage에 저장된 탭이 있으면 해당 탭을 활성화
       if (lastActiveTab) {
-        const savedTab = document.querySelector(`.anytimekorea-style-guide-nav a[href="#${lastActiveTab}"]`);
+        const savedTab = document.querySelector(`.style-guide-nav a[href="#${lastActiveTab}"]`);
         if (savedTab) {
           activeTabIndex = Array.from(navLinks).indexOf(savedTab);
         }
@@ -100,8 +151,8 @@
 </head>
 
 <body style="margin: 0; padding: 0">
-  <div class="anytimekorea-style-guide-wrapper">
-    <nav class="anytimekorea-style-guide-nav">
+  <div class="style-guide-wrapper">
+    <nav class="style-guide-nav">
       <a href="#FONT">FONT</a>
       <a href="#COLOR">COLOR</a>
       <a href="#BUTTON">BUTTON</a>
@@ -125,13 +176,13 @@
       <a href="#SPONTANEOUS_CONVERSATION">SPONTANEOUS_CONVERSATION</a>
       <a href="#COMIC">COMIC</a>
     </nav>
-    <div class="anytimekorea-style-guide-content">
+    <div class="style-guide-content">
       <div id="content-sandbox">
         <div class="section-wrapper">
           <!-- ++++ 폰트  -->
-          <div id="FONT" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 폰트</h2>
-            <h3 class="anytimekorea-style-guide-title-sub">1. 폰트 사이즈</h3>
+          <div id="FONT" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 폰트</h2>
+            <h3 class="style-guide-title-sub">1. 폰트 사이즈</h3>
             <p class="ft-10">폰트 사이즈 ft-10</p>
             <p class="ft-11">폰트 사이즈 ft-11</p>
             <p class="ft-12">폰트 사이즈 ft-12</p>
@@ -144,22 +195,23 @@
             <p class="ft-30">폰트 사이즈 ft-30</p>
             <p class="ft-40">폰트 사이즈 ft-40</p>
 
-            <h3 class="anytimekorea-style-guide-title-sub">2. 폰트 강조</h3>
+            <h3 class="style-guide-title-sub">2. 폰트 강조</h3>
             <div class="code-copy">
               <div><strong class="primary-blue">으세요</strong>/~<strong class="primary-blue">세요</strong></div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">3. 폰트 강조 코드</h3>
+            <h3 class="style-guide-title-sub">3. 폰트 강조 코드</h3>
             <div class="code-copy">
               <strong class="primary-blue"></strong>
             </div>
 
+
           </div>
 
           <!-- ++++ 색상  -->
-          <div id="COLOR" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 색상</h2>
-            <h3 class="anytimekorea-style-guide-title-sub">1. primary-color</h3>
+          <div id="COLOR" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 색상</h2>
+            <h3 class="style-guide-title-sub">1. primary-color</h3>
             <div class="primary-color-box">
               <p class="primary-color-white">
                 primary-color-white<br>
@@ -201,9 +253,9 @@
           </div>
 
           <!-- ++++ 버튼  -->
-          <div id="BUTTON" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 버튼</h2>
-            <h3 class="anytimekorea-style-guide-title-sub">1. 오디오 플레이 버튼 - 기본</h3>
+          <div id="BUTTON" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 버튼</h2>
+            <h3 class="style-guide-title-sub">1. 오디오 플레이 버튼 - 기본</h3>
             <div class="code-copy">
               <button type="button" class="audio theme-a" alt="음성파일">
                 <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -214,7 +266,7 @@
               </button>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">2. 오디오 플레이 버튼 - 플레이 버튼 텍스트 포함</h3>
+            <h3 class="style-guide-title-sub">2. 오디오 플레이 버튼 - 플레이 버튼 텍스트 포함</h3>
             <div class="code-copy">
               <div class="button_audio_text theme-b">
                 <button type="button" class="audio" alt="음성파일">
@@ -228,14 +280,14 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">3. 설정 아이콘</h3>
+            <h3 class="style-guide-title-sub">3. 설정 아이콘</h3>
             <div class="code-copy">
               <div class="icon-settings">
                 <p><i class="fa-solid fa-gears"></i></p>
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">4. 마이크 아이콘</h3>
+            <h3 class="style-guide-title-sub">4. 마이크 아이콘</h3>
             <div class="code-copy">
               <div class="icon-mic">
                 <p><i class="fa-solid fa-microphone-lines"></i></p>
@@ -243,7 +295,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">5. 펜 아이콘</h3>
+            <h3 class="style-guide-title-sub">5. 펜 아이콘</h3>
             <div class="code-copy">
               <div class="icon-pen">
                 <p><i class="fa-solid fa-pen"></i></p><span>Exercise 25</span>
@@ -253,16 +305,16 @@
           </div>
 
           <!-- ++++ 배지  -->
-          <div id="BADGE" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 배지</h2>
-            <h3 class="anytimekorea-style-guide-title-sub">1. 배지 기본</h3>
+          <div id="BADGE" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 배지</h2>
+            <h3 class="style-guide-title-sub">1. 배지 기본</h3>
             <!-- icon text normal -->
             <div class="code-copy">
               <div class="icon-txt-normal mgb-10">Usage</div>
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">2. 배지 라운드</h3>
+            <h3 class="style-guide-title-sub">2. 배지 라운드</h3>
             <!-- icon text round -->
             <div class="code-copy">
               <div class="icon-txt-round mgb-10">meaning</div>
@@ -270,9 +322,9 @@
           </div>
 
           <!-- ++++ 타이틀  -->
-          <div id="TITLE" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 타이틀</h2>
-            <h3 class="anytimekorea-style-guide-title-sub">1. 타이틀 레슨</h3>
+          <div id="TITLE" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 타이틀</h2>
+            <h3 class="style-guide-title-sub">1. 타이틀 레슨</h3>
             <div class="code-copy">
               <div class="lesson-title-group theme-a">
                 <div class="lesson-title">
@@ -299,7 +351,7 @@
 
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">2. 타이틀 대제목</h3>
+            <h3 class="style-guide-title-sub">2. 타이틀 대제목</h3>
             <!-- 타이틀 대제목 -->
             <div class="code-copy">
               <div class="title-main-wrapper mgb-10">
@@ -307,7 +359,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">3. 타이틀 부제목</h3>
+            <h3 class="style-guide-title-sub">3. 타이틀 부제목</h3>
             <!-- 타이틀 부제목 -->
             <div class="code-copy">
               <div class="title-sub-wrapper">
@@ -315,7 +367,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">4. 타이틀 그룹</h3>
+            <h3 class="style-guide-title-sub">4. 타이틀 그룹</h3>
             <!-- 타이틀 그룹 -->
             <div class="code-copy">
               <div class="title-group-wrapper">
@@ -328,20 +380,20 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">5. 타이틀 섹션</h3>
+            <h3 class="style-guide-title-sub">5. 타이틀 섹션</h3>
             <!-- 타이틀 섹션 -->
             <div class="code-copy">
               <h4 class="title-section mgb-10">Here are more examples.</h4>
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">6. 타이틀 섹션 - 배경색</h3>
+            <h3 class="style-guide-title-sub">6. 타이틀 섹션 - 배경색</h3>
             <!-- 타이틀 섹션 배경색 -->
             <div class="code-copy">
               <h4 class="title-section bg-blue mgb-10">English loan words that are frequently used in Korean</h4>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">7. 타이틀섹션 + 버튼 (섹션제목)</h3>
+            <h3 class="style-guide-title-sub">7. 타이틀섹션 + 버튼 (섹션제목)</h3>
             <!-- 타이틀 섹션 + 버튼 -->
             <div class="code-copy">
               <div class="title-icons theme-a">
@@ -359,7 +411,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">7-1. 타이틀섹션 + 아이콘</h3>
+            <h3 class="style-guide-title-sub">7-1. 타이틀섹션 + 아이콘</h3>
             <!-- 타이틀 섹션 + 버튼 -->
             <div class="code-copy">
               <div class="title-icons mgb-20">
@@ -371,7 +423,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">7-2. 타이틀섹션 + 아이콘</h3>
+            <h3 class="style-guide-title-sub">7-2. 타이틀섹션 + 아이콘</h3>
             <!-- 타이틀 섹션 + 버튼 -->
             <div class="code-copy">
               <div class="title-icons mgb-20">
@@ -383,7 +435,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">7-3. 타이틀섹션 + 아이콘</h3>
+            <h3 class="style-guide-title-sub">7-3. 타이틀섹션 + 아이콘</h3>
             <!-- 타이틀 섹션 + 버튼 -->
             <div class="code-copy">
               <div class="title-icons mgb-10">
@@ -395,7 +447,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">7-4. 타이틀섹션 + 아이콘</h3>
+            <h3 class="style-guide-title-sub">7-4. 타이틀섹션 + 아이콘</h3>
             <!-- 타이틀 섹션 + 버튼 -->
             <div class="code-copy">
               <div class="title-icons flex-start mgb-10 theme-a">
@@ -418,7 +470,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">7-5. 타이틀섹션 + 아이콘</h3>
+            <h3 class="style-guide-title-sub">7-5. 타이틀섹션 + 아이콘</h3>
             <!-- 타이틀 섹션 + 버튼 -->
             <div class="code-copy">
               <div class="title-icons theme-a mgb-10">
@@ -440,7 +492,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">7-6. 타이틀섹션 + 아이콘</h3>
+            <h3 class="style-guide-title-sub">7-6. 타이틀섹션 + 아이콘</h3>
             <div class="code-copy">
               <div class="title-icons mgb-20 theme-a">
                 <div class="icon-mic">
@@ -463,7 +515,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">7-7. 타이틀섹션 + 아이콘</h3>
+            <h3 class="style-guide-title-sub">7-7. 타이틀섹션 + 아이콘</h3>
             <div class="code-copy">
               <div class="title-icons mgb-20 theme-a">
                 <div class="icon-pen">
@@ -487,7 +539,7 @@
 
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">8. 타이틀섹션 + 버튼 (대제목)</h3>
+            <h3 class="style-guide-title-sub">8. 타이틀섹션 + 버튼 (대제목)</h3>
             <div class="code-copy">
               <div class="title-icons theme-a">
                 <div class="title-main-wrapper mgb-10">
@@ -506,7 +558,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">9. 타이틀 스텝 - 테마</h3>
+            <h3 class="style-guide-title-sub">9. 타이틀 스텝 - 테마</h3>
             <!-- 타이틀 스텝 테마a -->
             <div class="code-copy">
               <h3 class="step-title-box theme-a">
@@ -522,9 +574,9 @@
           </div>
 
           <!-- ++++ 텍스트  -->
-          <div id="TEXT" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 텍스트</h2>
-            <h3 class="anytimekorea-style-guide-title-sub">1. 텍스트 기본</h3>
+          <div id="TEXT" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 텍스트</h2>
+            <h3 class="style-guide-title-sub">1. 텍스트 기본</h3>
 
             <div class="code-copy">
               <p class="text-basic">
@@ -535,7 +587,7 @@
               </p>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">2. 텍스트 형태</h3>
+            <h3 class="style-guide-title-sub">2. 텍스트 형태</h3>
             <div class="code-copy">
               <p class="dp-inline-flex dp-direction-column dp-gap-5">
                 <span class="td-underline ta-c">음식</span>
@@ -544,7 +596,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">3. 텍스트 문장</h3>
+            <h3 class="style-guide-title-sub">3. 텍스트 문장</h3>
             <div class="code-copy">
               <p class="mgb-20 text-desc-p">
                 "NOUN<strong class="primary-blue">이에요</strong>/<strong class="primary-blue">예요</strong>" is used to
@@ -555,9 +607,9 @@
           </div>
 
           <!-- ++++ 대화 스타일  -->
-          <div id="DIALOGUE" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 대화 스타일</h2>
-            <h3 class="anytimekorea-style-guide-title-sub">1. 대화 스타일 - (grid)</h3>
+          <div id="DIALOGUE" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 대화 스타일</h2>
+            <h3 class="style-guide-title-sub">1. 대화 스타일 - (grid)</h3>
             <div class="code-copy">
               <div class="grid-style-normal dp-flex dp-direction-column dp-gap-05 mgb-20">
                 <div class="grid-row">
@@ -586,7 +638,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">1-1. 대화 스타일 - (grid)</h3>
+            <h3 class="style-guide-title-sub">1-1. 대화 스타일 - (grid)</h3>
             <div class="code-copy">
               <div class="pd-20 box-color mgb-20 theme-a">
                 <div class="grid-style-normal dp-flex dp-direction-column dp-gap-05 responsive-gap-20">
@@ -619,7 +671,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">1-2. 대화 스타일 - (grid)</h3>
+            <h3 class="style-guide-title-sub">1-2. 대화 스타일 - (grid)</h3>
             <div class="code-copy">
               <div class="pd-20 box-color mgb-20 theme-a">
                 <div class="grid-style-normal dp-flex dp-direction-column responsive-gap-20">
@@ -662,7 +714,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">2. 대화 스타일 - (flex)</h3>
+            <h3 class="style-guide-title-sub">2. 대화 스타일 - (flex)</h3>
             <div class="code-copy">
               <div class="flex-style-normal mgb-20">
                 <div class="flex-row">
@@ -683,7 +735,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">2-1. 대화 스타일 - (flex)</h3>
+            <h3 class="style-guide-title-sub">2-1. 대화 스타일 - (flex)</h3>
             <div class="code-copy">
               <div class="flex-style-normal mgb-20">
                 <div class="flex-row">
@@ -701,7 +753,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">2-2. 대화 스타일 - (flex)</h3>
+            <h3 class="style-guide-title-sub">2-2. 대화 스타일 - (flex)</h3>
             <div class="code-copy">
               <div class="flex-style-normal mgb-20">
                 <div class="flex-row">
@@ -734,7 +786,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">3. 대화 스타일 3개- (grid + flex / normal)</h3>
+            <h3 class="style-guide-title-sub">3. 대화 스타일 3개- (grid + flex / normal)</h3>
 
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
@@ -756,7 +808,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">3. 대화 스타일 (grid + flex)</h3>
+            <h3 class="style-guide-title-sub">3. 대화 스타일 (grid + flex)</h3>
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
                 <div class="grid-row grid-row-22px-22px-1fr dp-grid-items-start mgb-10">
@@ -798,7 +850,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">3-1. 대화 스타일 (grid + flex)</h3>
+            <h3 class="style-guide-title-sub">3-1. 대화 스타일 (grid + flex)</h3>
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
                 <div class="grid-row grid-row-22px-22px-1fr dp-grid-items-start">
@@ -840,7 +892,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">3-2. 대화 스타일 (grid + flex)</h3>
+            <h3 class="style-guide-title-sub">3-2. 대화 스타일 (grid + flex)</h3>
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
                 <div class="grid-row grid-row-22px-22px-1fr dp-grid-items-start mgb-10">
@@ -886,7 +938,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">3-3. 대화 스타일 (grid + flex)</h3>
+            <h3 class="style-guide-title-sub">3-3. 대화 스타일 (grid + flex)</h3>
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
                 <div class="grid-row grid-row-22px-22px-1fr dp-grid-items-start mgb-10">
@@ -930,7 +982,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">4. 대화 스타일 (grid + flex 타입)</h3>
+            <h3 class="style-guide-title-sub">4. 대화 스타일 (grid + flex 타입)</h3>
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
                 <div class="grid-row grid-row-22px-1fr dp-grid-items-start ">
@@ -962,7 +1014,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">4-1. 대화 스타일 (grid + flex 넘버)</h3>
+            <h3 class="style-guide-title-sub">4-1. 대화 스타일 (grid + flex 넘버)</h3>
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
                 <div class="grid-row grid-row-22px-auto-1fr dp-grid-items-start mgb-10">
@@ -1007,7 +1059,7 @@
 
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">4-2. 대화 스타일 (grid + flex 넘버)</h3>
+            <h3 class="style-guide-title-sub">4-2. 대화 스타일 (grid + flex 넘버)</h3>
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
                 <div class="grid-row grid-row-22px-1fr dp-grid-items-start mgb-10">
@@ -1029,7 +1081,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">4-3. 대화 스타일 (grid + flex 넘버)</h3>
+            <h3 class="style-guide-title-sub">4-3. 대화 스타일 (grid + flex 넘버)</h3>
 
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
@@ -1058,7 +1110,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">4-4. 대화 스타일 (grid + flex 넘버)</h3>
+            <h3 class="style-guide-title-sub">4-4. 대화 스타일 (grid + flex 넘버)</h3>
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
                 <div class="grid-row grid-row-22px-1fr dp-grid-items-start mgb-10">
@@ -1083,7 +1135,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">4-5. 대화 스타일 (grid + flex 넘버)</h3>
+            <h3 class="style-guide-title-sub">4-5. 대화 스타일 (grid + flex 넘버)</h3>
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
                 <div class="grid-row grid-row-22px-1fr dp-grid-items-start mgb-10">
@@ -1115,7 +1167,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">7. 대화 스타일 4개- (grid + flex)</h3>
+            <h3 class="style-guide-title-sub">7. 대화 스타일 4개- (grid + flex)</h3>
 
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
@@ -1158,7 +1210,7 @@
 
 
             <!-- 대화 스타일 (이미지 + 텍스트 ) -->
-            <h3 class="anytimekorea-style-guide-title-sub">7. 대화 스타일 - (이미지 + 텍스트) 1</h3>
+            <h3 class="style-guide-title-sub">7. 대화 스타일 - (이미지 + 텍스트) 1</h3>
             <div class="code-copy">
               <div class="numbered-image-list">
                 <div class="numbered-image mgb-20">
@@ -1230,7 +1282,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">7. 대화 스타일 - (이미지 + 텍스트) 2</h3>
+            <h3 class="style-guide-title-sub">7. 대화 스타일 - (이미지 + 텍스트) 2</h3>
             <div class="code-copy">
               <div class="numbered-image-list">
                 <div class="numbered-image mgb-20">
@@ -1265,7 +1317,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">7. 대화 스타일 - (이미지 + 텍스트) 3</h3>
+            <h3 class="style-guide-title-sub">7. 대화 스타일 - (이미지 + 텍스트) 3</h3>
             <div class="code-copy">
               <div class="numbered-image-list">
                 <div class="numbered-image mgb-20">
@@ -1295,7 +1347,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">8. 대화 스타일 - box</h3>
+            <h3 class="style-guide-title-sub">8. 대화 스타일 - box</h3>
 
             <div class="code-copy">
               <div class="box-color pd-20 mgb-20 theme-a">
@@ -1386,7 +1438,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">9. 문법 박스</h3>
+            <h3 class="style-guide-title-sub">9. 문법 박스</h3>
 
             <div class="code-copy">
               <div class="grammar-rule-container mgb-20 box-color pd-20 theme-a">
@@ -1432,7 +1484,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">9-1. 문법 박스</h3>
+            <h3 class="style-guide-title-sub">9-1. 문법 박스</h3>
             <div class="code-copy">
               <div class="grammar-rule-container mgb-20 box-color pd-20 theme-a">
                 <div class="grammar-rule-item mgb-10">
@@ -1477,7 +1529,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">9-2. 문법 박스</h3>
+            <h3 class="style-guide-title-sub">9-2. 문법 박스</h3>
 
             <div class="code-copy">
               <div class="grammar-rule-container mgb-20 box-color pd-20 theme-a">
@@ -1535,7 +1587,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">9-3. 문법 박스</h3>
+            <h3 class="style-guide-title-sub">9-3. 문법 박스</h3>
             <div class="code-copy">
               <div class="grammar-rule-container mgb-20 box-color pd-20 theme-a">
                 <div class="grammar-rule-item mgb-10 dp-direction-column">
@@ -1601,7 +1653,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">9-4. 문법 박스</h3>
+            <h3 class="style-guide-title-sub">9-4. 문법 박스</h3>
             <div class="code-copy">
               <div class="box-color dp-flex dp-direction-column dp-gap-10 pd-20 mgb-40 theme-a">
                 <p class="dp-grid dp-grid-cols-auto dp-grid-gap-10">
@@ -1626,7 +1678,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">9-5. 문법 박스</h3>
+            <h3 class="style-guide-title-sub">9-5. 문법 박스</h3>
             <div class="code-copy">
               <div class="grammar-description mgb-20">
                 <div class="grammar-dict-row">
@@ -1689,7 +1741,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">9-6. 문법 박스</h3>
+            <h3 class="style-guide-title-sub">9-6. 문법 박스</h3>
             <div class="code-copy">
               <div class="grammar-description">
                 <div class="grammar-dict-row">
@@ -1720,7 +1772,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">9-7. 문법 박스</h3>
+            <h3 class="style-guide-title-sub">9-7. 문법 박스</h3>
             <div class="code-copy">
               <div class="draw-box theme-a">
                 <div class="left-content">
@@ -1756,7 +1808,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">9-8. 대화스타일</h3>
+            <h3 class="style-guide-title-sub">9-8. 대화스타일</h3>
             <div class="code-copy">
               <div class="imgs-text-box theme-a">
                 <div class="example-box">
@@ -1786,7 +1838,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">9-9. 문법 카드 스타일</h3>
+            <h3 class="style-guide-title-sub">9-9. 문법 카드 스타일</h3>
             <div class="code-copy">
               <div class="responsive-scroll mgb-60">
                 <div class="dp-flex dp-direction-column dp-gap-20 pd-20 bg-primary-gray">
@@ -1866,7 +1918,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">10. 문법 카드 스타일</h3>
+            <h3 class="style-guide-title-sub">10. 문법 카드 스타일</h3>
             <div class="code-copy">
               <div class="responsive-scroll dp-inline-flex mgb-40">
                 <div class="dp-inline-flex dp-direction-column dp-gap-10 grammar-wrap m-w-400">
@@ -1926,7 +1978,7 @@
 
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">11. 대화스타일 (input 라인)</h3>
+            <h3 class="style-guide-title-sub">11. 대화스타일 (input 라인)</h3>
             <div class="code-copy">
               <ol class="respond-questions-wrap theme-a">
                 <li>
@@ -1967,9 +2019,9 @@
           </div>
 
           <!-- ++++ 테이블 -->
-          <div id="TABLE" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 테이블</h2>
-            <h3 class="anytimekorea-style-guide-title-sub">1. 목차 테이블 스타일</h3>
+          <div id="TABLE" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 테이블</h2>
+            <h3 class="style-guide-title-sub">1. 목차 테이블 스타일</h3>
 
             <!-- 목차 테이블 스타일 -->
             <div class="code-copy">
@@ -2034,7 +2086,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">2. 테이블 스타일 1 (미디어쿼리 아래로나열)</h3>
+            <h3 class="style-guide-title-sub">2. 테이블 스타일 1 (미디어쿼리 아래로나열)</h3>
 
             <!-- 테이블 스타일 1 (아래로나열) -->
             <div class="code-copy">
@@ -2144,7 +2196,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">2. 테이블 스타일 2 (미디어쿼리 아래로 나열)</h3>
+            <h3 class="style-guide-title-sub">2. 테이블 스타일 2 (미디어쿼리 아래로 나열)</h3>
 
             <!-- 테이블 스타일2 (아래로나열) -->
             <div class="code-copy">
@@ -2251,7 +2303,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">3. 테이블 스타일 3 (미디어쿼리 아래로 나열)</h3>
+            <h3 class="style-guide-title-sub">3. 테이블 스타일 3 (미디어쿼리 아래로 나열)</h3>
             <!-- 테이블 스타일3 (아래로 나열) -->
             <div class="code-copy">
               <div class="mgb-20">
@@ -2303,7 +2355,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">3. 테이블 스타일 3-2 (미디어쿼리 아래로 나열)</h3>
+            <h3 class="style-guide-title-sub">3. 테이블 스타일 3-2 (미디어쿼리 아래로 나열)</h3>
             <div class="code-copy">
               <div class="mgb-20 pattern-table-group">
                 <div class="pattern-table">
@@ -2399,7 +2451,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">3. 테이블 스타일 (스크롤)</h3>
+            <h3 class="style-guide-title-sub">3. 테이블 스타일 (스크롤)</h3>
             <div class="code-copy">
               <div class="tb-responsive mgb-20">
                 <table border="1" class="tb-normal responsive-table">
@@ -2486,7 +2538,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">3-1. 테이블 스타일 (스크롤)</h3>
+            <h3 class="style-guide-title-sub">3-1. 테이블 스타일 (스크롤)</h3>
             <!-- 테이블 스타일 (스크롤 - 기본) -->
             <div class="code-copy">
               <div class="tb-responsive mgb-20">
@@ -2555,7 +2607,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">3-2. 테이블 스타일 (스크롤)</h3>
+            <h3 class="style-guide-title-sub">3-2. 테이블 스타일 (스크롤)</h3>
             <!-- 테이블 스타일 (스크롤 - 기본) -->
             <div class="code-copy">
               <div class="tb-responsive mgb-20">
@@ -2606,7 +2658,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">3-3. 테이블 스타일 (스크롤)</h3>
+            <h3 class="style-guide-title-sub">3-3. 테이블 스타일 (스크롤)</h3>
             <!-- 테이블 스타일 (스크롤 - 기본) -->
             <div class="code-copy">
               <div class="tb-responsive mgb-20">
@@ -2625,7 +2677,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">4. 테이블 스타일 (텍스트 입력)</h3>
+            <h3 class="style-guide-title-sub">4. 테이블 스타일 (텍스트 입력)</h3>
             <!-- 테이블 스타일 (텍스트 입력) -->
             <div class="code-copy">
               <div class="tb-responsive mgb-20">
@@ -2663,10 +2715,10 @@
           </div>
 
           <!-- ++++ 노트  -->
-          <div id="NOTE" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 노트</h2>
+          <div id="NOTE" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 노트</h2>
 
-            <h3 class="anytimekorea-style-guide-title-sub">1. 노트 스타일 1 (Normal)</h3>
+            <h3 class="style-guide-title-sub">1. 노트 스타일 1 (Normal)</h3>
 
             <div class="code-copy">
               <div class="note-box mgb-20">
@@ -2679,7 +2731,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">2. 노트 스타일 2</h3>
+            <h3 class="style-guide-title-sub">2. 노트 스타일 2</h3>
 
             <div class="code-copy">
               <div class="note-box mgb-20">
@@ -2718,7 +2770,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">3. 노트 스타일 3</h3>
+            <h3 class="style-guide-title-sub">3. 노트 스타일 3</h3>
 
             <div class="code-copy">
               <div class="note-box mgb-20">
@@ -2758,8 +2810,8 @@
           </div>
 
           <!-- ++++ 이미지  -->
-          <div id="IMAGE" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 이미지</h2>
+          <div id="IMAGE" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 이미지</h2>
 
             <h3 class="anytimekorea-style-guide-title-sub">1. 이미지 스타일 (기본)</h3>
             <div class="code-copy">
@@ -2774,7 +2826,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">2. 이미지 스타일 1 (이미지+말풍선)</h3>
+            <h3 class="style-guide-title-sub">2. 이미지 스타일 1 (이미지+말풍선)</h3>
             <div class="code-copy">
               <ul class="img-grid img-grid-cols-3 img-grid-gap-20 mg-40-0">
                 <li class="img-grid-box-list">
@@ -2806,7 +2858,7 @@
             </div>
 
 
-            <h3 class="anytimekorea-style-guide-title-sub">3. 이미지 스타일 2 (이미지 리스트형)</h3>
+            <h3 class="style-guide-title-sub">3. 이미지 스타일 2 (이미지 리스트형)</h3>
             <div class="code-copy">
               <ul class="img-grid-numb-type-wrap">
                 <li class="img-grid-numb-type img-grid-gap-10">
@@ -2884,7 +2936,7 @@
               </ul>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">4. 이미지 스타일 3 (이미지 리스트형)</h3>
+            <h3 class="style-guide-title-sub">4. 이미지 스타일 3 (이미지 리스트형)</h3>
             <div class="code-copy">
               <ul class="img-grid img-grid-cols-4 img-grid-gap-20 mgb-20">
                 <li>
@@ -2958,8 +3010,8 @@
           </div>
 
           <!-- ++++ 이미지 답변 -->
-          <div id="IMAGE-ANSWER" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 이미지 문답</h2>
+          <div id="IMAGE-ANSWER" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 이미지 문답</h2>
 
             <div class="code-copy">
               <ul class="form-list-answer-img dp-flex dp-direction-column dp-gap-20">
@@ -3023,17 +3075,17 @@
           </div>
 
           <!-- ++++ 텍스트 영역 -->
-          <div id="TEXTAREA" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 텍스트 영역</h2>
+          <div id="TEXTAREA" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 텍스트 영역</h2>
             <div class="code-copy">
               <textarea class="text-area-textarea theme-a"></textarea>
             </div>
           </div>
 
           <!-- ++++ RULE -->
-          <div id="RULE" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ RULE</h2>
-            <h3 class="anytimekorea-style-guide-title-sub">1. 규칙 스타일1</h3>
+          <div id="RULE" class="style-guide-section">
+            <h2 class="style-guide-title">▶ RULE</h2>
+            <h3 class="style-guide-title-sub">1. 규칙 스타일1</h3>
             <div class="code-copy">
               <div class="rule-box text-basic theme-a">
                 <div><i class="fa-solid fa-list-check"></i> <strong>Rule1</strong></div>
@@ -3062,9 +3114,9 @@
           </div>
 
           <!-- ++++ 유용한 표현 -->
-          <div id="USEFUL_EXPRESSIONS" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 유용한 표현</h2>
-            <h3 class="anytimekorea-style-guide-title-sub">1. 유용한 표현 스타일1</h3>
+          <div id="USEFUL_EXPRESSIONS" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 유용한 표현</h2>
+            <h3 class="style-guide-title-sub">1. 유용한 표현 스타일1</h3>
 
             <div class="code-copy">
               <div class="background_image useful-expressions theme-a">
@@ -3085,7 +3137,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">2. 유용한 표현 스타일2</h3>
+            <h3 class="style-guide-title-sub">2. 유용한 표현 스타일2</h3>
             <div class="code-copy">
               <div class="background_image useful-expressions theme-a">
                 <i class="custom-icon"></i>
@@ -3110,7 +3162,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">3. 유용한 표현 스타일3</h3>
+            <h3 class="style-guide-title-sub">3. 유용한 표현 스타일3</h3>
             <div class="code-copy">
               <div class="background_image useful-expressions theme-a">
                 <i class="custom-icon"></i>
@@ -3134,7 +3186,7 @@
               </div>
             </div>
 
-            <h3 class="anytimekorea-style-guide-title-sub">4. 유용한 표현 스타일 커스텀</h3>
+            <h3 class="style-guide-title-sub">4. 유용한 표현 스타일 커스텀</h3>
             <div class="code-copy">
               <div class="background_image useful-expressions useful-custom">
                 <i class="custom-icon"></i>
@@ -3241,9 +3293,9 @@
           </div>
 
           <!-- ++++ NEW_WORDS -->
-          <div id="NEW_WORDS" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ NEW_WORDS</h2>
-            <h3 class="anytimekorea-style-guide-title-sub">1. 새로운 단어 스타일</h3>
+          <div id="NEW_WORDS" class="style-guide-section">
+            <h2 class="style-guide-title">▶ NEW_WORDS</h2>
+            <h3 class="style-guide-title-sub">1. 새로운 단어 스타일</h3>
 
             <div class="code-copy">
               <div class="dp-flex dp-direction-column">
@@ -3526,8 +3578,8 @@
           </div>
 
           <!-- ++++ Patterns, Expressions & Practice -->
-          <div id="PATTERNS_EXPRESSIONS_PRACTICE" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ PATTERNS_EXPRESSIONS_PRACTICE</h2>
+          <div id="PATTERNS_EXPRESSIONS_PRACTICE" class="style-guide-section">
+            <h2 class="style-guide-title">▶ PATTERNS_EXPRESSIONS_PRACTICE</h2>
 
             <div class="code-copy">
               <section class="section">
@@ -3560,8 +3612,8 @@
           </div>
 
           <!-- ++++ CULTURE  -->
-          <div id="CULTURE" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ CULTURE</h2>
+          <div id="CULTURE" class="style-guide-section">
+            <h2 class="style-guide-title">▶ CULTURE</h2>
 
             <div class="code-copy">
               <section class="section">
@@ -3583,9 +3635,9 @@
 
 
           <!-- ++++ LISTEN_DISCUSS -->
-          <div id="LISTEN_DISCUSS" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ LISTEN_DISCUSS</h2>
-            <h3 class="anytimekorea-style-guide-title-sub">1. 듣기 토론하기 스타일</h3>
+          <div id="LISTEN_DISCUSS" class="style-guide-section">
+            <h2 class="style-guide-title">▶ LISTEN_DISCUSS</h2>
+            <h3 class="style-guide-title-sub">1. 듣기 토론하기 스타일</h3>
 
             <div class="code-copy">
               <section class="section theme-a">
@@ -3669,8 +3721,8 @@
 
 
           <!-- ++++ 스크립트 -->
-          <div id="SCRIPT" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 스크립트</h2>
+          <div id="SCRIPT" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 스크립트</h2>
 
             <div class="code-copy">
               <section class="section theme-a">
@@ -3922,8 +3974,8 @@
           </div>
 
           <!-- ++++ GUIDED_CONVERSATION -->
-          <div id="GUIDED_CONVERSATION" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ GUIDED_CONVERSATION</h2>
+          <div id="GUIDED_CONVERSATION" class="style-guide-section">
+            <h2 class="style-guide-title">▶ GUIDED_CONVERSATION</h2>
 
             <div class="code-copy">
               <section class="section theme-a">
@@ -4335,8 +4387,8 @@
 
 
           <!-- ++++ SPONTANEOUS_CONVERSATION -->
-          <div id="SPONTANEOUS_CONVERSATION" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ SPONTANEOUS_CONVERSATION</h2>
+          <div id="SPONTANEOUS_CONVERSATION" class="style-guide-section">
+            <h2 class="style-guide-title">▶ SPONTANEOUS_CONVERSATION</h2>
 
             <div class="code-copy">
               <section class="section theme-a">
@@ -4386,148 +4438,157 @@
           </div>
 
           <!-- ++++ 만화 이미지  -->
-          <div id="COMIC" class="anytimekorea-style-guide-section">
-            <h2 class="anytimekorea-style-guide-title">▶ 만화 이미지</h2>
+          <div id="COMIC" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 만화 이미지</h2>
 
             <div class="code-copy">
-              <div class="section1 theme-b">
+              <section class="section1 theme-a">
                 <div class="lesson-title-group">
                   <div class="lesson-title">
                     <div class="lesson-title-inner-box">
                       <div class="lesson-title-text">
                         <h3 class="ft-28 dp-flex dp-direction-column dp-gap-02 primary-white">
-                          몇 명쯤 와요?
-                          <span>How many people are coming?</span>
+                          안녕하세요?
+                          <span>Hi!</span>
                         </h3>
-                        <p class="lesson-title-description">Counting people and things</p>
+                        <p class="lesson-title-description">Exchanging greetings!</p>
                       </div>
                     </div>
                   </div>
 
                   <h4 class="toons-caption mgb-10">
                     <i class="fa-solid fa-circle-play"></i>
-                    At a Korean market in New York
+                    In the lounge of a Korean company in New York
                   </h4>
                 </div>
 
                 <div class="comic-image-container">
                   <div class="comic-wrapper">
-                    <img alt="오늘은 제가 살게요 만화이미지"
-                      src="https://api.pineapple.ac/textbook/textbookContents/images/9781635190151/8-웹용.jpg"
-                      style="width: 100%;" width="100%">
+                    <img alt="안녕하세요 만화이미지"
+                      src="https://api.pineapple.ac/textbook/textbookContents/images/9781635190151/1-1.jpg">
                     <div class="speech-bubble speech-bubble-1">
                       <div class="speech-content">
                         <sub class="speech-content-numb">01</sub>
-                        <p class="speech-content-txt">
-                          에이미 씨,<br> 뭐 마실래요?
+                        <p class="speech-content-txt text-ko">
+                          안녕하세요?
                         </p>
-                        <!-- <p class="speech-content-txt">
-                                    Mr. Xiaoming,<br> what's your phone number?
-                                  </p> -->
+                        <p class="speech-content-txt text-en">
+                          How many people are coming<br>
+                          to today's meeting
+                        </p>
                       </div>
                     </div>
                     <div class="speech-bubble speech-bubble-2">
                       <div class="speech-content">
                         <sub class="speech-content-numb">02</sub>
-                        <p class="speech-content-txt">
-                          저는<br>아메리카노요.
+                        <p class="speech-content-txt text-ko">
+                          안녕하세요?
                         </p>
-                        <!-- <p class="speech-content-txt">
-                                    What's my number?
-                                  </p> -->
-                      </div>
-                    </div>
-                    <div class="speech-bubble speech-bubble-2 speech-bubble-2-1">
-                      <div class="speech-content">
-                        <sub class="speech-content-numb"></sub>
-                        <p class="speech-content-txt">
-                          민준 씨는요?
+                        <p class="speech-content-txt text-en">
+                          About 15 people.
                         </p>
-                        <!-- <p class="speech-content-txt">
-                                    What's my number?
-                                  </p> -->
                       </div>
                     </div>
                     <div class="speech-bubble speech-bubble-3">
                       <div class="speech-content">
                         <sub class="speech-content-numb">03</sub>
-                        <p class="speech-content-txt">
-                          저는 카페라테요
+                        <p class="speech-content-txt text-ko">
+                          인턴이세요?
                         </p>
-                        <!-- <p class="speech-content-txt">
-                                    Yes
-                                  </p> -->
+                        <p class="speech-content-txt text-en">
+                          How many pounds<br>
+                          of bulgogi?
+                        </p>
                       </div>
                     </div>
                     <div class="speech-bubble speech-bubble-4">
                       <div class="speech-content">
                         <sub class="speech-content-numb">04</sub>
-                        <p class="speech-content-txt">
-                          커피<br>
-                          제가 살게요.
+                        <p class="speech-content-txt text-ko">
+                          네.
                         </p>
-                        <!-- <p class="speech-content-txt">
-                                    My number is 010-1234-5679
-                                  </p> -->
+                        <p class="speech-content-txt text-en">
+                          About 3 pounds.
+                        </p>
                       </div>
                     </div>
                     <div class="speech-bubble speech-bubble-5">
                       <div class="speech-content">
                         <sub class="speech-content-numb">05</sub>
-                        <p class="speech-content-txt">
-                          아녜요! 아녜요.<br>
-                          오늘은 제가 살게요.<br>
-                          에이미 씨는<br>
-                          다음에 사세요.
+                        <p class="speech-content-txt text-ko">
+                          아~ 성함이 어떻게<br>
+                          되세요?
                         </p>
-                        <!-- <p class="speech-content-txt">
-                                    010 to...?<br>
-                                    Again, please. -->
+                        <p class="speech-content-txt text-en">
+                          3 pounds?
                         </p>
                       </div>
                     </div>
                     <div class="speech-bubble speech-bubble-6">
                       <div class="speech-content">
                         <sub class="speech-content-numb">06</sub>
-                        <p class="speech-content-txt">
-                          네~. 그럼<br>
-                          다음에는 제가<br>
-                          살게요~
+                        <p class="speech-content-txt text-ko">
+                          에이미예요.
+                        </p>
+                        <p class="speech-content-txt text-en">
+                          Yes, I don't have<br>
+                          any money.
                         </p>
                       </div>
                     </div>
                     <div class="speech-bubble speech-bubble-7">
                       <div class="speech-content">
                         <sub class="speech-content-numb">07</sub>
-                        <p class="speech-content-txt">
-                          네, 그러세요~<br>
-                          ㅎㅎ<br>
-                          제가 주문할게요.
+                        <p class="speech-content-txt text-ko">
+                          에임 ...?
                         </p>
-                        <!-- <p class="speech-content-txt">
-                                    Okay, got it
-                                  </p> -->
+                        <p class="speech-content-txt text-en">
+                          Oh. In that case,<br>
+                          we'll just buy 12 packs<br>
+                          of instant rice pack.
+                        </p>
                       </div>
                     </div>
                     <div class="speech-bubble speech-bubble-8">
                       <div class="speech-content">
                         <sub class="speech-content-numb">08</sub>
-                        <p class="speech-content-txt">
-                          아메리카노<br>
-                          하나하고 카페라테<br>
-                          하나 주세요.
+                        <p class="speech-content-txt text-ko">
+                          에이미요.
                         </p>
-                        <!-- <p class="speech-content-txt">
-                                    Ms. Amy,<br>
-                                    What's your<br>
-                                    phone number?
-                                  </p> -->
+                        <p class="speech-content-txt text-en">
+                          Ms. Amy,<br>
+                          What's your<br>
+                          phone number?
+                        </p>
                       </div>
                     </div>
-
+                    <div class="speech-bubble speech-bubble-9">
+                      <div class="speech-content">
+                        <sub class="speech-content-numb">09</sub>
+                        <p class="speech-content-txt text-ko">
+                          아~ 에이미! 반갑습니다.<br>
+                          김민준이에요.
+                        </p>
+                        <p class="speech-content-txt text-en">
+                          About 45 dollars.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="speech-bubble speech-bubble-10">
+                      <div class="speech-content">
+                        <sub class="speech-content-numb">10</sub>
+                        <p class="speech-content-txt text-ko">
+                          네. 반갑습니다.
+                        </p>
+                        <p class="speech-content-txt text-en">
+                          Yes, let's go to<br>
+                          the vegetable corner!
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </section>
             </div>
           </div>
 

@@ -1,9 +1,8 @@
 /* =============================================
-   애니타임코리아 네비게이션 CSS
+  네비게이션 CSS
    ============================================= */
-.anytimekorea-style-guide-nav {
+.style-guide-nav {
   height: auto;
-  min-height: 86px;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +22,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.anytimekorea-style-guide-nav a {
+.style-guide-nav a {
   transition: color 0.3s ease;
   text-decoration: none;
   color: #333;
@@ -34,13 +33,13 @@ html {
   border-radius: 5px;
 }
 
-.anytimekorea-style-guide-nav a.active {
+.style-guide-nav a.active {
   color: blueviolet;
   font-weight: bold;
   border-color: blueviolet;
 }
 
-.anytimekorea-style-guide-title {
+.style-guide-title {
   position: relative;
   transition: all 0.3s ease;
   border: 3px solid blueviolet;
@@ -55,15 +54,15 @@ html {
   z-index: 1;
 }
 
-.anytimekorea-style-guide-wrapper {
+.style-guide-wrapper {
   overflow: hidden;
 }
 
-.anytimekorea-style-guide-content {
+.style-guide-content {
   padding-top: 20px;
 }
 
-.anytimekorea-style-guide-title-sub {
+.style-guide-title-sub {
   font-size: 20px;
   font-weight: 600;
   margin-top: 30px;
@@ -72,9 +71,9 @@ html {
 }
 
 @media screen and (max-width: 768px) {
-  .anytimekorea-style-guide-nav {
+  .style-guide-nav {
     height: auto;
-    min-height: 120px;
+    /* min-height: 120px; */
   }
 }
 
@@ -142,12 +141,12 @@ html {
 }
 
 /* 탭 스타일 */
-.anytimekorea-style-guide-section {
+.style-guide-section {
   display: none;
   position: relative;
 }
 
-.anytimekorea-style-guide-section.active {
+.style-guide-section.active {
   display: block;
 }
 

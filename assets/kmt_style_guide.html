@@ -63,6 +63,96 @@
       top: 89%;
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('.style-guide-nav a');
+      const sections = document.querySelectorAll('.style-guide-section');
+      const content = document.querySelector('.style-guide-content');
+      const nav = document.querySelector('.style-guide-nav');
+
+      // 네비게이션 높이에 따라 콘텐츠 마진 조정
+      function updateContentMargin() {
+        const navHeight = nav.offsetHeight;
+        content.style.marginTop = `${navHeight}px`;
+
+        // 스크롤 패딩도 함께 조정
+        document.documentElement.style.scrollPaddingTop = `${navHeight + 20}px`;
+      }
+
+      // 초기 실행
+      updateContentMargin();
+
+      // 리사이즈 이벤트 추가
+      window.addEventListener('resize', updateContentMargin);
+
+      // localStorage에서 마지막 활성화된 탭 ID 가져오기
+      const lastActiveTab = localStorage.getItem('lastActiveTab');
+
+      // 첫 번째 탭을 기본값으로 설정
+      let activeTabIndex = 0;
+
+      // localStorage에 저장된 탭이 있으면 해당 탭을 활성화
+      if (lastActiveTab) {
+        const savedTab = document.querySelector(`.style-guide-nav a[href="#${lastActiveTab}"]`);
+        if (savedTab) {
+          activeTabIndex = Array.from(navLinks).indexOf(savedTab);
+        }
+      }
+
+      // 활성화된 탭과 섹션에 active 클래스 추가
+      navLinks[activeTabIndex].classList.add('active');
+      sections[activeTabIndex].classList.add('active');
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          // 모든 탭과 섹션에서 active 클래스 제거
+          navLinks.forEach(l => l.classList.remove('active'));
+          sections.forEach(s => s.classList.remove('active'));
+
+          // 클릭한 탭과 해당 섹션에 active 클래스 추가
+          this.classList.add('active');
+          const targetId = this.getAttribute('href').substring(1);
+          document.getElementById(targetId).classList.add('active');
+
+          // localStorage에 현재 활성화된 탭 ID 저장
+          localStorage.setItem('lastActiveTab', targetId);
+        });
+      });
+
+      // 코드 복사 기능
+      const codeCopyElements = document.querySelectorAll('.code-copy');
+
+      codeCopyElements.forEach(element => {
+        element.addEventListener('click', function () {
+          // code-copy의 바로 자식 요소의 HTML을 가져옴
+          const childElement = this.firstElementChild;
+          if (!childElement) return;
+
+          // 자식 요소의 HTML을 가져와서 정리
+          const html = childElement.outerHTML
+            .replace(/>\s+</g, '><') // 불필요한 공백 제거
+            .replace(/\s+/g, ' ') // 연속된 공백을 하나로
+            .trim();
+
+          // 클립보드에 복사
+          navigator.clipboard.writeText(html)
+            .then(() => {
+              // 복사 성공 시 UI 피드백
+              this.classList.add('copied');
+              setTimeout(() => {
+                this.classList.remove('copied');
+              }, 2000);
+            })
+            .catch(err => {
+              console.error('코드 복사 실패:', err);
+              alert('코드 복사에 실패했습니다. 다시 시도해주세요.');
+            });
+        });
+      });
+    });
+  </script>
 </head>
 
 
@@ -85,7 +175,7 @@
       <div id="content-sandbox">
         <div class="section-wrapper">
           <!-- ++++ 폰트  -->
-          <div id="FONT">
+          <div id="FONT" class="style-guide-section">
             <h2 class="style-guide-title">▶ 폰트</h2>
             <h3 class="style-guide-title-sub">1. 폰트 사이즈</h3>
             <p class="ft-10">폰트 사이즈 ft-10</p>
@@ -101,7 +191,7 @@
           </div>
 
           <!-- ++++ 색상  -->
-          <div id="COLOR">
+          <div id="COLOR" class="style-guide-section">
             <h2 class="style-guide-title">▶ 색상</h2>
 
             <!-- Primary Colors -->
@@ -250,51 +340,55 @@
           </div>
 
           <!-- ++++ 아이콘  -->
-          <div id="ICON">
+          <div id="ICON" class="style-guide-section">
             <h2 class="style-guide-title">▶ 아이콘</h2>
             <h3 class="style-guide-title-sub">1. 버튼 기본</h3>
           </div>
 
           <!-- ++++ 타이틀  -->
-          <div id="TITLE">
+          <div id="TITLE" class="style-guide-section">
             <h2 class="style-guide-title">▶ 타이틀</h2>
             <h3 class="style-guide-title-sub">1. 대제목</h3>
 
-            <div class="lesson-title-group mgb-60">
-              <div class="lesson-title-item">
-                <p class="lesson-title-item-subtitle" style="--subtitle-color: #71bf44">
-                  Gastroenterology
-                </p>
-                <h4 class="lesson-title-item-title">소화기 내과</h4>
-              </div>
-              <div class="lesson-title-item">
-                <p class="lesson-title-item-goal-title">| 학습 목표 |</p>
-                <div class="lesson-title-item-goal-description">
-                  <span>□</span>
-                  <p>
-                    통역사로서 소화기 내과에서 통용되는 어휘와 표현을 이해하고
-                    통번역할 수 있다.
+            <div class="code-copy">
+              <div class="lesson-title-group mgb-60">
+                <div class="lesson-title-item">
+                  <p class="lesson-title-item-subtitle" style="--subtitle-color: #71bf44">
+                    Gastroenterology
                   </p>
+                  <h4 class="lesson-title-item-title">소화기 내과</h4>
                 </div>
-                <div class="lesson-title-item-goal-description">
-                  <span>□</span>
-                  <p>
-                    통번역사로서 소화기 내과에서 일어나는 상황을 의사와 환자
-                    각각의 입장에서 원활하게 소통할 수 있다.
-                  </p>
+                <div class="lesson-title-item">
+                  <p class="lesson-title-item-goal-title">| 학습 목표 |</p>
+                  <div class="lesson-title-item-goal-description">
+                    <span>□</span>
+                    <p>
+                      통역사로서 소화기 내과에서 통용되는 어휘와 표현을 이해하고
+                      통번역할 수 있다.
+                    </p>
+                  </div>
+                  <div class="lesson-title-item-goal-description">
+                    <span>□</span>
+                    <p>
+                      통번역사로서 소화기 내과에서 일어나는 상황을 의사와 환자
+                      각각의 입장에서 원활하게 소통할 수 있다.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <h3 class="style-guide-title-sub">2. 소제목</h3>
-            <div class="lesson-subtitle-group mgb-60">
-              <i class="icon_box width-50">
-                <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-1-1.png"
-                  alt="어휘와표현아이콘" />
-              </i>
-              <div class="lesson-title-item">
-                <p class="lesson-title-item-subtitle-sm">Key Vocabulary & Expressions</p>
-                <h4 class="lesson-title-item-title-sm">어휘와 표현</h4>
+            <div class="code-copy">
+              <div class="lesson-subtitle-group mgb-60">
+                <i class="icon_box width-50">
+                  <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-1-1.png"
+                    alt="어휘와표현아이콘" />
+                </i>
+                <div class="lesson-title-item">
+                  <p class="lesson-title-item-subtitle-sm">Key Vocabulary & Expressions</p>
+                  <h4 class="lesson-title-item-title-sm">어휘와 표현</h4>
+                </div>
               </div>
             </div>
 
@@ -596,7 +690,7 @@
           </div>
 
           <!-- ++++ 카드  -->
-          <div id="CARD">
+          <div id="CARD" class="style-guide-section">
             <h2 class="style-guide-title">▶ 카드</h2>
             <h3 class="style-guide-title-sub">1. 카드 기본</h3>
 
@@ -799,7 +893,7 @@
           </div>
 
           <!-- ++++ 의료 정보 -->
-          <div id="MEDICAL-INFO">
+          <div id="MEDICAL-INFO" class="style-guide-section">
             <h2 class="style-guide-title">▶ 의료 정보</h2>
             <h3 class="style-guide-title-sub">1. 의료 정보 기본</h3>
 
@@ -859,7 +953,7 @@
           </div>
 
           <!-- ++++ 테이블 -->
-          <div id="TABLE">
+          <div id="TABLE" class="style-guide-section">
             <h2 class="style-guide-title">▶ 테이블</h2>
             <h3 class="style-guide-title-sub">1. 테이블 기본</h3>
             <!-- 테이블 스타일 (스크롤 - 기본) -->
@@ -900,7 +994,7 @@
           </div>
 
           <!-- ++++ 텍스트 -->
-          <div id="TEXT">
+          <div id="TEXT" class="style-guide-section">
             <h2 class="style-guide-title">▶ 텍스트</h2>
             <h3 class="style-guide-title-sub">1. 텍스트 - 대화</h3>
 
@@ -1027,8 +1121,8 @@
                     </div>
                     <div class="text-practice-inner-right">
                       <p class="text-basic">
-                        Doctor, I’ve had no appetite lately, my whole body
-                        feels heavy, and I’m extremely tired. I also came
+                        Doctor, I've had no appetite lately, my whole body
+                        feels heavy, and I'm extremely tired. I also came
                         because it seems like my eyes and skin are turning
                         yellow.
                       </p>
@@ -1117,7 +1211,7 @@
                         되어 있던 상황에서 벗어났으나, 1406년 다시 중국의 지배
                         를 받다가 1428년 레 왕조에 의해 정부 체제와 법률이 정
                         비되고 베트남 전통 문화의 발전을 이루었다. 그 후 1802
-                        년 응웬 왕조가 ‘비엣남’이라는 국호를 사용하며 마지막
+                        년 응웬 왕조가 '비엣남'이라는 국호를 사용하며 마지막
                         왕 조 시대를 열었지만, 1883년에 프랑스의 식민지가
                         되었고 1940년에는 일본의 보호국 지위에 있게 되었다.
                         1945년 제 2차 세계 대전이 끝난 후 호찌민이 주석인
@@ -1176,7 +1270,7 @@
           </div>
 
           <!-- +++++ 이미지 -->
-          <div id="IMAGE">
+          <div id="IMAGE" class="style-guide-section">
             <h2 class="style-guide-title">▶ 이미지</h2>
             <h3 class="style-guide-title-sub">1. 이미지 기본</h3>
 
@@ -1310,7 +1404,7 @@
           </div>
 
           <!-- +++++ QR 코드 -->
-          <div id="QR-CODE">
+          <div id="QR-CODE" class="style-guide-section">
             <h2 class="style-guide-title">▶ QR 코드</h2>
             <h3 class="style-guide-title-sub">1. QR 코드 기본</h3>
 
@@ -1335,92 +1429,6 @@
     </div>
   </div>
 
-  <!-- +++++ Script +++++ -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const sections = document.querySelectorAll("div[id]");
-      const navLinks = document.querySelectorAll(".style-guide-nav a");
-      const titles = document.querySelectorAll(".style-guide-title");
-      const nav = document.querySelector(".style-guide-nav");
-
-      // 헤더 높이를 동적으로 계산하는 함수
-      function getNavHeight() {
-        return nav.offsetHeight;
-      }
-
-      // 스크롤 위치 계산 함수
-      function calculateScrollPosition(targetElement) {
-        const navHeight = getNavHeight();
-        const extraMargin = window.innerWidth <= 768 ? 40 : 20;
-        const targetPosition =
-          targetElement.getBoundingClientRect().top + window.scrollY;
-        return targetPosition - navHeight - extraMargin;
-      }
-
-      // 네비게이션 링크 클릭 이벤트 처리
-      navLinks.forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href");
-          const targetSection = document.querySelector(targetId);
-          const targetTitle =
-            targetSection.querySelector(".style-guide-title");
-
-          if (targetTitle) {
-            const scrollPosition = calculateScrollPosition(targetTitle);
-            window.scrollTo({
-              top: scrollPosition,
-              behavior: "smooth",
-            });
-          }
-        });
-      });
-
-      function updateActiveSection() {
-        const navHeight = getNavHeight();
-        const scrollPosition = window.scrollY + navHeight + 20;
-
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop - navHeight;
-          const sectionHeight = section.offsetHeight;
-
-          if (
-            scrollPosition >= sectionTop &&
-            scrollPosition < sectionTop + sectionHeight
-          ) {
-            navLinks.forEach((link) => {
-              link.classList.remove("active");
-              if (link.getAttribute("href") === "#" + section.id) {
-                link.classList.add("active");
-              }
-            });
-
-            titles.forEach((title) => {
-              title.classList.remove("active");
-              if (title.closest("div[id]") === section) {
-                title.classList.add("active");
-              }
-            });
-          }
-        });
-      }
-
-      // 리사이즈 이벤트 추가
-      window.addEventListener("resize", function () {
-        updateActiveSection();
-      });
-
-      // 스크롤 이벤트에 디바운스 적용
-      let scrollTimeout;
-      window.addEventListener("scroll", function () {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(updateActiveSection, 100);
-      });
-
-      // 초기 실행
-      updateActiveSection();
-    });
-  </script>
 </body>
 
 </html>
