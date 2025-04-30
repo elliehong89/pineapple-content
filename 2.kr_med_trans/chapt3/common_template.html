@@ -2,38 +2,35 @@
 <html lang="ko">
 
 <head>
-  <title>chapter all</title>
+  <title>chapter0 section template</title>
   <meta charset="utf-8" />
   <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
     name="viewport" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../../../assets/css/anytimekorea/anytimekorea_main.css" />
+  <link rel="stylesheet" href="../../assets/css/kor_med_trans/kmt_main.css" />
+  <!-- 여기에 섹션별 스타일을 추가 -->
+  <style>
+    /* 섹션별 스타일을 여기에 추가 */
+  </style>
 </head>
 
 <body style="margin: 0; padding: 0">
   <div id="content-sandbox">
-    <!-- 섹션들이 여기에 동적으로 로드됨 -->
-    <!--#include file="section1.html" -->
+
   </div>
+
 
   <script>
     // 섹션 파일들을 순서대로 로드
     const sections = [
       'section1.html',
-      'section2.html',
-      'section3.html',
-      'section7.html',
-      'section12.html',
-      'section15.html',
-      'section17.html',
-      'section21.html',
-      'section24.html',
-      'section25.html',
-      'section26.html',
-      'section27.html',
-      'section28.html',
-      'section29.html'
+      // 'section2.html',
+      // 'section3.html',
+      // 'section4.html',
+      // 'section5.html',
+      // 'section6.html',
     ];
+
 
     // 섹션 로드 함수
     async function loadSection(sectionFile) {
@@ -62,6 +59,8 @@
     // 모든 섹션을 순서대로 로드
     sections.forEach(section => loadSection(section));
   </script>
+
+
 </body>
 
 </html>

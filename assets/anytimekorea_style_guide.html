@@ -58,96 +58,7 @@
       left: 65%;
     }
   </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const navLinks = document.querySelectorAll('.style-guide-nav a');
-      const sections = document.querySelectorAll('.style-guide-section');
-      const content = document.querySelector('.style-guide-content');
-      const nav = document.querySelector('.style-guide-nav');
-
-      // 네비게이션 높이에 따라 콘텐츠 마진 조정
-      function updateContentMargin() {
-        const navHeight = nav.offsetHeight;
-        content.style.marginTop = `${navHeight}px`;
-
-        // 스크롤 패딩도 함께 조정
-        document.documentElement.style.scrollPaddingTop = `${navHeight + 20}px`;
-      }
-
-      // 초기 실행
-      updateContentMargin();
-
-      // 리사이즈 이벤트 추가
-      window.addEventListener('resize', updateContentMargin);
-
-      // localStorage에서 마지막 활성화된 탭 ID 가져오기
-      const lastActiveTab = localStorage.getItem('lastActiveTab');
-
-      // 첫 번째 탭을 기본값으로 설정
-      let activeTabIndex = 0;
-
-      // localStorage에 저장된 탭이 있으면 해당 탭을 활성화
-      if (lastActiveTab) {
-        const savedTab = document.querySelector(`.style-guide-nav a[href="#${lastActiveTab}"]`);
-        if (savedTab) {
-          activeTabIndex = Array.from(navLinks).indexOf(savedTab);
-        }
-      }
-
-      // 활성화된 탭과 섹션에 active 클래스 추가
-      navLinks[activeTabIndex].classList.add('active');
-      sections[activeTabIndex].classList.add('active');
-
-      navLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-
-          // 모든 탭과 섹션에서 active 클래스 제거
-          navLinks.forEach(l => l.classList.remove('active'));
-          sections.forEach(s => s.classList.remove('active'));
-
-          // 클릭한 탭과 해당 섹션에 active 클래스 추가
-          this.classList.add('active');
-          const targetId = this.getAttribute('href').substring(1);
-          document.getElementById(targetId).classList.add('active');
-
-          // localStorage에 현재 활성화된 탭 ID 저장
-          localStorage.setItem('lastActiveTab', targetId);
-        });
-      });
-
-      // 코드 복사 기능
-      const codeCopyElements = document.querySelectorAll('.code-copy');
-
-      codeCopyElements.forEach(element => {
-        element.addEventListener('click', function () {
-          // code-copy의 바로 자식 요소의 HTML을 가져옴
-          const childElement = this.firstElementChild;
-          if (!childElement) return;
-
-          // 자식 요소의 HTML을 가져와서 정리
-          const html = childElement.outerHTML
-            .replace(/>\s+</g, '><') // 불필요한 공백 제거
-            .replace(/\s+/g, ' ') // 연속된 공백을 하나로
-            .trim();
-
-          // 클립보드에 복사
-          navigator.clipboard.writeText(html)
-            .then(() => {
-              // 복사 성공 시 UI 피드백
-              this.classList.add('copied');
-              setTimeout(() => {
-                this.classList.remove('copied');
-              }, 2000);
-            })
-            .catch(err => {
-              console.error('코드 복사 실패:', err);
-              alert('코드 복사에 실패했습니다. 다시 시도해주세요.');
-            });
-        });
-      });
-    });
-  </script>
+  <script src="js/style_guide.js"></script>
 </head>
 
 <body style="margin: 0; padding: 0">
@@ -204,8 +115,6 @@
             <div class="code-copy">
               <strong class="primary-blue"></strong>
             </div>
-
-
           </div>
 
           <!-- ++++ 색상  -->
@@ -346,11 +255,6 @@
             </div>
 
 
-
-
-
-
-
             <h3 class="style-guide-title-sub">2. 타이틀 대제목</h3>
             <!-- 타이틀 대제목 -->
             <div class="code-copy">
@@ -454,7 +358,8 @@
                 <div class="icon-dots">
                   <i class="fa-solid fa-comment-dots fa-2x"></i>
                 </div>
-                <h4 class="title-section">The following is a list of useful expressions that are commonly used in daily
+                <h4 class="title-section">The following is a list of useful expressions that are commonly used in
+                  daily
                   conversation. Listen to the audio and repeat after each sentence.
                   <div class="button_audio_text">
                     <button type="button" class="audio" alt="음성파일">
@@ -536,9 +441,6 @@
               </div>
             </div>
 
-
-
-
             <h3 class="style-guide-title-sub">8. 타이틀섹션 + 버튼 (대제목)</h3>
             <div class="code-copy">
               <div class="title-icons theme-a">
@@ -573,14 +475,17 @@
             </div>
           </div>
 
+
+
           <!-- ++++ 텍스트  -->
           <div id="TEXT" class="style-guide-section">
             <h2 class="style-guide-title">▶ 텍스트</h2>
-            <h3 class="style-guide-title-sub">1. 텍스트 기본</h3>
 
+            <h3 class="style-guide-title-sub">1. 텍스트 기본</h3>
             <div class="code-copy">
               <p class="text-basic">
-                If [name + <strong class="primary-blue">씨</strong>] form is used to a person who is older than you, you
+                If [name + <strong class="primary-blue">씨</strong>] form is used to a person who is older than you,
+                you
                 may
                 sound rude.
                 Instead, refer to them as [their job title + <strong class="primary-blue">님</strong>].
@@ -609,6 +514,7 @@
           <!-- ++++ 대화 스타일  -->
           <div id="DIALOGUE" class="style-guide-section">
             <h2 class="style-guide-title">▶ 대화 스타일</h2>
+
             <h3 class="style-guide-title-sub">1. 대화 스타일 - (grid)</h3>
             <div class="code-copy">
               <div class="grid-style-normal dp-flex dp-direction-column dp-gap-05 mgb-20">
@@ -624,6 +530,17 @@
                   </div>
                 </div>
 
+                <div class="grid-row">
+                  <div class="grid-numb-type-box">
+                    <div class="grid-cell">=</div>
+                  </div>
+                  <div class="grid-text-box">
+                    <div class="grid-cell">
+                      <strong class="primary-blue">그렇게</strong> 바빠요?
+                    </div>
+                    <div class="grid-cell">(O) appropriate</div>
+                  </div>
+                </div>
                 <div class="grid-row">
                   <div class="grid-numb-type-box">
                     <div class="grid-cell">=</div>
@@ -785,9 +702,7 @@
               </div>
             </div>
 
-
             <h3 class="style-guide-title-sub">3. 대화 스타일 3개- (grid + flex / normal)</h3>
-
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
                 <div class="grid-row grid-row-1fr dp-grid-items-start mgb-10">
@@ -806,7 +721,6 @@
                 </div>
               </div>
             </div>
-
 
             <h3 class="style-guide-title-sub">3. 대화 스타일 (grid + flex)</h3>
             <div class="code-copy">
@@ -981,7 +895,6 @@
               </div>
             </div>
 
-
             <h3 class="style-guide-title-sub">4. 대화 스타일 (grid + flex 타입)</h3>
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
@@ -1056,9 +969,6 @@
               </div>
             </div>
 
-
-
-
             <h3 class="style-guide-title-sub">4-2. 대화 스타일 (grid + flex 넘버)</h3>
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
@@ -1082,7 +992,6 @@
             </div>
 
             <h3 class="style-guide-title-sub">4-3. 대화 스타일 (grid + flex 넘버)</h3>
-
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
                 <div class="grid-row grid-row-22px-1fr dp-grid-items-start mgb-10">
@@ -1166,9 +1075,7 @@
               </div>
             </div>
 
-
             <h3 class="style-guide-title-sub">7. 대화 스타일 4개- (grid + flex)</h3>
-
             <div class="code-copy">
               <div class="qa-list-row mgb-20">
                 <div class="grid-row grid-row-22px-1fr dp-grid-items-start mgb-10">
@@ -1205,9 +1112,6 @@
                 </div>
               </div>
             </div>
-
-
-
 
             <!-- 대화 스타일 (이미지 + 텍스트 ) -->
             <h3 class="style-guide-title-sub">7. 대화 스타일 - (이미지 + 텍스트) 1</h3>
@@ -1346,9 +1250,7 @@
               </div>
             </div>
 
-
             <h3 class="style-guide-title-sub">8. 대화 스타일 - box</h3>
-
             <div class="code-copy">
               <div class="box-color pd-20 mgb-20 theme-a">
                 <div class="qa-list-row mgb-20">
@@ -1437,9 +1339,7 @@
               </div>
             </div>
 
-
             <h3 class="style-guide-title-sub">9. 문법 박스</h3>
-
             <div class="code-copy">
               <div class="grammar-rule-container mgb-20 box-color pd-20 theme-a">
                 <div class="grammar-rule-item mgb-10">
@@ -1530,7 +1430,6 @@
             </div>
 
             <h3 class="style-guide-title-sub">9-2. 문법 박스</h3>
-
             <div class="code-copy">
               <div class="grammar-rule-container mgb-20 box-color pd-20 theme-a">
                 <div class="grammar-rule-item mgb-10 responsive-dp-direction-row-768">
@@ -1677,7 +1576,6 @@
               </div>
             </div>
 
-
             <h3 class="style-guide-title-sub">9-5. 문법 박스</h3>
             <div class="code-copy">
               <div class="grammar-description mgb-20">
@@ -1727,8 +1625,9 @@
                   <p>3. Tense form (먹<strong class="grammar-blue-text">었</strong>어요, …)</p>
                   <p>4. Modal form (먹<strong class="grammar-blue-text">겠</strong>어요, …)</p>
                   <p>5. Sentence ending (먹<strong class="grammar-blue-text">어</strong>요, 먹<strong
-                      class="grammar-blue-text">습니다</strong>, 먹<strong class="grammar-blue-text">습니까</strong>, 먹<strong
-                      class="grammar-blue-text">자</strong>), 먹<strong class="grammar-blue-text">는다</strong>, ...)</p>
+                      class="grammar-blue-text">습니다</strong>, 먹<strong class="grammar-blue-text">습니까</strong>,
+                    먹<strong class="grammar-blue-text">자</strong>), 먹<strong class="grammar-blue-text">는다</strong>,
+                    ...)</p>
                 </div>
 
                 <p class="text-basic">
@@ -1917,7 +1816,6 @@
               </div>
             </div>
 
-
             <h3 class="style-guide-title-sub">10. 문법 카드 스타일</h3>
             <div class="code-copy">
               <div class="responsive-scroll dp-inline-flex mgb-40">
@@ -1975,9 +1873,6 @@
               </div>
             </div>
 
-
-
-
             <h3 class="style-guide-title-sub">11. 대화스타일 (input 라인)</h3>
             <div class="code-copy">
               <ol class="respond-questions-wrap theme-a">
@@ -2013,16 +1908,13 @@
                 </li>
               </ol>
             </div>
-
-
-
           </div>
 
           <!-- ++++ 테이블 -->
           <div id="TABLE" class="style-guide-section">
             <h2 class="style-guide-title">▶ 테이블</h2>
-            <h3 class="style-guide-title-sub">1. 목차 테이블 스타일</h3>
 
+            <h3 class="style-guide-title-sub">1. 목차 테이블 스타일</h3>
             <!-- 목차 테이블 스타일 -->
             <div class="code-copy">
               <div class="toc-container mgb-20 theme-a">
@@ -2197,7 +2089,6 @@
             </div>
 
             <h3 class="style-guide-title-sub">2. 테이블 스타일 2 (미디어쿼리 아래로 나열)</h3>
-
             <!-- 테이블 스타일2 (아래로나열) -->
             <div class="code-copy">
               <div class="mgb-20">
@@ -2711,7 +2602,6 @@
                 </table>
               </div>
             </div>
-
           </div>
 
           <!-- ++++ 노트  -->
@@ -2719,7 +2609,6 @@
             <h2 class="style-guide-title">▶ 노트</h2>
 
             <h3 class="style-guide-title-sub">1. 노트 스타일 1 (Normal)</h3>
-
             <div class="code-copy">
               <div class="note-box mgb-20">
                 <h4 class="title-section">Note1</h4>
@@ -2732,7 +2621,6 @@
 
 
             <h3 class="style-guide-title-sub">2. 노트 스타일 2</h3>
-
             <div class="code-copy">
               <div class="note-box mgb-20">
                 <h4 class="title-section">Note2</h4>
@@ -2771,13 +2659,13 @@
 
 
             <h3 class="style-guide-title-sub">3. 노트 스타일 3</h3>
-
             <div class="code-copy">
               <div class="note-box mgb-20">
                 <h4 class="title-section">Note3</h4>
                 <p class="note-text mgb-20">
                   You may begin with <strong class="primary-black">아니요</strong> or <strong
-                    class="primary-black">아뇨</strong> before "(A은/는) B이/가 아니에요."
+                    class="primary-black">아뇨</strong>
+                  before "(A은/는) B이/가 아니에요."
                 </p>
 
                 <div class="dp-flex dp-direction-row dp-gap-20">
@@ -2813,7 +2701,7 @@
           <div id="IMAGE" class="style-guide-section">
             <h2 class="style-guide-title">▶ 이미지</h2>
 
-            <h3 class="anytimekorea-style-guide-title-sub">1. 이미지 스타일 (기본)</h3>
+            <h3 class="style-guide-title-sub">1. 이미지 스타일 (기본)</h3>
             <div class="code-copy">
               <div class="dp-flex dp-direction-column dp-align-items-center">
                 <figure class="img-box">
@@ -3296,285 +3184,196 @@
           <div id="NEW_WORDS" class="style-guide-section">
             <h2 class="style-guide-title">▶ NEW_WORDS</h2>
             <h3 class="style-guide-title-sub">1. 새로운 단어 스타일</h3>
-
             <div class="code-copy">
-              <div class="dp-flex dp-direction-column">
-                <div class="title-main-wrapper">
-                  <h2 class="title-main">I. New Words &amp; Expressions</h2>
-                </div>
-                <div class="title-icons theme-a mgb-10">
-                  <div class="icon-point">
-                    <i class="fa-regular fa-hand-pointer fa-2x"></i>
-                  </div>
-                  <h4 class="title-section dp-flex">Study the words and expressions with the audio.
-                    <div class="button_audio_text">
-                      <button type="button" class="audio" alt="음성파일">
-                        <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                          <path clip-rule="evenodd"
-                            d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
-                            fill="white" fill-rule="evenodd" />
-                        </svg>
-                      </button>
-                      <span class="text icon-text ft-14">100</span>
-                    </div>
-                  </h4>
-                </div>
-              </div>
-
-
-              <!-- 용어 테이블 스타일 -->
-              <div class="word-list-container">
-                <div class="word-list-wrapper">
-                  <div class="left-list word-list-column">
-                    <div class="word-list-title">
-                      <strong>NOUN</strong>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>돈</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        money
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>리스트</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        list
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>모임</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        gathering
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term ">
-                        <strong>불고기</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        bulgogi (marinated beef)
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>쇼핑</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        shopping
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term ">
-                        <strong>야채</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        vegetable
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term ">
-                        <strong>지금</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        the present moment
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>코너</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        corner; section
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term mgb-20">
-                        <strong>햇반</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        instant rice pack
-                      </p>
-                    </div>
-
-
-                    <div class="word-list-title">
-                      <strong>ADVERB</strong>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>근데</strong>
-                      </p>
-                      <p class="word-list-definition text-basic">
-                        (1) by the way;<br>
-                        (2) but [shortened form of 그런데]
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>여기</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        here
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>오늘</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        today
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>이제</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        now; then
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>진짜(로)</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        really
-                      </p>
-                    </div>
+              <section class="section theme-a">
+                <div class="dp-flex dp-direction-column mgb-10">
+                  <!-- 타이틀 대제목 -->
+                  <div class="title-main-wrapper mgb-10">
+                    <h2 class="title-main">I. New Words &amp; Expressions</h2>
                   </div>
 
-                  <div class="right-list word-list-column">
-                    <div class="word-list-title">
-                      <strong>MARKER</strong>
+                  <div class="title-icons theme-a mgb-10">
+                    <div class="icon-point">
+                      <i class="fa-regular fa-hand-pointer fa-2x"></i>
                     </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>-까지</strong>
-                      </p>
-                      <p class="word-list-definition text-basic">
-                        up to ~; up until ~ (e.g., 지금까지<br>
-                        "up to now; until now")
-                      </p>
-                    </div>
-                    <div class="word-list-item ">
-                      <p class="word-list-term">
-                        <strong>-만</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        only (e.g., 열두 개만 "only twelve")
-                      </p>
-                    </div>
-                    <div class="word-list-item ">
-                      <p class="word-list-term">
-                        <strong>-으로/-로</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        towards ~; to ~ (e.g., 야채 코너로)
-                      </p>
-                    </div>
-                    <div class="word-list-item mgb-20">
-                      <p class="word-list-term">
-                        <strong>-쯤</strong>
-                      </p>
-                      <p class="word-list-definition text-basic">
-                        around ~; about ~<br>
-                        (3파운드쯤 "around three pounds")
-                      </p>
-                    </div>
-
-                    <div class="word-list-title">
-                      <strong>EXPRESSION</strong>
-                    </div>
-                    <div class="word-list-item flex-direction-column">
-                      <p class="word-list-term">
-                        <strong>· 어느 나라 사람이세요?</strong>
-                      </p>
-                      <div class="word-list-definition dp-grid">
-                        <p class="dp-grid dp-grid-cols-22-1fr dp-grid-cols-22-1fr-responsive-768 mgb-05">
-                          <span></span>What
-                          nationality
-                          are (you)?
-                        </p>
-                        <p class="dp-grid dp-grid-cols-22-1fr dp-grid-cols-22-1fr-responsive-768"><span></span>[Lit.,
-                          Which
-                          country person are (you)?]</p>
+                    <h4 class="title-section dp-flex">study the words and expressions in the boxes.
+                      <div class="button_audio_text">
+                        <button type="button" class="audio" alt="음성파일">
+                          <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd"
+                              d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
+                              fill="white" fill-rule="evenodd" />
+                          </svg>
+                        </button>
+                        <span class="text icon-text ft-14">24</span>
                       </div>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>· 45불/달러</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        45 dollars
-                      </p>
-                    </div>
-                    <div class="word-list-item flex-direction-column">
-                      <p class="word-list-term">
-                        <strong>· 처음 뵙겠습니다.</strong>
-                      </p>
-                      <div class="word-list-definition dp-grid">
-                        <p class="dp-grid dp-grid-cols-22-1fr dp-grid-cols-22-1fr-responsive-768 mgb-05"><span></span>
-                          (I am) glad to see (you).
+                    </h4>
+                  </div>
+                </div>
+
+                <!-- 용어 테이블 스타일 -->
+                <div class="word-list-container">
+                  <div class="word-list-wrapper">
+                    <div class="left-list word-list-column">
+                      <div class="word-list-title">
+                        <strong>NOUN</strong>
+                      </div>
+                      <div class="word-list-item">
+                        <p class="word-list-term">
+                          <strong>다이어트</strong>
                         </p>
-                        <p class="dp-grid dp-grid-cols-22-1fr dp-grid-cols-22-1fr-responsive-768"><span></span>
-                          [Lit., I will see you for the first time.]
+                        <p class="word-list-definition">
+                          diet
+                        </p>
+                      </div>
+                      <div class="word-list-item">
+                        <p class="word-list-term">
+                          <strong>드라마</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          drama
+                        </p>
+                      </div>
+                      <div class="word-list-item mgb-20">
+                        <p class="word-list-term">
+                          <strong>라면</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          ramen
+                        </p>
+                      </div>
+
+                      <div class="word-list-title">
+                        <strong>VERB</strong>
+                      </div>
+                      <div class="word-list-item">
+                        <p class="word-list-term">
+                          <strong>먹어요</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          to eat
+                        </p>
+                      </div>
+                      <div class="word-list-item">
+                        <p class="word-list-term">
+                          <strong>봐요</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          to see; to watch
+                        </p>
+                      </div>
+                      <div class="word-list-item mgb-20">
+                        <p class="word-list-term">
+                          <strong>해요</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          to do
+                        </p>
+                      </div>
+
+                      <div class="word-list-title">
+                        <strong>ADJECTIVE</strong>
+                      </div>
+                      <div class="word-list-item">
+                        <p class="word-list-term">
+                          <strong>바빠요</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          to be busy
+                        </p>
+                      </div>
+                      <div class="word-list-item">
+                        <p class="word-list-term">
+                          <strong>좋아요</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          to be good
                         </p>
                       </div>
                     </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>· 그렇게</strong>
-                      </p>
-                      <p class="word-list-definition text-basic">
-                        that much<br>
-                        [shortened form of 그러하게]
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>· 그렇게</strong>
-                      </p>
-                      <p class="word-list-definition text-basic">
-                        that much<br>
-                        [shortened form of 그러하게]
-                      </p>
-                    </div>
 
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>· 몇 명</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        how many people
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>· 몇 파운드</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        how many pounds
-                      </p>
-                    </div>
-                    <div class="word-list-item">
-                      <p class="word-list-term">
-                        <strong>· 얼마예요?</strong>
-                      </p>
-                      <p class="word-list-definition">
-                        How much is it?
-                      </p>
+                    <div class="right-list word-list-column">
+                      <div class="word-list-title">
+                        <strong>ADVERB</strong>
+                      </div>
+                      <div class="word-list-item">
+                        <p class="word-list-term">
+                          <strong>같이</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          together
+                        </p>
+                      </div>
+                      <div class="word-list-item">
+                        <p class="word-list-term">
+                          <strong>안</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          not
+                        </p>
+                      </div>
+                      <div class="word-list-item ">
+                        <p class="word-list-term">
+                          <strong>왜</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          why
+                        </p>
+                      </div>
+                      <div class="word-list-item ">
+                        <p class="word-list-term">
+                          <strong>지금</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          now
+                        </p>
+                      </div>
+                      <div class="word-list-item mgb-20">
+                        <p class="word-list-term">
+                          <strong>혹시</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          by any chance
+                        </p>
+                      </div>
+
+                      <div class="word-list-title">
+                        <strong>PRE-NOUN</strong>
+                      </div>
+                      <div class="word-list-item mgb-20">
+                        <p class="word-list-term">
+                          <strong>무슨</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          what kind of (e.g., <span class="td-underline">무슨</span> 드라마)
+                        </p>
+                      </div>
+
+                      <div class="word-list-title">
+                        <strong>EXPRESSION</strong>
+                      </div>
+                      <div class="word-list-item mgb-20">
+                        <p class="word-list-term">
+                          <strong>· 뭐 해요?</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          What are you doing? [Lit., What do?]
+                        </p>
+                      </div>
+                      <div class="word-list-item mgb-20">
+                        <p class="word-list-term">
+                          <strong>· 음…</strong>
+                        </p>
+                        <p class="word-list-definition">
+                          um … [indicating hesitation or thinking]
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </section>
             </div>
-
           </div>
 
           <!-- ++++ Patterns, Expressions & Practice -->

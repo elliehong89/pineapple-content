@@ -66,8 +66,19 @@ html {
   font-size: 20px;
   font-weight: 600;
   margin-top: 30px;
+  margin-bottom: 20px;
+  color: #333;
+  background-color: #fec66a;
+  padding: 8px 20px;
+}
+
+.style-guide-title-sub-small {
+  font-size: 16px;
+  margin-top: 30px;
   margin-bottom: 10px;
   color: #333;
+  padding: 5px 20px;
+  background-color: #fcd9d3;
 }
 
 @media screen and (max-width: 768px) {
@@ -188,4 +199,13 @@ html {
 .code-copy:hover {
   border: 4px solid rgb(98, 247, 93);
   box-sizing: border-box;
+}
+
+#FONT > p {
+  padding: 10px;
+  transition: opacity 0.3s;
+}
+
+#FONT > p:hover {
+  background-color: rgb(98, 247, 93);
 }
