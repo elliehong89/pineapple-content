@@ -66,11 +66,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const childElement = this.firstElementChild;
       if (!childElement) return;
 
-      // 자식 요소의 HTML을 가져와서 정리
-      const html = childElement.outerHTML
-        .replace(/>\s+</g, "><") // 불필요한 공백 제거
-        .replace(/\s+/g, " ") // 연속된 공백을 하나로
-        .trim();
+      // code-copy 요소에 no-space 클래스가 있는 경우에만 공백 제거
+      let html = childElement.outerHTML;
+      if (this.classList.contains("no-space")) {
+        html = html
+          .replace(/>\s+</g, "><") // 불필요한 공백 제거
+          .replace(/\s+/g, " ") // 연속된 공백을 하나로
+          .trim();
+      }
 
       // 클립보드에 복사
       navigator.clipboard
