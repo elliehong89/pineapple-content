@@ -221,6 +221,10 @@
     border-right: none;
   }
 
+  .image-text-box-item {
+    font-size: 15px;
+  }
+
   /* Image Text */
   .image-text-box-item .text-en {
     font-size: 15px;
@@ -244,6 +248,10 @@
   .text-practice-inner-right {
     flex: none;
     width: 100%;
+  }
+
+  .image-text-box-item {
+    font-size: 14px;
   }
 
   .image-text-box-item .text-en,

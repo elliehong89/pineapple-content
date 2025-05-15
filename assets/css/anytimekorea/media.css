@@ -84,7 +84,15 @@
     grid-template-columns: 1fr;
   }
 
+  .grid-row-22px-1fr-1fr.responsive-grid-row-22px-1fr-1fr-768 {
+    grid-template-columns: 1fr;
+  }
+
   .grid-row.grid-row-22px-1fr.responsive-grid-row-22px-1fr-768 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-row.grid-row-34px-1fr.responsive-grid-row-34px-1fr-768 {
     grid-template-columns: 1fr;
   }
 
@@ -509,6 +517,39 @@
     font-size: 14px;
     padding: 10px;
   }
+
+  .img-blank-figure {
+    width: 100%;
+  }
+
+  .img-blank-content {
+    flex-direction: column;
+  }
+
+  .img-blank-right {
+    width: 100%;
+  }
+
+  .verb-example-wrapper-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .verb-example-wrapper-row:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .verb-example-item > div {
+    flex: unset;
+  }
+
+  .verb-example-item.center-content {
+    justify-content: flex-start;
+  }
+
+  .verb-example-item.no-content {
+    display: none;
+  }
 }
 
 /* 모바일 디바이스 (~ 480px) */
@@ -521,6 +562,14 @@
   th,
   em {
     font-size: 15px;
+  }
+
+  .img-w-auto-480 {
+    width: auto;
+  }
+
+  .mg-0-auto-480 {
+    margin: 0 auto;
   }
 
   .responsive-br-480 {

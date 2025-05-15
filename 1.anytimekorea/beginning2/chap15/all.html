@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>chapter15 all</title>
+  <meta charset="utf-8" />
+  <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    name="viewport" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../assets/css/anytimekorea/anytimekorea_main.css" />
+</head>
+
+<body style="margin: 0; padding: 0">
+  <div id="content-sandbox">
+    <!-- 섹션들이 여기에 동적으로 로드됨 -->
+  </div>
+
+  <script>
+    // 섹션 파일들을 순서대로 로드
+    const sections = [
+      'section1.html',
+      'section2.html',
+      'section3.html',
+      'section6.html',
+      'section9.html',
+      'section10.html',
+      'section14.html',
+      'section15.html',
+      'section16.html',
+      'section19.html',
+      'section21.html',
+      'section23.html',
+      'section25.html',
+      'section26.html',
+      'section27.html',
+      'section28.html',
+      'section29.html',
+      'section30.html',
+    ];
+
+    // 섹션 로드 함수
+    async function loadSection(sectionFile) {
+      try {
+        const response = await fetch(sectionFile);
+        const html = await response.text();
+
+        // HTML에서 style 태그를 찾아서 head에 추가
+        const styleMatch = html.match(/<style>([\s\S]*?)<\/style>/);
+        if (styleMatch) {
+          const style = document.createElement('style');
+          style.textContent = styleMatch[1];
+          document.head.appendChild(style);
+        }
+
+        // section 태그의 내용만 추출
+        const sectionMatch = html.match(/<section[^>]*>([\s\S]*?)<\/section>/);
+        if (sectionMatch) {
+          document.getElementById('content-sandbox').innerHTML += sectionMatch[0];
+        }
+      } catch (error) {
+        console.error(`Error loading ${sectionFile}:`, error);
+      }
+    }
+
+    // 모든 섹션을 순서대로 로드
+    sections.forEach(section => loadSection(section));
+  </script>
+</body>
+
+</html>

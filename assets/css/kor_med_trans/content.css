@@ -74,6 +74,14 @@ section {
   margin: 100px 0;
 }
 
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--color-text--primary);
+}
+
 /* Layout */
 #content-sandbox {
   margin: 0 auto;
@@ -1538,11 +1546,100 @@ textarea {
   flex-direction: row-reverse;
 }
 
-.image-text-box > div {
+/* add a tag */
+.image-text-box-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  font-family: sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #ccc;
+  position: relative;
+}
+
+.image-text-box-item .text-en,
+.image-text-box-item .text-ko {
+  display: none;
+}
+
+.image-text-box-item:before {
+  content: attr(data-text-ko);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #ff005e;
+  color: #fff;
+  transition: 0.5s;
+  transform-origin: bottom;
+  transform: translatey(-100%) rotatex(90deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.image-text-box-item:hover:before,
+.image-text-box-item:active:before,
+.image-text-box-item:focus:before {
+  transform: translatey(0) rotatex(0deg);
+}
+
+.image-text-box-item:after {
+  content: attr(data-text-en);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background: #ea004f;
+  color: #fff;
+  transition: 0.5s;
+  transform-origin: top;
+  transform: translatey(0) rotatex(0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-text-box-item:hover:after,
+.image-text-box-item:active:after,
+.image-text-box-item:focus:after {
+  transform: translatey(100%) rotatex(90deg);
+}
+
+/* 모바일 환경에서 포커스 상태 유지 */
+.image-text-box-item:focus {
+  outline: none;
+}
+
+/* 모바일 환경에서 터치 영역 확장 */
+@media (max-width: 768px) {
+  .image-text-box-item {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* 태블릿 환경 (768px 이하) */
+@media screen and (max-width: 768px) {
+  .image-text-box-item:before,
+  .image-text-box-item:after {
+    font-size: 15px;
+  }
+}
+
+/* 모바일 환경 (480px 이하) */
+@media screen and (max-width: 480px) {
+  .image-text-box-item:before,
+  .image-text-box-item:after {
+    font-size: 14px;
+  }
 }
 
 .image-box-caption-item-group {

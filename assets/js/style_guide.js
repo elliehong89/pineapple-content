@@ -59,7 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 코드 복사 기능
   const codeCopyElements = document.querySelectorAll(".code-copy");
+  const textCopyElements = document.querySelectorAll(".text-copy");
 
+  // code-copy 복사 기능
   codeCopyElements.forEach((element) => {
     element.addEventListener("click", function () {
       // code-copy의 바로 자식 요소의 HTML을 가져옴
@@ -78,6 +80,34 @@ document.addEventListener("DOMContentLoaded", function () {
       // 클립보드에 복사
       navigator.clipboard
         .writeText(html)
+        .then(() => {
+          // 복사 성공 시 UI 피드백
+          this.classList.add("copied");
+          setTimeout(() => {
+            this.classList.remove("copied");
+          }, 2000);
+        })
+        .catch((err) => {
+          console.error("복사 실패:", err);
+        });
+    });
+  });
+
+  // text-copy 복사 기능
+  textCopyElements.forEach((element) => {
+    element.addEventListener("click", function () {
+      // text-copy 요소의 내용을 가져옴
+      let content = this.innerHTML;
+
+      // 불필요한 공백과 줄바꿈 제거
+      content = content
+        .replace(/>\s+</g, "><") // 태그 사이의 공백 제거
+        .replace(/\s+/g, " ") // 연속된 공백을 하나로
+        .trim(); // 앞뒤 공백 제거
+
+      // 클립보드에 복사
+      navigator.clipboard
+        .writeText(content)
         .then(() => {
           // 복사 성공 시 UI 피드백
           this.classList.add("copied");
