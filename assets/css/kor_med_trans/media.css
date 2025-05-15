@@ -151,7 +151,6 @@
   .qa-text-box-textarea {
     font-size: 15px;
     padding: 5px 10px;
-    line-height: 40px;
   }
 
   .qa-text-box-textarea::placeholder {

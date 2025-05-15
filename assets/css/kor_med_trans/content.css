@@ -634,6 +634,14 @@ button {
   font-family: "NotoSansKR-RegularCJK";
 }
 
+.dp-grid.dp-grid-row-62px-1fr {
+  grid-template-columns: 62px 1fr;
+}
+
+.dp-grid.dp-grid-row-62px-1fr-62px {
+  grid-template-columns: 62px 1fr 62px;
+}
+
 /* Theme Classes */
 .theme-a {
   --theme-primary: var(--color-primary--blue);
@@ -955,13 +963,14 @@ button {
 .btn-jelly {
   padding: 6px 10px;
   color: #fff;
-  /* background: #4ec0e9; */
   background: #ffe9e9;
   border: 1px solid #ffa5a5;
   border-radius: 10px;
   white-space: nowrap;
   cursor: pointer;
   margin-left: 20px;
+  height: 50px;
+  width: 152px;
 }
 
 .btn-jelly:hover,
@@ -1055,6 +1064,10 @@ button {
 
 .qa-text-box {
   color: var(--color-text--primary);
+  height: auto;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
 }
 
 .qa-text-box-normal {
@@ -1067,7 +1080,8 @@ button {
 }
 
 .qa-text-box.h-45px {
-  height: 45px;
+  min-height: 45px;
+  height: auto;
 }
 
 .qa-text-box.w-100 {
@@ -1088,13 +1102,11 @@ textarea {
 .qa-text-box-textarea {
   display: block;
   width: 100%;
-  height: 100%;
   border: none;
   outline: none;
   resize: none;
   overflow: hidden;
-  min-height: 120px;
-  max-height: 120px;
+  min-height: 45px;
   line-height: 30px;
   padding: 10px 20px;
   border-radius: 18px;
@@ -1104,28 +1116,34 @@ textarea {
   transition: all 0.3s ease;
 }
 
-.qa-text-box-textarea:focus {
-  background-color: #f9f9f9;
-}
-
-.qa-text-box-textarea:hover {
-  background-color: #f9f9f9;
-}
-
 .qa-text-box-textarea.h-none {
-  min-height: 100%;
-  max-height: 100%;
+  min-height: 45px;
+  height: auto;
 }
 
 .qa-text-box-textarea.h-160 {
   min-height: 160px;
-  max-height: 160px;
+  height: auto;
 }
 
-.qa-text-box-textarea::placeholder {
-  font-size: 16px;
-  color: var(--color-text--tertiary);
-  vertical-align: middle;
+/* textarea 자동 높이 조절을 위한 JavaScript 이벤트 핸들러 추가 */
+.qa-text-box-textarea {
+  overflow: hidden;
+  resize: none;
+  min-height: 45px;
+}
+
+.qa-text-box-textarea:focus {
+  outline: none;
+}
+
+/* 말풍선 내부 텍스트 스타일 */
+.qa-text-box p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .step-title-box {
