@@ -4480,6 +4480,24 @@ input.tb-editable-textarea::placeholder {
   background-color: var(--theme-box);
 }
 
+.draw-box.align-items-start {
+  align-items: flex-start;
+}
+
+.draw-box.align-items-center {
+  align-items: center;
+}
+
+.draw-box.align-items-center {
+  align-items: center;
+}
+
+.draw-box.align-items-center {
+  align-items: center;
+}
+.draw-box.align-items-end {
+  align-items: flex-end;
+}
 .draw-box .left-content {
   width: 50%;
   word-break: keep-all;
@@ -4518,6 +4536,14 @@ input.tb-editable-textarea::placeholder {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+.draw-box .text-content.flex-direction-row {
+  flex-direction: row;
+}
+
+.draw-box .text-content.justify-content-center {
+  justify-content: center;
 }
 
 .draw-box .line {

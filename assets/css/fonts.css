@@ -3,11 +3,3 @@
 
 /* KoPubWorld 폰트 임포트 */
 @import "../font/KoPubWorld/kpubworld-fonts.css";
-
-/* 폰트 최적화를 위한 기본 설정 */
-body {
-  font-family: "Noto Sans KR", "KoPubWorldDotum";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}

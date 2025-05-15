@@ -154,6 +154,10 @@
     line-height: 40px;
   }
 
+  .qa-text-box-textarea::placeholder {
+    font-size: 14px;
+  }
+
   /* Translation Card */
   .lesson-translation-card-component-inner-text-box {
     padding: 16px;

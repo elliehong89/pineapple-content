@@ -10,6 +10,7 @@
   --color-primary--blue-dark: #2786b9;
   --color-primary--green: #71bf44;
   --color-primary--green-light: #e3f2e7;
+  --color-primary-olive-light: #bfc478;
   --color-primary--green-pale: #d3e5a1;
   --color-primary--green-teal: #24bb9d;
   --color-primary--green-mint: #cae7dd;
@@ -22,8 +23,8 @@
   --color-primary--orange: #f8ac8b;
   --color-primary--orange-light: #fde2d6;
   --color-primary--orange-dark: #f79c78;
-  --color-primary--yellow: #fed783;
-  --color-primary--yellow-pale: #fff79a;
+  --color-primary--yellow: #ffedc7;
+  --color-primary--yellow-pale: #fffcd6;
   --color-primary--brown: #bd9e7e;
   --color-primary--brown-pale: #f3ede5;
   --color-primary--gray-light: #f9f9f9;
@@ -34,6 +35,7 @@
   --color-text--primary: #333;
   --color-text--secondary: #666;
   --color-text--tertiary: #999;
+  --color-text--title-blue: #76c2c7;
 
   /* Background Colors */
   --color-background--light: #f9f9f9;
@@ -45,6 +47,12 @@
   --theme-primary-dark: var(--color-primary--blue-dark);
   --theme-text-primary: var(--color-text--primary);
   --theme-background: var(--color-background--light);
+
+  /* 폰트 패밀리 변수 정의 */
+  --font-family-dotum: "KoPubWorldDotum", "Apple SD Gothic Neo", "Malgun Gothic",
+    "맑은 고딕", sans-serif;
+  --font-family-batang: "KoPubWorldBatang", "Apple SD Gothic Neo",
+    "Malgun Gothic", "맑은 고딕", serif;
 }
 
 /* Base Styles */
@@ -52,7 +60,7 @@
   box-sizing: border-box;
   word-break: keep-all;
   color: var(--color-text--primary);
-  font-family: "KoPubWorldDotum", sans-serif;
+  font-family: var(--font-family-dotum);
   margin: 0;
   padding: 0;
 }
@@ -80,6 +88,14 @@ a:link {
 
 a:visited {
   color: var(--color-text--primary);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 /* Layout */
@@ -667,12 +683,12 @@ a:visited {
 }
 
 /* ===== Layout Components ===== */
-
 /* Title Groups */
 .lesson-title-group {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  justify-content: space-between;
+  gap: 40px;
   background-color: var(--color-primary--yellow-pale);
   padding: 40px 40px 20px;
   position: relative;
@@ -684,7 +700,7 @@ a:visited {
   position: absolute;
   top: 0;
   right: 0;
-  border-width: 0 16px 16px 0;
+  border-width: 0 30px 30px 0;
   border-style: solid;
   border-color: var(--color-primary--white) var(--color-primary--white)
     var(--color-primary--yellow) var(--color-primary--yellow);
@@ -715,22 +731,28 @@ a:visited {
   align-items: center;
   flex-direction: row;
   gap: 10px;
-  background-color: var(--color-primary--yellow);
-  padding: 10px 20px;
-  border-radius: 40px;
-  box-shadow: 4px 4px 8px 2px rgba(0, 0, 0, 0.2);
+  border: 5px solid var(--color-text--title-blue);
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
   margin: 0 10px 30px;
-}
-
-.lesson-card-title-group .icon-color {
-  color: #fff;
-  margin-top: 2px;
+  padding: 5px 20px 0;
+  font-weight: 600;
 }
 
 .lesson-card-title {
-  color: var(--card-text-color, var(--color-primary--white));
+  color: var(--card-text-color, var(--color-primary--black));
   padding: 0;
   font-size: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-family-dotum);
+  font-weight: 600;
+}
+
+.lesson-card-title > strong {
+  color: var(--card-text-color, var(--color-text--title-blue));
+  font-size: 14px;
 }
 
 /* Middle Title Group */
@@ -775,8 +797,8 @@ a:visited {
 .lesson-title-item {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  gap: 4px;
+  /* flex: 1; */
+  gap: 2px;
 }
 
 .lesson-title-item.pd-0-60 {
@@ -784,15 +806,21 @@ a:visited {
 }
 
 .lesson-title-item-title {
-  padding: 0;
+  white-space: nowrap;
   font-size: 36px;
-  color: var(--color-text--primary);
+  color: var(--color-text--title-blue);
+  font-family: var(--font-family-dotum);
+  font-weight: bold;
 }
 
 .lesson-title-item-subtitle {
-  color: var(--color-primary--blue-dark);
+  color: var(--subtitle-color, var(--color-primary-olive-light));
   font-weight: bold;
   font-size: 18px;
+}
+
+.lesson-title-item-subtitle.lh-normal {
+  line-height: 1;
 }
 
 .lesson-title-item-title-sm {
@@ -849,6 +877,7 @@ a:visited {
   font-size: 14px;
   color: var(--color-text--primary);
   line-height: 1.6;
+  /* white-space: nowrap; */
 }
 
 /* ===== Icon Components ===== */
@@ -897,6 +926,7 @@ a:visited {
   flex-direction: row;
   position: relative;
 }
+
 .lesson-card-component-inner {
   width: 100%;
   background-color: var(--box-bg-color, var(--color-primary--green-light));
@@ -909,6 +939,60 @@ a:visited {
   z-index: 2;
   box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px,
     rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+  position: relative;
+}
+
+.lesson-card-ai-button {
+  /* position: absolute;
+  top: 0;
+  right: 0; */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.btn-jelly {
+  padding: 6px 10px;
+  color: #fff;
+  /* background: #4ec0e9; */
+  background: #ffe9e9;
+  border: 1px solid #ffa5a5;
+  border-radius: 10px;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.btn-jelly:hover,
+.btn-jelly:focus,
+.btn-jelly:active {
+  animation: jelly 0.5s;
+}
+
+@keyframes jelly {
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+.ai-button-icon {
+  color: #333;
+}
+
+.ai-button-text {
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
 }
 
 .qa-list-row {
@@ -930,7 +1014,7 @@ a:visited {
   font-weight: bold;
   background-color: var(--color-primary--blue-pale);
   border-radius: 100%;
-  padding: 10px;
+  padding: 14px 10px 10px 10px;
   color: #fff;
   width: 40px;
   height: 40px;

@@ -990,9 +990,9 @@
 /* 만화 말풍선 기본 설정 */
 @media screen and (max-width: 375px) {
   :root {
-    --font-size-base-small: 14px;
+    --font-size-base-small: 13px;
     --font-size-base-medium: 3vw;
-    --font-size-base-large: 16px;
+    --font-size-base-large: 15px;
 
     --font-size-small-small: 10px;
     --font-size-small-medium: 1.8vw;
@@ -1003,9 +1003,9 @@
 /* 태블릿 (375px ~ 456px) */
 @media (min-width: 375px) and (max-width: 456px) {
   :root {
-    --font-size-base-small: 18px;
+    --font-size-base-small: 14px;
     --font-size-base-medium: 3vw;
-    --font-size-base-large: 22px;
+    --font-size-base-large: 16px;
 
     --font-size-small-small: 10px;
     --font-size-small-medium: 1.8vw;
@@ -1016,9 +1016,9 @@
 /* 태블릿(456px ~ 480px) */
 @media (min-width: 456px) and (max-width: 480px) {
   :root {
-    --font-size-base-small: 22px;
+    --font-size-base-small: 16px;
     --font-size-base-medium: 2.8vw;
-    --font-size-base-large: 26px;
+    --font-size-base-large: 20px;
 
     --font-size-small-small: 12px;
     --font-size-small-medium: 1.8vw;
@@ -1027,11 +1027,23 @@
 }
 
 /* 태블릿 (480px ~ 768px) */
-@media (min-width: 480px) and (max-width: 768px) {
+@media (min-width: 480px) and (max-width: 650px) {
   :root {
-    --font-size-base-small: 26px;
+    --font-size-base-small: 17px;
     --font-size-base-medium: 1.8vw;
-    --font-size-base-large: 28px;
+    --font-size-base-large: 22px;
+
+    --font-size-small-small: 14px;
+    --font-size-small-medium: 1.8vw;
+    --font-size-small-large: 16px;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 768px) {
+  :root {
+    --font-size-base-small: 20px;
+    --font-size-base-medium: 1.8vw;
+    --font-size-base-large: 24px;
 
     --font-size-small-small: 14px;
     --font-size-small-medium: 1.8vw;
@@ -1042,9 +1054,9 @@
 /* 태블릿 (768px ~ 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   :root {
-    --font-size-base-small: 28px;
+    --font-size-base-small: 26px;
     --font-size-base-medium: 2vw;
-    --font-size-base-large: 30px;
+    --font-size-base-large: 28px;
 
     --font-size-small-small: 16px;
     --font-size-small-medium: 1.2vw;
