@@ -634,6 +634,9 @@ button {
   font-family: "NotoSansKR-RegularCJK";
 }
 
+.dp-grid-row-1fr-62px {
+  grid-template-columns: 1fr 62px;
+}
 .dp-grid.dp-grid-row-62px-1fr {
   grid-template-columns: 62px 1fr;
 }
@@ -968,7 +971,6 @@ button {
   border-radius: 10px;
   white-space: nowrap;
   cursor: pointer;
-  margin-left: 20px;
   height: 50px;
   width: 152px;
 }
@@ -1007,7 +1009,7 @@ button {
 .qa-list-row {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 20px;
   align-items: flex-start;
 }
 
@@ -1034,6 +1036,10 @@ button {
   position: relative;
   display: flex;
   flex-direction: row;
+}
+
+.qa-text-box-wrapper.dp-flex-justify-end {
+  justify-content: flex-end;
 }
 
 .qa-text-box-wrapper.w-100 {
