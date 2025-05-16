@@ -78,3 +78,11 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* 폰트 패밀리 변수 정의 */
+:root {
+  --font-family-dotum: "KoPubWorldDotum", "Apple SD Gothic Neo", "Malgun Gothic",
+    "맑은 고딕", sans-serif;
+  --font-family-batang: "KoPubWorldBatang", "Apple SD Gothic Neo",
+    "Malgun Gothic", "맑은 고딕", serif;
+}

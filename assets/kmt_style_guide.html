@@ -73,6 +73,7 @@
     <nav class="style-guide-nav">
       <a href="#FONT">FONT</a>
       <a href="#COLOR">COLOR</a>
+      <a href="#BUTTON">BUTTON</a>
       <a href="#TITLE">TITLE</a>
       <a href="#CARD">CARD</a>
       <a href="#MEDICAL-INFO">MEDICAL-INFO</a>
@@ -249,13 +250,27 @@
             </div>
           </div>
 
+          <!-- ++++ 버튼 -->
+          <div id="BUTTON" class="style-guide-section">
+            <h2 class="style-guide-title">▶ 버튼</h2>
+            <h3 class="style-guide-title-sub">1. 버튼 - AI에게 질문하기</h3>
+
+            <div class="code-copy">
+              <button type="button" id="" class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+                style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+                <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
+                <span class="ai-button-text">AI에게 질문하기</span>
+              </button>
+            </div>
+          </div>
+
           <!-- ++++ 타이틀  -->
           <div id="TITLE" class="style-guide-section">
             <h2 class="style-guide-title">▶ 타이틀</h2>
             <h3 class="style-guide-title-sub">1. 대제목</h3>
 
             <div class="code-copy">
-              <div class="lesson-title-group mgb-60">
+              <div class="lesson-title-group mgb-40">
                 <div class="lesson-title-item">
                   <p class="lesson-title-item-subtitle lh-normal"
                     style="--subtitle-color: var(--color-primary-olive-light)">
@@ -283,7 +298,7 @@
 
             <h3 class="style-guide-title-sub">2. 소제목</h3>
             <div class="code-copy">
-              <div class="lesson-subtitle-group mgb-60">
+              <div class="lesson-subtitle-group mgb-40">
                 <i class="icon_box width-50">
                   <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-1-1.png"
                     alt="어휘와표현아이콘" />
@@ -317,6 +332,27 @@
                 <div class="lesson-title-item dp-flex-justify-center">
                   <h4 class="lesson-title-item-title-sm ft-20" style="--text-color: #bd9e7e">베트남의 문화</h4>
                 </div>
+              </div>
+            </div>
+
+
+            <div class="code-copy">
+              <div class="title-ai-box">
+                <div class="lesson-section-title-group">
+                  <i class="icon_box width-30">
+                    <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-6-1.png"
+                      alt="문화아이콘" />
+                  </i>
+                  <div class="lesson-title-item dp-flex-justify-center">
+                    <h4 class="lesson-title-item-title-sm ft-20" style="--text-color: #bd9e7e">aibtn</h4>
+                  </div>
+                </div>
+                <button type="button" id=""
+                  class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+                  style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+                  <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
+                  <span class="ai-button-text">AI에게 질문하기</span>
+                </button>
               </div>
             </div>
 
@@ -383,31 +419,46 @@
                   </div>
                 </div>
                 <div class="lesson-middle-title-group-description" style="--box-bg-color: #cae7dd">
-                  <div class="bubble-icon"></div>
-                  <div class="lesson-middle-inner flex-1 dp-flex dp-flex-row dp-flex-align-center gap-20">
-                    <i class="icon_box width-40">
-                      <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-2-2.png"
-                        alt="GRIEF-ICON" />
-                    </i>
-                    <div class="lesson-title-item dp-flex-justify-center mgt-10">
-                      <div class="lesson-title-item-goal-description">
-                        <span style="color: var(--color-primary--green-teal)">□</span>
-                        <p>
-                          환자가 기능성 소화 불량 관련 증상으로 의사를
-                          찾아왔습니다.
-                        </p>
+                  <div class="lesson-middle-title-group-description-inner">
+                    <div class="objective-text">
+                      <i class="icon_box width-40 flex-shrink-0">
+                        <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-2-2.png"
+                          alt="GRIEF-ICON" />
+                      </i>
+                      <div class="lesson-title-item dp-flex-justify-center mgt-10">
+                        <div class="lesson-title-item-goal-description">
+                          <span style="color: var(--color-primary--green-teal)">□</span>
+                          <p>
+                            환자가 기능성 소화 불량 관련 증상으로 의사를
+                            찾아왔습니다.
+                          </p>
+                        </div>
+                        <div class="lesson-title-item-goal-description">
+                          <span style="color: var(--color-primary--green-teal)">□</span>
+                          <p>
+                            환자와 의사의 대화를 양방향으로 원활하게 통역합니다.
+                          </p>
+                        </div>
                       </div>
-                      <div class="lesson-title-item-goal-description">
-                        <span style="color: var(--color-primary--green-teal)">□</span>
-                        <p>
-                          환자와 의사의 대화를 양방향으로 원활하게 통역합니다.
-                        </p>
+                    </div>
+                    <div class="qr-code-area">
+                      <div class="qr-code-area-inner">
+                        <div class="qr-code-code">
+                          <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/QR-3-1.png"
+                            alt="QR-3-1">
+                        </div>
+                        <div class="qr-code-number">
+                          <img
+                            src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/qr-headset.png">
+                          <span class="qr-code-text">3-1</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
 
             <!-- 중제목 스타일2 실전 -->
             <div class="code-copy">
@@ -423,7 +474,7 @@
                       <p class="lesson-title-item-subtitle-sm" style="--subtitle-color: #F79C78">
                         Conversaion Interpretation
                       </p>
-                      <h4 class="lesson-title-item-title-sm">
+                      <h4 class="lesson-title-item-title-sm" style="--title-color: #24bb9d">
                         대화 통역 연습
                       </h4>
                     </div>
@@ -440,24 +491,38 @@
                   </div>
                 </div>
                 <div class="lesson-middle-title-group-description" style="--box-bg-color: #fde2d6">
-                  <div class="bubble-icon"></div>
-                  <div class="lesson-middle-inner flex-1 dp-flex dp-flex-row dp-flex-align-center gap-20">
-                    <i class="icon_box width-40">
-                      <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-2-2.png"
-                        alt="GRIEF-ICON" />
-                    </i>
-                    <div class="lesson-title-item dp-flex-justify-center mgt-10">
-                      <div class="lesson-title-item-goal-description">
-                        <span style="color: var(--color-primary--orange-dark)">□</span>
-                        <p>
-                          환자가 A형 간염 의심 증상으로 의사를 찾아왔습니다.
-                        </p>
+                  <div class="lesson-middle-title-group-description-inner">
+                    <div class="objective-text">
+                      <i class="icon_box width-40 flex-shrink-0">
+                        <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-2-2.png"
+                          alt="GRIEF-ICON" />
+                      </i>
+                      <div class="lesson-title-item dp-flex-justify-center mgt-10">
+                        <div class="lesson-title-item-goal-description">
+                          <span style="color: var(--color-primary--orange-dark)">□</span>
+                          <p>
+                            환자가 A형 간염 의심 증상으로 의사를 찾아왔습니다.
+                          </p>
+                        </div>
+                        <div class="lesson-title-item-goal-description">
+                          <span style="color: var(--color-primary--orange-dark)">□</span>
+                          <p>
+                            통번역사는 대화 상황에 적절한 표현으로 통역을 완성합니다.
+                          </p>
+                        </div>
                       </div>
-                      <div class="lesson-title-item-goal-description">
-                        <span style="color: var(--color-primary--orange-dark)">□</span>
-                        <p>
-                          대화 상황에 적절한 표현으로 통역을 완성합니다.
-                        </p>
+                    </div>
+                    <div class="qr-code-area">
+                      <div class="qr-code-area-inner">
+                        <div class="qr-code-code">
+                          <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/QR-3-1.png"
+                            alt="QR-3-1">
+                        </div>
+                        <div class="qr-code-number">
+                          <img
+                            src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/qr-headset.png">
+                          <span class="qr-code-text">3-1</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -497,24 +562,25 @@
                 </div>
                 <div class="lesson-middle-title-group-description"
                   style="--box-bg-color: var(--color-primary--purple-pale)">
-                  <div class="bubble-icon"></div>
-                  <div class="lesson-middle-inner flex-1 dp-flex dp-flex-row dp-flex-align-center gap-20">
-                    <i class="icon_box width-40">
-                      <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-2-2.png"
-                        alt="GRIEF-ICON" />
-                    </i>
-                    <div class="lesson-title-item dp-flex-justify-center mgt-10">
-                      <div class="lesson-title-item-goal-description">
-                        <span style="color: var(--color-primary--purple)">□</span>
-                        <p>
-                          의사가 환자에게 역류 식도염에 대해 구체적으로 설명합니다.
-                        </p>
-                      </div>
-                      <div class="lesson-title-item-goal-description">
-                        <span style="color: var(--color-primary--purple)">□</span>
-                        <p>
-                          환자가 의학적·전문적 개념을 잘 이해할 수 있게 번역합니다.
-                        </p>
+                  <div class="lesson-middle-title-group-description-inner">
+                    <div class="objective-text">
+                      <i class="icon_box width-40 flex-shrink-0">
+                        <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-2-2.png"
+                          alt="GRIEF-ICON" />
+                      </i>
+                      <div class="lesson-title-item dp-flex-justify-center mgt-10">
+                        <div class="lesson-title-item-goal-description">
+                          <span style="color: var(--color-primary--purple)">□</span>
+                          <p>
+                            의사가 환자에게 역류 식도염에 대해 구체적으로 설명합니다.
+                          </p>
+                        </div>
+                        <div class="lesson-title-item-goal-description">
+                          <span style="color: var(--color-primary--purple)">□</span>
+                          <p>
+                            환자가 의학적·전문적 개념을 잘 이해할 수 있게 번역합니다.
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -553,24 +619,25 @@
                 </div>
                 <div class="lesson-middle-title-group-description"
                   style="--box-bg-color: var(--color-primary--pink-pale)">
-                  <div class="bubble-icon"></div>
-                  <div class="lesson-middle-inner flex-1 dp-flex dp-flex-row dp-flex-align-center gap-20">
-                    <i class="icon_box width-40">
-                      <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-2-2.png"
-                        alt="GRIEF-ICON" />
-                    </i>
-                    <div class="lesson-title-item dp-flex-justify-center mgt-10">
-                      <div class="lesson-title-item-goal-description">
-                        <span style="color: var(--color-primary--pink)">□</span>
-                        <p>
-                          의사가 환자에게 역류 식도염에 대해 구체적으로 설명합니다.
-                        </p>
-                      </div>
-                      <div class="lesson-title-item-goal-description">
-                        <span style="color: var(--color-primary--pink)">□</span>
-                        <p>
-                          환자가 의학적·전문적 개념을 잘 이해할 수 있게 번역합니다.
-                        </p>
+                  <div class="lesson-middle-title-group-description-inner">
+                    <div class="objective-text">
+                      <i class="icon_box width-40 flex-shrink-0">
+                        <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-2-2.png"
+                          alt="GRIEF-ICON" />
+                      </i>
+                      <div class="lesson-title-item dp-flex-justify-center mgt-10">
+                        <div class="lesson-title-item-goal-description">
+                          <span style="color: var(--color-primary--pink)">□</span>
+                          <p>
+                            의사가 환자에게 역류 식도염에 대해 구체적으로 설명합니다.
+                          </p>
+                        </div>
+                        <div class="lesson-title-item-goal-description">
+                          <span style="color: var(--color-primary--pink)">□</span>
+                          <p>
+                            환자가 의학적·전문적 개념을 잘 이해할 수 있게 번역합니다.
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -643,7 +710,8 @@
                             </div>
                           </div>
                           <button type="button" id=""
-                            class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly">
+                            class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+                            style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
                             <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
                             <span class="ai-button-text">AI에게 질문하기</span>
                           </button>
@@ -692,7 +760,8 @@
                             </div>
                           </div>
                           <button type="button" id=""
-                            class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly">
+                            class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+                            style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
                             <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
                             <span class="ai-button-text">AI에게 질문하기</span>
                           </button>
@@ -732,7 +801,8 @@
                           <!-- <p class="qa-type-box">A</p> -->
                           <div class="qa-text-box-wrapper w-100 dp-flex dp-flex-justify-end">
                             <button type="button" id=""
-                              class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly">
+                              class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+                              style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
                               <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
                               <span class="ai-button-text">AI에게 질문하기</span>
                             </button>
@@ -830,24 +900,22 @@
                     <p class="qa-type-box-translation"><span>A</span></p>
                     <div class="lesson-translation-card-component-inner-text-box">
                       <p class="translation-card-text-box-left text-basic">
-                        안녕하세요. 규칙적으로 식사하지 못하다가 먹을 때마다
-                        속이 쓰리면서 불 편한 느낌이 계속되는 증상은 위염일 때
-                        나타나는 증상과 유사합니다. 식후에 상복부의 타는 듯한
-                        통증이 더 심하고 토하기까지 하셨다니, 위염이 악화되었을
-                        가능성이 있어 병원에 오셔서 검사하시길 권합니다. 경우에
-                        따라 위염은 위궤양으로 악화될 수 있습니다. 위궤양의
-                        주원인은 '헬리 코박터 파일로리'라는 위 나선균에 의한
-                        감염이고, 위장 내시경 검사로 조직 검사 를 거쳐
-                        헬리코박터균의 유무를 확인해 보는 것이 좋습니다. 만약
-                        균이 검출될 경 우 제균 치료를 하면 됩니다.
-                        헬리코박터균이 원인이 아니라면, 위산 분비 억제제 나 위장
-                        점막 보호제 등의 약물을 4～8주간 복용하게 됩니다. 많은
-                        사람들을 만나는 일을 하신다니 스트레스도 심하실 것
-                        같은데요. 가급적 스트레스를 받지 않도록 노력하시고,
-                        평소에 술과 담배를 하신다면 반드시 금주 와 금연을 하셔야
-                        합니다. 맵고 짠 자극적인 음식도 피하시고요. 증상이
-                        심하신 듯하니 되도록 빠른 시일 내에 병원에 오시기를
-                        바랍니다.
+                        안녕하세요. 규칙적으로 식사하지 못하다가 먹을 때마다 속이 쓰리면서 불
+                        편한 느낌이 계속되는 증상은 위염일 때 나타나는 증상과 유사합니다. 환자분
+                        은 식후에 상복부의 타는 듯한 통증이 더 심해지고 토하기까지 하셨다니, 위염이
+                        악화되었을 가능성이 있으므로 병원에 오셔서 검사받으시길 권합니다.<br>
+                        경우에 따라 위염은 위궤양으로 악화될 수 있습니다. 위궤양의 주된 원인은 ‘헬
+                        리코박터 파일로리’라는 위 나선균에 의한 감염이고, 위장 내시경 검사로 조직 검
+                        사를 거쳐 헬리코박터균의 유무를 확인해 보는 것이 좋습니다. 만약 위장에서 균
+                        이 검출될 경우 제균 치료를 하면 됩니다. 헬리코박터균이 위궤양의 원인이 아니
+                        라면, 환자분은 위산 분비 억제제나 위장 점막 보호제 등의 약물을 4～8주간 복
+                        용하게 됩니다.<br>
+                        환자분께서는 많은 사람을 만나는 일을 하신다니 스트레스도 심하실 것 같은
+                        데요. 가급적 스트레스를 받지 않도록 노력하시고, 환자분께서 평소에 술과 담배
+                        를 하신다면 반드시 금주와 금연을 하셔야 합니다. 맵고 짠 자극적인 음식도 피하
+                        시고요.<br>
+                        환자분께서 겪고 계시는 증상들이 심한 듯하니 되도록 빠른 시일 내에 병원에
+                        오시기를 바랍니다.
                       </p>
                       <p class="translation-card-text-box-right">
                         <textarea name="" id="" class="translation-card-text-box-textarea"
@@ -937,28 +1005,28 @@
                     <th>영어</th>
                   </tr>
                   <tr>
-                    <td class="ta-c va-m">24시간 식도 산도 검사</td>
-                    <td class="ta-c va-m">
+                    <td class="ta-l va-m">24시간 식도 산도 검사</td>
+                    <td class="ta-l va-m">
                       24hr esophageal pH<br />
                       monitoring tests
                     </td>
-                    <td class="ta-c va-m">
+                    <td class="ta-l va-m">
                       ALT<br />
                       (알리닌 아미노기 전달 효소)
                     </td>
-                    <td class="ta-c va-m">alanine aminotransferase</td>
+                    <td class="ta-l va-m">alanine aminotransferase</td>
                   </tr>
                   <tr>
-                    <td class="ta-c va-m">간 경화증 hep</td>
-                    <td class="ta-c va-m">hepatic cirrhosis</td>
-                    <td class="ta-c va-m">격리</td>
-                    <td class="ta-c va-m">isolation</td>
+                    <td class="ta-l va-m">간 경화증 hep</td>
+                    <td class="ta-l va-m">hepatic cirrhosis</td>
+                    <td class="ta-l va-m">격리</td>
+                    <td class="ta-l va-m">isolation</td>
                   </tr>
                   <tr>
-                    <td class="ta-c va-m">고지질 혈증</td>
-                    <td class="ta-c va-m">hyperlipidemia</td>
-                    <td class="ta-c va-m">고혈압</td>
-                    <td class="ta-c va-m">hypertension</td>
+                    <td class="ta-l va-m">고지질 혈증</td>
+                    <td class="ta-l va-m">hyperlipidemia</td>
+                    <td class="ta-l va-m">고혈압</td>
+                    <td class="ta-l va-m">hypertension</td>
                   </tr>
                 </table>
               </div>
@@ -1327,10 +1395,10 @@
                   <div class="image-box-caption-item-group image-box-caption-item-group-1">
                     <div class="image-box-caption-item">
                       <div class="image-text-box">
-                        <div class="image-text-box-item">
+                        <a class="image-text-box-item" href="#none" data-text-en="liver" data-text-ko="간">
                           <span class="text-en">liver</span>
                           <span class="text-ko">간</span>
-                        </div>
+                        </a>
                         <span class="image-line"></span>
                       </div>
                     </div>
@@ -1338,10 +1406,10 @@
                   <div class="image-box-caption-item-group image-box-caption-item-group-2">
                     <div class="image-box-caption-item">
                       <div class="image-text-box">
-                        <div class="image-text-box-item">
+                        <a class="image-text-box-item" href="#none" data-text-en="gallbladder" data-text-ko="담낭">
                           <span class="text-en">gallbladder</span>
                           <span class="text-ko">담낭</span>
-                        </div>
+                        </a>
                         <span class="image-line"></span>
                       </div>
                     </div>
@@ -1349,10 +1417,10 @@
                   <div class="image-box-caption-item-group image-box-caption-item-group-3">
                     <div class="image-box-caption-item">
                       <div class="image-text-box">
-                        <div class="image-text-box-item">
+                        <a class="image-text-box-item" href="#none" data-text-en="duodenum" data-text-ko="십이지장">
                           <span class="text-en">duodenum</span>
                           <span class="text-ko">십이지장</span>
-                        </div>
+                        </a>
                         <span class="image-line"></span>
                       </div>
                     </div>
@@ -1360,10 +1428,10 @@
                   <div class="image-box-caption-item-group image-box-caption-item-group-4">
                     <div class="image-box-caption-item">
                       <div class="image-text-box">
-                        <div class="image-text-box-item">
+                        <a class="image-text-box-item" href="#none" data-text-en="caecum, cecum" data-text-ko="맹장">
                           <span class="text-en">caecum, cecum</span>
                           <span class="text-ko">맹장</span>
-                        </div>
+                        </a>
                         <span class="image-line"></span>
                       </div>
                     </div>
@@ -1371,10 +1439,10 @@
                   <div class="image-box-caption-item-group image-box-caption-item-group-5">
                     <div class="image-box-caption-item">
                       <div class="image-text-box">
-                        <div class="image-text-box-item">
+                        <a class="image-text-box-item" href="#none" data-text-en="appendix" data-text-ko="충수">
                           <span class="text-en">appendix</span>
                           <span class="text-ko">충수</span>
-                        </div>
+                        </a>
                         <span class="image-line"></span>
                       </div>
                     </div>
@@ -1382,10 +1450,10 @@
                   <div class="image-box-caption-item-group image-box-caption-item-group-6">
                     <div class="image-box-caption-item">
                       <div class="image-text-box image-text-box-reverse">
-                        <div class="image-text-box-item">
+                        <a class="image-text-box-item" href="#none" data-text-en="esophagus" data-text-ko="식도">
                           <span class="text-en">esophagus</span>
                           <span class="text-ko">식도</span>
-                        </div>
+                        </a>
                         <span class="image-line"></span>
                       </div>
                     </div>
@@ -1393,10 +1461,10 @@
                   <div class="image-box-caption-item-group image-box-caption-item-group-7">
                     <div class="image-box-caption-item">
                       <div class="image-text-box image-text-box-reverse">
-                        <div class="image-text-box-item">
+                        <a class="image-text-box-item" href="#none" data-text-en="stomach" data-text-ko="위장">
                           <span class="text-en">stomach</span>
                           <span class="text-ko">위장</span>
-                        </div>
+                        </a>
                         <span class="image-line"></span>
                       </div>
                     </div>
@@ -1404,10 +1472,10 @@
                   <div class="image-box-caption-item-group image-box-caption-item-group-8">
                     <div class="image-box-caption-item">
                       <div class="image-text-box image-text-box-reverse">
-                        <div class="image-text-box-item">
+                        <a class="image-text-box-item" href="#none" data-text-en="pancreas" data-text-ko="췌장">
                           <span class="text-en">pancreas</span>
                           <span class="text-ko">췌장</span>
-                        </div>
+                        </a>
                         <span class="image-line"></span>
                       </div>
                     </div>
@@ -1415,10 +1483,10 @@
                   <div class="image-box-caption-item-group image-box-caption-item-group-9">
                     <div class="image-box-caption-item">
                       <div class="image-text-box image-text-box-reverse">
-                        <div class="image-text-box-item">
+                        <a class="image-text-box-item" href="#none" data-text-en="large intestine" data-text-ko="대장">
                           <span class="text-en">large intestine</span>
                           <span class="text-ko">대장</span>
-                        </div>
+                        </a>
                         <span class="image-line"></span>
                       </div>
                     </div>
@@ -1426,10 +1494,10 @@
                   <div class="image-box-caption-item-group image-box-caption-item-group-10">
                     <div class="image-box-caption-item">
                       <div class="image-text-box image-text-box-reverse">
-                        <div class="image-text-box-item">
+                        <a class="image-text-box-item" href="#none" data-text-en="small intestine" data-text-ko="소장">
                           <span class="text-en">small intestine</span>
                           <span class="text-ko">소장</span>
-                        </div>
+                        </a>
                         <span class="image-line"></span>
                       </div>
                     </div>
@@ -1437,10 +1505,10 @@
                   <div class="image-box-caption-item-group image-box-caption-item-group-11">
                     <div class="image-box-caption-item">
                       <div class="image-text-box image-text-box-reverse">
-                        <div class="image-text-box-item">
+                        <a class="image-text-box-item" href="#none" data-text-en="rectum" data-text-ko="직장">
                           <span class="text-en">rectum</span>
                           <span class="text-ko">직장</span>
-                        </div>
+                        </a>
                         <span class="image-line"></span>
                       </div>
                     </div>
@@ -1459,13 +1527,13 @@
             <div class="code-copy">
               <div class="qr-code-area">
                 <div class="qr-code-area-inner">
-                  <div class="qr-code-number">
-                    <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-0.png">
-                    <span class="qr-code-text">3-2</span>
-                  </div>
                   <div class="qr-code-code">
-                    <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/QR.jpg"
-                      alt="QR-CODE">
+                    <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/QR-3-1.png"
+                      alt="QR-3-1">
+                  </div>
+                  <div class="qr-code-number">
+                    <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/qr-headset.png">
+                    <span class="qr-code-text">3-1</span>
                   </div>
                 </div>
               </div>

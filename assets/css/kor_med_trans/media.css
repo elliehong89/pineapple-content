@@ -53,9 +53,14 @@
     padding: 0 10px 0 30px;
   }
 
+  .lesson-card-text-component-title {
+    font-size: 17px;
+  }
+
   /* Icons */
   .icon_box {
     width: 30px;
+    margin-top: 12px;
   }
   .icon_box.width-30 {
     width: 24px;
@@ -78,7 +83,7 @@
   }
   .lesson-middle-title-group-description {
     min-height: 100px;
-    padding: 64px 8px 14px;
+    padding: 44px 8px 14px;
   }
 
   /* Note */
@@ -95,8 +100,8 @@
     font-size: 16px;
   }
   .lesson-card-title-group {
-    padding: 8px 14px;
-    margin: 0 8px 20px;
+    padding: 4px 14px 0;
+    margin: 0 8px 14px;
     font-size: 16px;
   }
   .lesson-card-text-component-wrapper {
@@ -178,7 +183,7 @@
   .lesson-translation-card-component-inner-text-box
     > p.translation-card-text-box-right {
     flex: none;
-    height: 300px;
+    height: 400px;
   }
   .qa-type-box-translation {
     width: 50px;
@@ -235,6 +240,39 @@
   }
   .image-text-box-item .text-ko {
     font-size: 15px;
+  }
+
+  .qr-code-area {
+    height: 50px;
+    margin-top: 10px;
+  }
+  .qr-code-code {
+    width: 50px;
+    height: 50px;
+    gap: 5px;
+  }
+
+  .qr-code-number {
+    height: 40px;
+  }
+
+  .qr-code-number .qr-code-text {
+    font-size: 11px;
+    left: -9px;
+  }
+
+  .gap-20-responsive-768 {
+    gap: 10px;
+  }
+
+  .lesson-middle-title-group-description-inner {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .objective-text {
+    gap: 10px;
+    align-items: flex-start;
   }
 }
 

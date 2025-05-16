@@ -22,7 +22,7 @@
   --color-primary--pink-pale: #fadbe8;
   --color-primary--orange: #f8ac8b;
   --color-primary--orange-light: #fde2d6;
-  --color-primary--orange-dark: #f79c78;
+  --color-primary--orange-dark: #f79770;
   --color-primary--yellow: #ffedc7;
   --color-primary--yellow-pale: #fffcd6;
   --color-primary--brown: #bd9e7e;
@@ -36,6 +36,9 @@
   --color-text--secondary: #666;
   --color-text--tertiary: #999;
   --color-text--title-blue: #76c2c7;
+
+  --color-background-ai-btn-pink: #ffe9e9;
+  --color-border-ai-btn-pink: #ffa5a5;
 
   /* Background Colors */
   --color-background--light: #f9f9f9;
@@ -79,7 +82,7 @@ strong {
 }
 
 section {
-  margin: 100px 0;
+  margin: 0 0 200px;
 }
 
 a:link {
@@ -350,6 +353,9 @@ button {
 .flex-0 {
   flex: 0;
 }
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
 .flex-1 {
   flex: 1;
 }
@@ -570,7 +576,7 @@ button {
   border: 2px solid;
 }
 .border-left-1 {
-  border-left: 1px solid;
+  border-left: 1px solid var(--border-color, var(--border-color));
 }
 .border-right-1 {
   border-right: 1px solid;
@@ -798,11 +804,28 @@ button {
   display: flex;
   align-items: flex-end;
   position: relative;
-  padding: 74px 20px 20px;
+  padding: 54px 20px 20px;
   background-color: var(--box-bg-color, var(--box-color));
   z-index: 0;
   margin-top: -120px;
   margin-left: auto;
+}
+
+.lesson-middle-title-group-description-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.title-ai-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 /* ===== Title Items ===== */
@@ -810,7 +833,6 @@ button {
 .lesson-title-item {
   display: flex;
   flex-direction: column;
-  /* flex: 1; */
   gap: 2px;
 }
 
@@ -968,17 +990,16 @@ button {
 .btn-jelly {
   padding: 6px 10px;
   color: #fff;
-  background: #ffe9e9;
-  border: 1px solid #ffa5a5;
+  background: var(--box-bg-color, var(--box-bg-color));
+  border: 1px solid var(--box-border-color, var(--box-border-color));
   border-radius: 10px;
   white-space: nowrap;
   cursor: pointer;
   height: 50px;
-  width: 152px;
+  margin: 0 8px;
+  flex-shrink: 0;
 }
 
-.btn-jelly:hover,
-.btn-jelly:focus,
 .btn-jelly:active {
   animation: jelly 0.5s;
 }
@@ -1006,6 +1027,7 @@ button {
   font-size: 16px;
   font-weight: bold;
   line-height: normal;
+  font-family: var(--font-family-dotum);
 }
 
 .qa-list-row {
@@ -1203,7 +1225,7 @@ textarea {
 .lesson-note-component-inner {
   background-color: var(--box-bg-color, var(--box-color));
   border-radius: 20px;
-  padding: 20px 0;
+  padding: 40px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1249,7 +1271,7 @@ textarea {
   position: relative;
 }
 .note-text-box {
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .note-text-box > p {
@@ -1273,11 +1295,15 @@ textarea {
   border-spacing: 0;
 }
 
+.tb-normal.whitespace-nowrap td {
+  white-space: nowrap;
+}
+
 .tb-normal th,
 .tb-normal td {
   padding: 10px;
   vertical-align: middle;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .tb-normal th {
@@ -1290,17 +1316,30 @@ textarea {
 }
 
 .tb-normal td {
-  border: 1px solid #d3e5a1;
+  border: 1px solid #b3da80;
   background-color: #fff;
   font-family: "KoPubWorldBatang";
 }
 
-.tb-normal td:last-child {
-  border-right: 1px solid #fff;
+.tb-normal td:first-child {
+  background-color: #e4e3f1;
+  border-left: 1px solid #fff;
 }
 
-.tb-normal td:first-child {
-  border-left: 1px solid #fff;
+.tb-normal td:nth-child(2) {
+  background-color: #fde8f1;
+}
+
+.tb-normal td:nth-child(3) {
+  background-color: #e4e3f1;
+}
+
+.tb-normal td:nth-child(4) {
+  background-color: #fde8f1;
+}
+
+.tb-normal td:last-child {
+  border-right: 1px solid #fff;
 }
 
 /* 카드 텍스트 컴포넌트 */
@@ -1325,7 +1364,8 @@ textarea {
 }
 
 .lesson-card-text-component-title {
-  color: var(--color-primary--blue-dark);
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
 .lesson-card-text-component-title .ft-weight-light {
@@ -1340,7 +1380,8 @@ textarea {
   text-indent: 20px;
   padding-bottom: 40px;
   overflow-y: auto;
-  font-family: "KoPubWorldBatang";
+  font-family: var(--font-family-batang);
+  word-break: break-all;
 }
 
 .lesson-card-text-component-textarea {
@@ -1401,17 +1442,20 @@ textarea {
 .lesson-translation-card-component-inner-text-box {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   padding: 20px;
   border: 4px solid #d1d2d4;
   border-radius: 20px;
   gap: 20px;
   width: 97%;
   margin-left: auto;
+  min-height: 400px;
+  height: 100%;
 }
 
 .lesson-translation-card-component-inner-text-box > p {
-  height: 300px;
+  text-indent: 20px;
+  margin: 0;
 }
 
 .translation-card-text-box-left {
@@ -1420,14 +1464,14 @@ textarea {
   padding-left: 20px;
   padding-right: 20px;
   overflow-y: auto;
-}
-
-.translation-card-text-box-left.font-ko-pub-world-batang {
-  font-family: "KoPubWorldBatang";
+  display: flex;
+  flex-direction: column;
 }
 
 .translation-card-text-box-right {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .translation-card-text-box-textarea {
@@ -1440,6 +1484,7 @@ textarea {
   font-size: 16px;
   transition: all 0.3s ease;
   background-color: transparent;
+  flex: 1;
   padding: 10px;
 }
 
@@ -1503,7 +1548,7 @@ textarea {
 .text-sentence-inner {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 }
 
 .text-sentence-inner-content {
@@ -1540,8 +1585,9 @@ textarea {
 .text-practice-inner {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 60px;
 }
+
 .text-practice-row > div > p {
   padding: 5px;
 }
@@ -1686,7 +1732,7 @@ textarea {
   width: 100%;
   height: 100%;
   text-align: center;
-  background: #ff005e;
+  background: #f8ac8b;
   color: #fff;
   transition: 0.5s;
   transform-origin: bottom;
@@ -1711,7 +1757,7 @@ textarea {
   top: 0;
   left: 0;
   text-align: center;
-  background: #ea004f;
+  background: #f79770;
   color: #fff;
   transition: 0.5s;
   transform-origin: top;
@@ -1783,27 +1829,30 @@ textarea {
 }
 
 .qr-code-number {
-  width: 64px;
-  height: 38px;
   position: relative;
+  height: 55px;
 }
 
 .qr-code-area-inner {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 }
 
 .qr-code-number .qr-code-text {
+  display: inline-block;
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  left: -13px;
+  transform: translateY(-50%);
   text-align: center;
   width: 100%;
   font-weight: bold;
   font-size: 14px;
   color: var(--color-primary--blue-dark);
+  writing-mode: vertical-rl;
 }
 
 .qr-code-number > img {
@@ -1814,18 +1863,24 @@ textarea {
 
 /* QR 코드 영역 */
 .qr-code-area {
-  margin-top: 40px;
   display: flex;
-  justify-content: flex-end;
+  height: 65px;
 }
 
 .qr-code-code {
-  width: 64px;
-  height: 64px;
+  width: 65px;
+  height: 65px;
 }
 
 .qr-code-code > img {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.objective-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }

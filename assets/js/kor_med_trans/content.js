@@ -45,3 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// AI 버튼 클릭 이벤트 처리
+document.addEventListener("click", function (e) {
+  if (e.target.closest(".ai-button")) {
+    alert("서비스 준비중입니다.");
+  }
+});
