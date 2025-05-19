@@ -269,6 +269,18 @@
                 <span class="ai-button-text"></span>
               </button>
             </div>
+
+
+            <div class="code-copy">
+              <div class="btn-wrapper dp-flex-justify-end">
+                <button type="button" id="sentence-training-button"
+                  class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+                  style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+                  <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
+                  <span class="ai-button-text">훈련하기</span>
+                </button>
+              </div>
+            </div>
           </div>
 
           <!-- ++++ 타이틀  -->
@@ -691,6 +703,7 @@
 
             <div class="code-copy">
               <div class="mgb-60">
+                <!-- STEP 1 -->
                 <div class="lesson-card-component-wrapper mgb-30">
                   <div class="lesson-card-component">
                     <div class="lesson-card-component-step-title-box dp-flex-justify-start">
@@ -700,42 +713,46 @@
                       <!-- <div class="step-title-box" style="--box-bg-color: #E3F2E7;">STEP 2</div> -->
                       <!-- <div class="step-title-box" style="--box-bg-color: #E3F2E7;">STEP 3</div> -->
                     </div>
-                    <div class="lesson-card-component-inner" style="--box-bg-color: #e3f2e7">
-                      <div class="dp-grid dp-grid-row-1fr-62px dp-grid-row-1fr-62px-responsive">
-                        <div class="qa-list-row qa-list-row-question">
-                          <div class="dp-flex flex-1 dp-flex-align-start">
-                            <p class="qa-type-box">Q</p>
-                            <div class="qa-text-box-wrapper w-100 h-45px">
-                              <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
-                              <!-- <div class="qa-text-box qa-text-box-normal">
-                                소화기 계통의 신체 기관에는 어떤 것들이 있나요?
-                              </div> -->
-                              <div class="qa-text-box w-100 h-45px">
-                                <textarea id="qna-question"
-                                  class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
-                                  placeholder="소화기 계통의 신체 기관에는 어떤 것들이 있나요?" rows="1" readonly></textarea>
+                    <div class="lesson-card-component-inner-wrapper" style="--box-bg-color: #e3f2e7">
+                      <div class="lesson-card-component-inner">
+                        <div class="dp-grid dp-grid-row-1fr-62px dp-grid-row-1fr-62px-responsive">
+                          <div class="qa-list-row qa-list-row-question">
+                            <div class="dp-flex flex-1 dp-flex-align-start u-gap-10">
+                              <p class="qa-type-box">Q</p>
+                              <div class="qa-text-box-wrapper w-100 h-45px">
+                                <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
+                                <!-- <div class="qa-text-box qa-text-box-normal">
+                                  소화기 계통의 신체 기관에는 어떤 것들이 있나요?
+                                </div> -->
+                                <div class="qa-text-box w-100 h-45px">
+                                  <textarea id="qna-question"
+                                    class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
+                                    placeholder="소화기 계통의 신체 기관에는 어떤 것들이 있나요?" rows="1" readonly></textarea>
+                                </div>
                               </div>
                             </div>
                           </div>
+                          <div></div>
                         </div>
-                        <div></div>
-                      </div>
-                      <div class="dp-grid dp-grid-row-62px-1fr dp-grid-row-62px-1fr-responsive">
-                        <div></div>
-                        <div class="qa-list-row qa-list-row-question row-reverse">
-                          <p class="qa-type-box">A</p>
-                          <div class="qa-text-box-wrapper w-100">
-                            <div class="qa-text-box w-100">
-                              <textarea id="qna-answer" class="qa-text-box-textarea qa-text-box-textarea-answer"
-                                placeholder="소화기 계통의 신체 기관에는" rows="3" readonly></textarea>
+                        <div class="dp-grid dp-grid-row-62px-1fr dp-grid-row-62px-1fr-responsive">
+                          <div></div>
+                          <div class="qa-list-row qa-list-row-question row-reverse u-gap-10">
+                            <p class="qa-type-box">A</p>
+                            <div class="qa-text-box-wrapper w-100">
+                              <div class="qa-text-box w-100">
+                                <textarea id="qna-answer" class="qa-text-box-textarea qa-text-box-textarea-answer"
+                                  placeholder="소화기 계통의 신체 기관에는" rows="3" readonly></textarea>
+                              </div>
+                              <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
                             </div>
-                            <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                <!-- STEP 2 -->
                 <div class="lesson-card-component-wrapper mgb-30">
                   <div class="lesson-card-component">
                     <div class="lesson-card-component-step-title-box dp-flex-justify-center">
@@ -745,49 +762,67 @@
                       </div>
                       <!-- <div class="step-title-box" style="--box-bg-color: #E3F2E7;">STEP 3</div> -->
                     </div>
-                    <div class="lesson-card-component-inner" style="--box-bg-color: #e4e3f1">
-                      <div class="dp-grid dp-grid-row-1fr-62px dp-grid-row-1fr-62px-responsive">
-                        <div class="qa-list-row qa-list-row-question">
-                          <div class="dp-flex flex-1 dp-flex-align-start">
-                            <p class="qa-type-box">Q</p>
-                            <div class="qa-text-box-wrapper w-100 h-45px">
-                              <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
-                              <!-- <div class="qa-text-box qa-text-box-normal">
+                    <div class="lesson-card-component-inner-wrapper" style="--box-bg-color: #e4e3f1">
+                      <div id="qa-container">
+                        <!-- 기존 Q&A 영역 -->
+                        <div class="lesson-card-component-inner">
+                          <div class="dp-grid dp-grid-row-1fr-62px dp-grid-row-1fr-62px-responsive">
+                            <div class="qa-list-row qa-list-row-question">
+                              <div class="dp-flex flex-1 dp-flex-align-start u-gap-10">
+                                <p class="qa-type-box">Q</p>
+                                <div class="qa-text-box-wrapper w-100 h-45px">
+                                  <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
+                                  <!-- <div class="qa-text-box qa-text-box-normal">
                                                     소화기 계통의 신체 기관에는 어떤 것들이 있나요?
                                                   </div> -->
-                              <div class="qa-text-box w-100 h-45px">
-                                <textarea id="qna-set-1-question"
-                                  class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
-                                  placeholder="질문을 입력하세요." rows="1"></textarea>
-                                <button type="button" id=""
-                                  class="ai-button lesson-card-ai-button btn-jelly bd-radius-100 btn-question"
-                                  style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
-                                  <i class="fa-solid fa-question"
-                                    style="color: var(--color-text, var(--color-border-ai-btn-pink));"></i>
-                                  <span class="ai-button-text"></span>
-                                </button>
+                                  <div class="qa-text-box w-100 h-45px">
+                                    <textarea id="qna-set-1-question"
+                                      class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
+                                      placeholder="질문을 입력하세요." rows="1"></textarea>
+                                    <button type="button" id=""
+                                      class="ai-button lesson-card-ai-button btn-jelly bd-radius-100 btn-question"
+                                      style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+                                      <i class="fa-solid fa-question"
+                                        style="color: var(--color-text, var(--color-border-ai-btn-pink));"></i>
+                                      <span class="ai-button-text"></span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div></div>
+                          </div>
+                          <div class="dp-grid dp-grid-row-62px-1fr dp-grid-row-62px-1fr-responsive">
+                            <div></div>
+                            <div class="qa-list-row qa-list-row-question row-reverse u-gap-10">
+                              <p class="qa-type-box">A</p>
+                              <div class="qa-text-box-wrapper w-100">
+                                <div class="qa-text-box w-100">
+                                  <textarea id="qna-set-1-answer"
+                                    class="qa-text-box-textarea qa-text-box-textarea-answer" placeholder=""
+                                    rows="3"></textarea>
+                                </div>
+                                <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div></div>
                       </div>
-                      <div class="dp-grid dp-grid-row-62px-1fr dp-grid-row-62px-1fr-responsive">
-                        <div></div>
-                        <div class="qa-list-row qa-list-row-question row-reverse">
-                          <p class="qa-type-box">A</p>
-                          <div class="qa-text-box-wrapper w-100">
-                            <div class="qa-text-box w-100">
-                              <textarea id="qna-set-1-answer" class="qa-text-box-textarea qa-text-box-textarea-answer"
-                                placeholder="" rows="3"></textarea>
-                            </div>
-                            <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
-                          </div>
-                        </div>
+
+                      <!-- 플러스 버튼 -->
+                      <div class="dp-flex dp-flex-justify-center mgt-20">
+                        <button type="button" id="qna-set-add-button" class=""
+                          style="--box-bg-color: #fff; --box-border-color: #ffa5a5">
+                          <i class="fa-solid fa-plus" style="color: #ffa5a5;"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
+
+
+
+                <!-- STEP 3 -->
                 <div class="lesson-card-component-wrapper">
                   <div class="lesson-card-component">
                     <div class="lesson-card-component-step-title-box dp-flex-justify-end">
@@ -797,16 +832,18 @@
                         STEP 3
                       </div>
                     </div>
-                    <div class="lesson-card-component-inner" style="--box-bg-color: #fce9f1">
-                      <div class="dp-grid dp-grid-row-62px-1fr-62px dp-grid-row-62px-1fr-responsive">
-                        <div></div>
-                        <div class="qa-list-row qa-list-row-question">
-                          <!-- <p class="qa-type-box">A</p> -->
-                          <div class="qa-text-box-wrapper w-100">
-                            <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
-                            <div class="qa-text-box w-100">
-                              <textarea id="qna-summary" class="qa-text-box-textarea h-160" placeholder="텍스트를 입력하세요."
-                                rows="3"></textarea>
+                    <div class="lesson-card-component-inner-wrapper" style="--box-bg-color: #fce9f1">
+                      <div class="lesson-card-component-inner">
+                        <div class="dp-grid dp-grid-row-62px-1fr-62px dp-grid-row-62px-1fr-responsive">
+                          <div></div>
+                          <div class="qa-list-row qa-list-row-question">
+                            <!-- <p class="qa-type-box">A</p> -->
+                            <div class="qa-text-box-wrapper w-100">
+                              <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
+                              <div class="qa-text-box w-100">
+                                <textarea id="qna-summary" class="qa-text-box-textarea h-160" placeholder="텍스트를 입력하세요."
+                                  rows="3"></textarea>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -893,7 +930,7 @@
                         은 식후에 상복부의 타는 듯한 통증이 더 심해지고 토하기까지 하셨다니, 위염이
                         악화되었을 가능성이 있으므로 병원에 오셔서 검사받으시길 권합니다.<br>
                         경우에 따라 위염은 위궤양으로 악화될 수 있습니다. 위궤양의 주된 원인은 ‘헬
-                        리코박터 파일로리’라는 위 나선균에 의한 감염이고, 위장 내시경 검사로 조직 검
+                        리코박터 파일로리'라는 위 나선균에 의한 감염이고, 위장 내시경 검사로 조직 검
                         사를 거쳐 헬리코박터균의 유무를 확인해 보는 것이 좋습니다. 만약 위장에서 균
                         이 검출될 경우 제균 치료를 하면 됩니다. 헬리코박터균이 위궤양의 원인이 아니
                         라면, 환자분은 위산 분비 억제제나 위장 점막 보호제 등의 약물을 4～8주간 복

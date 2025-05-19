@@ -104,6 +104,7 @@
 
 
       <div class="mgb-60">
+        <!-- STEP 1 -->
         <div class="lesson-card-component-wrapper mgb-30">
           <div class="lesson-card-component">
             <div class="lesson-card-component-step-title-box dp-flex-justify-start">
@@ -113,47 +114,46 @@
               <!-- <div class="step-title-box" style="--box-bg-color: #E3F2E7;">STEP 2</div> -->
               <!-- <div class="step-title-box" style="--box-bg-color: #E3F2E7;">STEP 3</div> -->
             </div>
-            <div class="lesson-card-component-inner" style="--box-bg-color: #e3f2e7">
-              <div class="dp-grid dp-grid-row-1fr-62px dp-grid-row-1fr-62px-responsive">
-                <div class="qa-list-row qa-list-row-question">
-                  <div class="dp-flex flex-1 dp-flex-align-start">
-                    <p class="qa-type-box">Q</p>
-                    <div class="qa-text-box-wrapper w-100 h-45px">
-                      <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
-                      <!-- <div class="qa-text-box qa-text-box-normal">
-                                소화기 계통의 신체 기관에는 어떤 것들이 있나요?
-                              </div> -->
-                      <div class="qa-text-box w-100 h-45px">
-                        <textarea class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
-                          placeholder="소화기 계통의 신체 기관에는 어떤 것들이 있나요?" rows="1" style="height: 50px;"></textarea>
+            <div class="lesson-card-component-inner-wrapper" style="--box-bg-color: #e3f2e7">
+              <div class="lesson-card-component-inner">
+                <div class="dp-grid dp-grid-row-1fr-62px dp-grid-row-1fr-62px-responsive">
+                  <div class="qa-list-row qa-list-row-question">
+                    <div class="dp-flex flex-1 dp-flex-align-start u-gap-10">
+                      <p class="qa-type-box">Q</p>
+                      <div class="qa-text-box-wrapper w-100 h-45px">
+                        <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
+                        <!-- <div class="qa-text-box qa-text-box-normal">
+                                  소화기 계통의 신체 기관에는 어떤 것들이 있나요?
+                                </div> -->
+                        <div class="qa-text-box w-100 h-45px">
+                          <textarea id="qna-question" class="qa-text-box-textarea qa-text-box-textarea-question h-none"
+                            type="text" placeholder="소화기 계통의 신체 기관에는 어떤 것들이 있나요?" rows="1" readonly=""
+                            style="height: 50px;"></textarea>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <button type="button" id=""
-                    class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
-                    style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
-                    <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
-                    <span class="ai-button-text">AI에게 질문하기</span>
-                  </button>
+                  <div></div>
                 </div>
-                <div></div>
-              </div>
-              <div class="dp-grid dp-grid-row-62px-1fr dp-grid-row-62px-1fr-responsive">
-                <div></div>
-                <div class="qa-list-row qa-list-row-question row-reverse">
-                  <p class="qa-type-box">A</p>
-                  <div class="qa-text-box-wrapper w-100">
-                    <div class="qa-text-box w-100">
-                      <textarea class="qa-text-box-textarea qa-text-box-textarea-answer" placeholder="소화기 계통의 신체 기관에는"
-                        rows="3" style="height: 110px;"></textarea>
+                <div class="dp-grid dp-grid-row-62px-1fr dp-grid-row-62px-1fr-responsive">
+                  <div></div>
+                  <div class="qa-list-row qa-list-row-question row-reverse u-gap-10">
+                    <p class="qa-type-box">A</p>
+                    <div class="qa-text-box-wrapper w-100">
+                      <div class="qa-text-box w-100">
+                        <textarea id="qna-answer" class="qa-text-box-textarea qa-text-box-textarea-answer"
+                          placeholder="소화기 계통의 신체 기관에는" rows="3" readonly="" style="height: 110px;"></textarea>
+                      </div>
+                      <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
                     </div>
-                    <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- STEP 2 -->
         <div class="lesson-card-component-wrapper mgb-30">
           <div class="lesson-card-component">
             <div class="lesson-card-component-step-title-box dp-flex-justify-center">
@@ -163,47 +163,66 @@
               </div>
               <!-- <div class="step-title-box" style="--box-bg-color: #E3F2E7;">STEP 3</div> -->
             </div>
-            <div class="lesson-card-component-inner" style="--box-bg-color: #e4e3f1">
-              <div class="dp-grid dp-grid-row-1fr-62px dp-grid-row-1fr-62px-responsive">
-                <div class="qa-list-row qa-list-row-question">
-                  <div class="dp-flex flex-1 dp-flex-align-start">
-                    <p class="qa-type-box">Q</p>
-                    <div class="qa-text-box-wrapper w-100 h-45px">
-                      <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
-                      <!-- <div class="qa-text-box qa-text-box-normal">
+            <div class="lesson-card-component-inner-wrapper" style="--box-bg-color: #e4e3f1">
+              <div id="qa-container">
+                <!-- 기존 Q&A 영역 -->
+                <div class="lesson-card-component-inner">
+                  <div class="dp-grid dp-grid-row-1fr-62px dp-grid-row-1fr-62px-responsive">
+                    <div class="qa-list-row qa-list-row-question">
+                      <div class="dp-flex flex-1 dp-flex-align-start u-gap-10">
+                        <p class="qa-type-box">Q</p>
+                        <div class="qa-text-box-wrapper w-100 h-45px">
+                          <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
+                          <!-- <div class="qa-text-box qa-text-box-normal">
                                                     소화기 계통의 신체 기관에는 어떤 것들이 있나요?
                                                   </div> -->
-                      <div class="qa-text-box w-100 h-45px">
-                        <textarea class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
-                          placeholder="소화기 계통의 신체 기관에는 어떤 것들이 있나요?" rows="1" style="height: 50px;"></textarea>
+                          <div class="qa-text-box w-100 h-45px">
+                            <textarea id="qna-set-1-question"
+                              class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
+                              placeholder="질문을 입력하세요." rows="1" style="height: 50px;"></textarea>
+                            <button type="button" id=""
+                              class="ai-button lesson-card-ai-button btn-jelly bd-radius-100 btn-question"
+                              style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+                              <i class="fa-solid fa-question"
+                                style="color: var(--color-text, var(--color-border-ai-btn-pink));"></i>
+                              <span class="ai-button-text"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div></div>
+                  </div>
+                  <div class="dp-grid dp-grid-row-62px-1fr dp-grid-row-62px-1fr-responsive">
+                    <div></div>
+                    <div class="qa-list-row qa-list-row-question row-reverse u-gap-10">
+                      <p class="qa-type-box">A</p>
+                      <div class="qa-text-box-wrapper w-100">
+                        <div class="qa-text-box w-100">
+                          <textarea id="qna-set-1-answer" class="qa-text-box-textarea qa-text-box-textarea-answer"
+                            placeholder="" rows="3" style="height: 110px;"></textarea>
+                        </div>
+                        <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
                       </div>
                     </div>
                   </div>
-                  <button type="button" id=""
-                    class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
-                    style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
-                    <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
-                    <span class="ai-button-text">AI에게 질문하기</span>
-                  </button>
                 </div>
-                <div></div>
               </div>
-              <div class="dp-grid dp-grid-row-62px-1fr dp-grid-row-62px-1fr-responsive">
-                <div></div>
-                <div class="qa-list-row qa-list-row-question row-reverse">
-                  <p class="qa-type-box">A</p>
-                  <div class="qa-text-box-wrapper w-100">
-                    <div class="qa-text-box w-100">
-                      <textarea class="qa-text-box-textarea qa-text-box-textarea-answer" placeholder="소화기 계통의 신체 기관에는"
-                        rows="3" style="height: 110px;"></textarea>
-                    </div>
-                    <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
-                  </div>
-                </div>
+
+              <!-- 플러스 버튼 -->
+              <div class="dp-flex dp-flex-justify-center mgt-20">
+                <button type="button" id="qna-set-add-button" class=""
+                  style="--box-bg-color: #fff; --box-border-color: #ffa5a5">
+                  <i class="fa-solid fa-plus" style="color: #ffa5a5;"></i>
+                </button>
               </div>
             </div>
           </div>
         </div>
+
+
+
+        <!-- STEP 3 -->
         <div class="lesson-card-component-wrapper">
           <div class="lesson-card-component">
             <div class="lesson-card-component-step-title-box dp-flex-justify-end">
@@ -213,32 +232,18 @@
                 STEP 3
               </div>
             </div>
-            <div class="lesson-card-component-inner" style="--box-bg-color: #fce9f1">
-
-              <div class="dp-grid dp-grid-row-62px-1fr-62px dp-grid-row-62px-1fr-62px-responsive">
-                <div></div>
-                <div class="qa-list-row qa-list-row-question">
-                  <!-- <p class="qa-type-box">A</p> -->
-                  <div class="qa-text-box-wrapper w-100 dp-flex dp-flex-justify-end">
-                    <button type="button" id=""
-                      class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
-                      style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
-                      <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
-                      <span class="ai-button-text">AI에게 질문하기</span>
-                    </button>
-                  </div>
-                </div>
-                <div></div>
-              </div>
-              <div class="dp-grid dp-grid-row-62px-1fr-62px dp-grid-row-62px-1fr-responsive">
-                <div></div>
-                <div class="qa-list-row qa-list-row-question">
-                  <!-- <p class="qa-type-box">A</p> -->
-                  <div class="qa-text-box-wrapper w-100">
-                    <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
-                    <div class="qa-text-box w-100">
-                      <textarea class="qa-text-box-textarea h-160" placeholder="텍스트를 입력하세요." rows="3"
-                        style="height: 160px;"></textarea>
+            <div class="lesson-card-component-inner-wrapper" style="--box-bg-color: #fce9f1">
+              <div class="lesson-card-component-inner">
+                <div class="dp-grid dp-grid-row-62px-1fr-62px dp-grid-row-62px-1fr-responsive">
+                  <div></div>
+                  <div class="qa-list-row qa-list-row-question">
+                    <!-- <p class="qa-type-box">A</p> -->
+                    <div class="qa-text-box-wrapper w-100">
+                      <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
+                      <div class="qa-text-box w-100">
+                        <textarea id="qna-summary" class="qa-text-box-textarea h-160" placeholder="텍스트를 입력하세요." rows="3"
+                          style="height: 160px;"></textarea>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -248,7 +253,11 @@
         </div>
       </div>
 
-      <figure class="image-box mgb-60">
+    </section>
+
+    <!-- section2 -->
+    <section class="section2">
+      <figure class="image-box mgb-40">
         <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/3-1.jpg" alt="소화기_계통_그림">
         <div class="image-box-caption">
           <div class="image-box-caption-item-group image-box-caption-item-group-1">
@@ -375,6 +384,16 @@
         </div>
       </figure>
 
+
+      <div class="btn-wrapper dp-flex-justify-end u-mgb-60">
+        <button type="button" id="diagram-practice-button"
+          class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+          style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+          <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
+          <span class="ai-button-text">연습하기</span>
+        </button>
+      </div>
+
       <div class="lesson-note-component-wrapper">
         <div class="lesson-note-component">
           <div class="lesson-note-component-inner" style="--box-bg-color: #f6ecd9">
@@ -425,10 +444,11 @@
           </div>
         </div>
       </div>
+
     </section>
 
-    <!-- section2 -->
-    <section class="section2">
+    <!-- section3 -->
+    <section class="section3">
       <div class="lesson-subtitle-group mgb-40">
         <i class="icon_box width-50">
           <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-1-1.png" alt="어휘와표현아이콘" />
@@ -439,21 +459,21 @@
         </div>
       </div>
 
-
-
+      <!-- 전문 어휘 -->
       <div class="title-ai-box mgb-20">
         <div class="lesson-section-title-group">
           <i class="icon_box width-30">
-            <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-1-2.png" alt="어휘와표현아이콘">
+            <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-1-2.png" alt="전문어휘아이콘">
           </i>
           <div class="lesson-title-item dp-flex-justify-center">
             <h4 class="lesson-title-item-title-sm ft-20" style="--text-color: #8BC63E">전문 어휘</h4>
           </div>
         </div>
-        <button type="button" id="" class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+        <button type="button" id="vocab-training-button"
+          class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
           style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
           <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
-          <span class="ai-button-text">AI에게 질문하기</span>
+          <span class="ai-button-text">연습하기</span>
         </button>
       </div>
 
@@ -618,22 +638,26 @@
         </table>
       </div>
 
+    </section>
+
+    <!-- section4 -->
+    <section class="section4">
       <div class="title-ai-box mgb-20">
         <div class="lesson-section-title-group">
           <i class="icon_box width-30">
-            <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-1-2.png" alt="어휘와표현아이콘">
+            <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-1-2.png" alt="유용한표현아이콘">
           </i>
           <div class="lesson-title-item dp-flex-justify-center">
             <h4 class="lesson-title-item-title-sm ft-20" style="--text-color: #8BC63E">유용한 표현</h4>
           </div>
         </div>
-        <button type="button" id="" class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+        <button type="button" id="phrase-training-button"
+          class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
           style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
           <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
-          <span class="ai-button-text">AI에게 질문하기</span>
+          <span class="ai-button-text">훈련하기</span>
         </button>
       </div>
-
       <!-- 테이블 스타일 (스크롤 - 기본) -->
       <div class="tb-responsive mgb-40">
         <table class="tb-normal responsive-table">
@@ -727,14 +751,25 @@
           </tr>
         </table>
       </div>
+    </section>
 
-      <div class="lesson-section-title-group mgb-20">
-        <i class="icon_box width-30">
-          <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-1-2.png" alt="어휘와표현아이콘" />
-        </i>
-        <div class="lesson-title-item dp-flex-justify-center">
-          <h4 class="lesson-title-item-title-sm ft-20" style="--text-color: #8BC63E">질환의 종류</h4>
+    <!-- section5 -->
+    <section class="section5">
+      <div class="title-ai-box mgb-20">
+        <div class="lesson-section-title-group">
+          <i class="icon_box width-30">
+            <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/0-1-2.png" alt="질환의 종류류">
+          </i>
+          <div class="lesson-title-item dp-flex-justify-center">
+            <h4 class="lesson-title-item-title-sm ft-20" style="--text-color: #8BC63E">질환의 종류</h4>
+          </div>
         </div>
+        <button type="button" id="sentence-training-button"
+          class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+          style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+          <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
+          <span class="ai-button-text">훈련하기</span>
+        </button>
       </div>
 
       <div class="lesson-card-text-component-wrapper mgb-20">
@@ -872,10 +907,11 @@
           <textarea name="" id="" class="lesson-card-text-component-textarea" placeholder="텍스트를 입력하세요."></textarea>
         </div>
       </div>
+
     </section>
 
-    <!-- section3 -->
-    <section class="section3">
+    <!-- section6 -->
+    <section class="section6">
       <div class="lesson-middle-title-group-wrapper">
         <div class="lesson-middle-title-group dp-flex dp-flex-align-center w-98"
           style="--box-bg-color: #fff; --border-color: #24bb9d">
@@ -942,7 +978,7 @@
         </div>
       </div>
 
-      <div class="text-box text-conversation">
+      <div class="text-box text-conversation u-mgb-40">
         <div class="text-conversation-inner">
           <div class="text-conversation-row">
             <div class="text-conversation-inner-left">
@@ -1255,10 +1291,19 @@
           </div>
         </div>
       </div>
+
+      <div class="btn-wrapper dp-flex-justify-end">
+        <button type="button" id="sentence-training-button"
+          class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+          style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+          <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
+          <span class="ai-button-text">훈련하기</span>
+        </button>
+      </div>
     </section>
 
-    <!-- section4 -->
-    <section class="section4">
+
+    <section class="section7">
       <div class="lesson-middle-title-group-wrapper">
         <div class="lesson-middle-title-group dp-flex dp-flex-align-end w-98" style="
                           --box-bg-color: #fff;
@@ -1374,6 +1419,19 @@
         </div>
       </div>
 
+      <div class="btn-wrapper dp-flex-justify-end">
+        <button type="button" id="segment-training-button"
+          class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+          style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+          <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
+          <span class="ai-button-text">훈련하기</span>
+        </button>
+      </div>
+    </section>
+
+
+
+    <section class="section8">
       <!-- 중제목 스타일2 -->
       <div class="lesson-middle-title-group-wrapper">
         <div class="lesson-middle-title-group dp-flex dp-flex-align-end w-98" style="
@@ -1428,69 +1486,80 @@
         </div>
       </div>
 
-      <div class="lesson-translation-card-component-wrapper mgb-40">
-        <div class="lesson-translation-card-component">
-          <div class="lesson-translation-card-component-inner">
-            <p class="qa-type-box-translation"><span>Q</span></p>
-            <div class="lesson-translation-card-component-inner-text-box">
-              <p class="translation-card-text-box-left text-basic font-ko-pub-world-batang">
-                Hello, Doctor. I'm reaching out because I've been
-                experiencing intense pain in the upper part of my
-                stomach after eating. I often get heartburn and nausea
-                after meals, but lately, it has gotten so bad that it
-                feels like having heartburn. Yesterday, I even threw up
-                everything I ate. Because of my job, I have irregular
-                mealtimes, but lately, my symptoms have become so
-                uncomfortable that I've lost my appetite. As a result,
-                I'm not eating well, which leaves me feeling exhausted
-                and makes it hard to focus on work. I'd like to know
-                what tests I should get at the hospital for these
-                symptoms. Also, are there any precautions I should take
-                before coming in?
-              </p>
-              <p class="translation-card-text-box-right">
-                <textarea name="" id="" class="translation-card-text-box-textarea font-ko-pub-world-batang"
-                  style="--box-bg-color: #fadbe8" placeholder="텍스트를 입력하세요."></textarea>
-              </p>
+      <div class="u-mgb-60">
+        <div class="lesson-translation-card-component-wrapper mgb-40">
+          <div class="lesson-translation-card-component">
+            <div class="lesson-translation-card-component-inner">
+              <p class="qa-type-box-translation"><span>Q</span></p>
+              <div class="lesson-translation-card-component-inner-text-box">
+                <p class="translation-card-text-box-left text-basic font-ko-pub-world-batang">
+                  Hello, Doctor. I'm reaching out because I've been
+                  experiencing intense pain in the upper part of my
+                  stomach after eating. I often get heartburn and nausea
+                  after meals, but lately, it has gotten so bad that it
+                  feels like having heartburn. Yesterday, I even threw up
+                  everything I ate. Because of my job, I have irregular
+                  mealtimes, but lately, my symptoms have become so
+                  uncomfortable that I've lost my appetite. As a result,
+                  I'm not eating well, which leaves me feeling exhausted
+                  and makes it hard to focus on work. I'd like to know
+                  what tests I should get at the hospital for these
+                  symptoms. Also, are there any precautions I should take
+                  before coming in?
+                </p>
+                <p class="translation-card-text-box-right">
+                  <textarea name="" id="" class="translation-card-text-box-textarea font-ko-pub-world-batang"
+                    style="--box-bg-color: #fadbe8" placeholder="텍스트를 입력하세요."></textarea>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lesson-translation-card-component-wrapper">
+          <div class="lesson-translation-card-component">
+            <div class="lesson-translation-card-component-inner">
+              <p class="qa-type-box-translation"><span>A</span></p>
+              <div class="lesson-translation-card-component-inner-text-box">
+                <p class="translation-card-text-box-left text-basic">
+                  안녕하세요. 규칙적으로 식사하지 못하다가 먹을 때마다 속이 쓰리면서 불
+                  편한 느낌이 계속되는 증상은 위염일 때 나타나는 증상과 유사합니다. 환자분
+                  은 식후에 상복부의 타는 듯한 통증이 더 심해지고 토하기까지 하셨다니, 위염이
+                  악화되었을 가능성이 있으므로 병원에 오셔서 검사받으시길 권합니다.<br>
+                  경우에 따라 위염은 위궤양으로 악화될 수 있습니다. 위궤양의 주된 원인은 ‘헬
+                  리코박터 파일로리’라는 위 나선균에 의한 감염이고, 위장 내시경 검사로 조직 검
+                  사를 거쳐 헬리코박터균의 유무를 확인해 보는 것이 좋습니다. 만약 위장에서 균
+                  이 검출될 경우 제균 치료를 하면 됩니다. 헬리코박터균이 위궤양의 원인이 아니
+                  라면, 환자분은 위산 분비 억제제나 위장 점막 보호제 등의 약물을 4～8주간 복
+                  용하게 됩니다.<br>
+                  환자분께서는 많은 사람을 만나는 일을 하신다니 스트레스도 심하실 것 같은
+                  데요. 가급적 스트레스를 받지 않도록 노력하시고, 환자분께서 평소에 술과 담배
+                  를 하신다면 반드시 금주와 금연을 하셔야 합니다. 맵고 짠 자극적인 음식도 피하
+                  시고요.<br>
+                  환자분께서 겪고 계시는 증상들이 심한 듯하니 되도록 빠른 시일 내에 병원에
+                  오시기를 바랍니다.
+                </p>
+                <p class="translation-card-text-box-right">
+                  <textarea name="" id="" class="translation-card-text-box-textarea" style="--box-bg-color: #fadbe8"
+                    placeholder="텍스트를 입력하세요."></textarea>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="lesson-translation-card-component-wrapper">
-        <div class="lesson-translation-card-component">
-          <div class="lesson-translation-card-component-inner">
-            <p class="qa-type-box-translation"><span>A</span></p>
-            <div class="lesson-translation-card-component-inner-text-box">
-              <p class="translation-card-text-box-left text-basic">
-                안녕하세요. 규칙적으로 식사하지 못하다가 먹을 때마다 속이 쓰리면서 불
-                편한 느낌이 계속되는 증상은 위염일 때 나타나는 증상과 유사합니다. 환자분
-                은 식후에 상복부의 타는 듯한 통증이 더 심해지고 토하기까지 하셨다니, 위염이
-                악화되었을 가능성이 있으므로 병원에 오셔서 검사받으시길 권합니다.<br>
-                경우에 따라 위염은 위궤양으로 악화될 수 있습니다. 위궤양의 주된 원인은 ‘헬
-                리코박터 파일로리’라는 위 나선균에 의한 감염이고, 위장 내시경 검사로 조직 검
-                사를 거쳐 헬리코박터균의 유무를 확인해 보는 것이 좋습니다. 만약 위장에서 균
-                이 검출될 경우 제균 치료를 하면 됩니다. 헬리코박터균이 위궤양의 원인이 아니
-                라면, 환자분은 위산 분비 억제제나 위장 점막 보호제 등의 약물을 4～8주간 복
-                용하게 됩니다.<br>
-                환자분께서는 많은 사람을 만나는 일을 하신다니 스트레스도 심하실 것 같은
-                데요. 가급적 스트레스를 받지 않도록 노력하시고, 환자분께서 평소에 술과 담배
-                를 하신다면 반드시 금주와 금연을 하셔야 합니다. 맵고 짠 자극적인 음식도 피하
-                시고요.<br>
-                환자분께서 겪고 계시는 증상들이 심한 듯하니 되도록 빠른 시일 내에 병원에
-                오시기를 바랍니다.
-              </p>
-              <p class="translation-card-text-box-right">
-                <textarea name="" id="" class="translation-card-text-box-textarea" style="--box-bg-color: #fadbe8"
-                  placeholder="텍스트를 입력하세요."></textarea>
-              </p>
-            </div>
-          </div>
-        </div>
+
+      <div class="btn-wrapper dp-flex-justify-end">
+        <button type="button" id="segment-note-training-button"
+          class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+          style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+          <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
+          <span class="ai-button-text">훈련하기</span>
+        </button>
       </div>
     </section>
 
-    <!-- section5 -->
-    <section class="section5">
+
+    <section class="section9">
       <!-- 중제목 스타일2 실전 -->
       <div class="lesson-middle-title-group-wrapper">
         <div class="lesson-middle-title-group dp-flex dp-flex-align-center w-98"
@@ -1557,7 +1626,7 @@
         </div>
       </div>
 
-      <div class="text-box text-practice">
+      <div class="text-box text-practice u-mgb-60">
         <div class="text-practice-inner">
           <div class="text-practice-row-group">
             <div class="text-practice-row">
@@ -1842,10 +1911,18 @@
           </div>
         </div>
       </div>
+
+      <div class="btn-wrapper dp-flex-justify-end">
+        <button type="button" id="interpret-training-button"
+          class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
+          style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+          <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
+          <span class="ai-button-text">훈련하기</span>
+        </button>
+      </div>
     </section>
 
-    <!-- section6 -->
-    <section class="section6">
+    <section class="section10">
       <div class="lesson-middle-title-group dp-inline-flex dp-flex-align-center shadow"
         style="--border-color: #bd9e7e; --box-bg-color: #fff">
         <div class="lesson-middle-inner flex-1 dp-flex gap-20">
@@ -2050,6 +2127,9 @@
         </div>
       </div>
     </section>
+
+
+
   </div>
 
 

@@ -1,60 +1,3 @@
-<style>
-  .image-box-caption-item-group-1 {
-    left: 20%;
-    top: 29%;
-  }
-
-  .image-box-caption-item-group-2 {
-    left: 21%;
-    top: 40%;
-  }
-
-  .image-box-caption-item-group-3 {
-    left: 24%;
-    top: 48%;
-  }
-
-  .image-box-caption-item-group-4 {
-    left: 18%;
-    top: 82%;
-  }
-
-  .image-box-caption-item-group-5 {
-    left: 29%;
-    top: 87.2%;
-  }
-
-  .image-box-caption-item-group-6 {
-    left: 63%;
-    top: 10%;
-  }
-
-  .image-box-caption-item-group-7 {
-    left: 80%;
-    top: 36%;
-  }
-
-  .image-box-caption-item-group-8 {
-    left: 81%;
-    top: 48%;
-  }
-
-  .image-box-caption-item-group-9 {
-    left: 84%;
-    top: 55%;
-  }
-
-  .image-box-caption-item-group-10 {
-    left: 79%;
-    top: 65%;
-  }
-
-  .image-box-caption-item-group-11 {
-    left: 65%;
-    top: 89%;
-  }
-</style>
-
 <section class="section1">
   <div class="lesson-title-group mgb-40">
     <div class="lesson-title-item">
@@ -86,7 +29,9 @@
     </h4>
   </div>
 
+
   <div class="mgb-60">
+    <!-- STEP 1 -->
     <div class="lesson-card-component-wrapper mgb-30">
       <div class="lesson-card-component">
         <div class="lesson-card-component-step-title-box dp-flex-justify-start">
@@ -96,41 +41,46 @@
           <!-- <div class="step-title-box" style="--box-bg-color: #E3F2E7;">STEP 2</div> -->
           <!-- <div class="step-title-box" style="--box-bg-color: #E3F2E7;">STEP 3</div> -->
         </div>
-        <div class="lesson-card-component-inner" style="--box-bg-color: #e3f2e7">
-          <div class="dp-grid dp-grid-row-1fr-62px dp-grid-row-1fr-62px-responsive">
-            <div class="qa-list-row qa-list-row-question">
-              <div class="dp-flex flex-1 dp-flex-align-start">
-                <p class="qa-type-box">Q</p>
-                <div class="qa-text-box-wrapper w-100 h-45px">
-                  <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
-                  <!-- <div class="qa-text-box qa-text-box-normal">
-                                소화기 계통의 신체 기관에는 어떤 것들이 있나요?
-                              </div> -->
-                  <div class="qa-text-box w-100 h-45px">
-                    <textarea class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
-                      placeholder="소화기 계통의 신체 기관에는 어떤 것들이 있나요?" rows="1" style="height: 50px;"></textarea>
+        <div class="lesson-card-component-inner-wrapper" style="--box-bg-color: #e3f2e7">
+          <div class="lesson-card-component-inner">
+            <div class="dp-grid dp-grid-row-1fr-62px dp-grid-row-1fr-62px-responsive">
+              <div class="qa-list-row qa-list-row-question">
+                <div class="dp-flex flex-1 dp-flex-align-start u-gap-10">
+                  <p class="qa-type-box">Q</p>
+                  <div class="qa-text-box-wrapper w-100 h-45px">
+                    <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
+                    <!-- <div class="qa-text-box qa-text-box-normal">
+                                  소화기 계통의 신체 기관에는 어떤 것들이 있나요?
+                                </div> -->
+                    <div class="qa-text-box w-100 h-45px">
+                      <textarea id="qna-question" class="qa-text-box-textarea qa-text-box-textarea-question h-none"
+                        type="text" placeholder="소화기 계통의 신체 기관에는 어떤 것들이 있나요?" rows="1" readonly=""
+                        style="height: 50px;"></textarea>
+                    </div>
                   </div>
                 </div>
               </div>
+              <div></div>
             </div>
-            <div></div>
-          </div>
-          <div class="dp-grid dp-grid-row-62px-1fr dp-grid-row-62px-1fr-responsive">
-            <div></div>
-            <div class="qa-list-row qa-list-row-question row-reverse">
-              <p class="qa-type-box">A</p>
-              <div class="qa-text-box-wrapper w-100">
-                <div class="qa-text-box w-100">
-                  <textarea class="qa-text-box-textarea qa-text-box-textarea-answer" placeholder="소화기 계통의 신체 기관에는"
-                    rows="3" style="height: 110px;"></textarea>
+            <div class="dp-grid dp-grid-row-62px-1fr dp-grid-row-62px-1fr-responsive">
+              <div></div>
+              <div class="qa-list-row qa-list-row-question row-reverse u-gap-10">
+                <p class="qa-type-box">A</p>
+                <div class="qa-text-box-wrapper w-100">
+                  <div class="qa-text-box w-100">
+                    <textarea id="qna-answer" class="qa-text-box-textarea qa-text-box-textarea-answer"
+                      placeholder="소화기 계통의 신체 기관에는" rows="3" readonly="" style="height: 110px;"></textarea>
+                  </div>
+                  <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
                 </div>
-                <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- STEP 2 -->
     <div class="lesson-card-component-wrapper mgb-30">
       <div class="lesson-card-component">
         <div class="lesson-card-component-step-title-box dp-flex-justify-center">
@@ -140,50 +90,66 @@
           </div>
           <!-- <div class="step-title-box" style="--box-bg-color: #E3F2E7;">STEP 3</div> -->
         </div>
-        <div class="lesson-card-component-inner" style="--box-bg-color: #e4e3f1">
-          <div class="dp-grid dp-grid-row-1fr-62px dp-grid-row-1fr-62px-responsive">
-            <div class="qa-list-row qa-list-row-question">
-              <div class="dp-flex flex-1 dp-flex-align-start">
-                <p class="qa-type-box">Q</p>
-                <div class="qa-text-box-wrapper w-100 h-45px">
-                  <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
-                  <!-- <div class="qa-text-box qa-text-box-normal">
+        <div class="lesson-card-component-inner-wrapper" style="--box-bg-color: #e4e3f1">
+          <div id="qa-container">
+            <!-- 기존 Q&A 영역 -->
+            <div class="lesson-card-component-inner">
+              <div class="dp-grid dp-grid-row-1fr-62px dp-grid-row-1fr-62px-responsive">
+                <div class="qa-list-row qa-list-row-question">
+                  <div class="dp-flex flex-1 dp-flex-align-start u-gap-10">
+                    <p class="qa-type-box">Q</p>
+                    <div class="qa-text-box-wrapper w-100 h-45px">
+                      <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
+                      <!-- <div class="qa-text-box qa-text-box-normal">
                                                     소화기 계통의 신체 기관에는 어떤 것들이 있나요?
                                                   </div> -->
-                  <div class="qa-text-box w-100 h-45px">
-                    <textarea class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
-                      placeholder="소화기 계통의 신체 기관에는 어떤 것들이 있나요?" rows="1" style="height: 50px;"></textarea>
-                    <button type="button" id=""
-                      class="ai-button lesson-card-ai-button btn-jelly bd-radius-100 btn-question"
-                      style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
-                      <i class="fa-solid fa-question"
-                        style="color: var(--color-text, var(--color-border-ai-btn-pink));"></i>
-                      <span class="ai-button-text"></span>
-                    </button>
-
+                      <div class="qa-text-box w-100 h-45px">
+                        <textarea id="qna-set-1-question"
+                          class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
+                          placeholder="질문을 입력하세요." rows="1" style="height: 50px;"></textarea>
+                        <button type="button" id=""
+                          class="ai-button lesson-card-ai-button btn-jelly bd-radius-100 btn-question"
+                          style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+                          <i class="fa-solid fa-question"
+                            style="color: var(--color-text, var(--color-border-ai-btn-pink));"></i>
+                          <span class="ai-button-text"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div></div>
+              </div>
+              <div class="dp-grid dp-grid-row-62px-1fr dp-grid-row-62px-1fr-responsive">
+                <div></div>
+                <div class="qa-list-row qa-list-row-question row-reverse u-gap-10">
+                  <p class="qa-type-box">A</p>
+                  <div class="qa-text-box-wrapper w-100">
+                    <div class="qa-text-box w-100">
+                      <textarea id="qna-set-1-answer" class="qa-text-box-textarea qa-text-box-textarea-answer"
+                        placeholder="" rows="3" style="height: 110px;"></textarea>
+                    </div>
+                    <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
                   </div>
                 </div>
               </div>
-
             </div>
-            <div></div>
           </div>
-          <div class="dp-grid dp-grid-row-62px-1fr dp-grid-row-62px-1fr-responsive">
-            <div></div>
-            <div class="qa-list-row qa-list-row-question row-reverse">
-              <p class="qa-type-box">A</p>
-              <div class="qa-text-box-wrapper w-100">
-                <div class="qa-text-box w-100">
-                  <textarea class="qa-text-box-textarea qa-text-box-textarea-answer" placeholder="소화기 계통의 신체 기관에는"
-                    rows="3" style="height: 110px;"></textarea>
-                </div>
-                <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
-              </div>
-            </div>
+
+          <!-- 플러스 버튼 -->
+          <div class="dp-flex dp-flex-justify-center mgt-20">
+            <button type="button" id="qna-set-add-button" class=""
+              style="--box-bg-color: #fff; --box-border-color: #ffa5a5">
+              <i class="fa-solid fa-plus" style="color: #ffa5a5;"></i>
+            </button>
           </div>
         </div>
       </div>
     </div>
+
+
+
+    <!-- STEP 3 -->
     <div class="lesson-card-component-wrapper">
       <div class="lesson-card-component">
         <div class="lesson-card-component-step-title-box dp-flex-justify-end">
@@ -193,16 +159,18 @@
             STEP 3
           </div>
         </div>
-        <div class="lesson-card-component-inner" style="--box-bg-color: #fce9f1">
-          <div class="dp-grid dp-grid-row-62px-1fr-62px dp-grid-row-62px-1fr-responsive">
-            <div></div>
-            <div class="qa-list-row qa-list-row-question">
-              <!-- <p class="qa-type-box">A</p> -->
-              <div class="qa-text-box-wrapper w-100">
-                <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
-                <div class="qa-text-box w-100">
-                  <textarea class="qa-text-box-textarea h-160" placeholder="텍스트를 입력하세요." rows="3"
-                    style="height: 160px;"></textarea>
+        <div class="lesson-card-component-inner-wrapper" style="--box-bg-color: #fce9f1">
+          <div class="lesson-card-component-inner">
+            <div class="dp-grid dp-grid-row-62px-1fr-62px dp-grid-row-62px-1fr-responsive">
+              <div></div>
+              <div class="qa-list-row qa-list-row-question">
+                <!-- <p class="qa-type-box">A</p> -->
+                <div class="qa-text-box-wrapper w-100">
+                  <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
+                  <div class="qa-text-box w-100">
+                    <textarea id="qna-summary" class="qa-text-box-textarea h-160" placeholder="텍스트를 입력하세요." rows="3"
+                      style="height: 160px;"></textarea>
+                  </div>
                 </div>
               </div>
             </div>
@@ -212,181 +180,4 @@
     </div>
   </div>
 
-  <figure class="image-box mgb-60">
-    <img src="https://api.pineapple.ac/textbook/textbookContents/images/9788997134663/3-1.jpg" alt="소화기_계통_그림">
-    <div class="image-box-caption">
-      <div class="image-box-caption-item-group image-box-caption-item-group-1">
-        <div class="image-box-caption-item">
-          <div class="image-text-box">
-            <a class="image-text-box-item" href="#none" data-text-en="liver" data-text-ko="간">
-              <span class="text-en">liver</span>
-              <span class="text-ko">간</span>
-            </a>
-            <span class="image-line"></span>
-          </div>
-        </div>
-      </div>
-      <div class="image-box-caption-item-group image-box-caption-item-group-2">
-        <div class="image-box-caption-item">
-          <div class="image-text-box">
-            <a class="image-text-box-item" href="#none" data-text-en="gallbladder" data-text-ko="담낭">
-              <span class="text-en">gallbladder</span>
-              <span class="text-ko">담낭</span>
-            </a>
-            <span class="image-line"></span>
-          </div>
-        </div>
-      </div>
-      <div class="image-box-caption-item-group image-box-caption-item-group-3">
-        <div class="image-box-caption-item">
-          <div class="image-text-box">
-            <a class="image-text-box-item" href="#none" data-text-en="duodenum" data-text-ko="십이지장">
-              <span class="text-en">duodenum</span>
-              <span class="text-ko">십이지장</span>
-            </a>
-            <span class="image-line"></span>
-          </div>
-        </div>
-      </div>
-      <div class="image-box-caption-item-group image-box-caption-item-group-4">
-        <div class="image-box-caption-item">
-          <div class="image-text-box">
-            <a class="image-text-box-item" href="#none" data-text-en="caecum, cecum" data-text-ko="맹장">
-              <span class="text-en">caecum, cecum</span>
-              <span class="text-ko">맹장</span>
-            </a>
-            <span class="image-line"></span>
-          </div>
-        </div>
-      </div>
-      <div class="image-box-caption-item-group image-box-caption-item-group-5">
-        <div class="image-box-caption-item">
-          <div class="image-text-box">
-            <a class="image-text-box-item" href="#none" data-text-en="appendix" data-text-ko="충수">
-              <span class="text-en">appendix</span>
-              <span class="text-ko">충수</span>
-            </a>
-            <span class="image-line"></span>
-          </div>
-        </div>
-      </div>
-      <div class="image-box-caption-item-group image-box-caption-item-group-6">
-        <div class="image-box-caption-item">
-          <div class="image-text-box image-text-box-reverse">
-            <a class="image-text-box-item" href="#none" data-text-en="esophagus" data-text-ko="식도">
-              <span class="text-en">esophagus</span>
-              <span class="text-ko">식도</span>
-            </a>
-            <span class="image-line"></span>
-          </div>
-        </div>
-      </div>
-      <div class="image-box-caption-item-group image-box-caption-item-group-7">
-        <div class="image-box-caption-item">
-          <div class="image-text-box image-text-box-reverse">
-            <a class="image-text-box-item" href="#none" data-text-en="stomach" data-text-ko="위장">
-              <span class="text-en">stomach</span>
-              <span class="text-ko">위장</span>
-            </a>
-            <span class="image-line"></span>
-          </div>
-        </div>
-      </div>
-      <div class="image-box-caption-item-group image-box-caption-item-group-8">
-        <div class="image-box-caption-item">
-          <div class="image-text-box image-text-box-reverse">
-            <a class="image-text-box-item" href="#none" data-text-en="pancreas" data-text-ko="췌장">
-              <span class="text-en">pancreas</span>
-              <span class="text-ko">췌장</span>
-            </a>
-            <span class="image-line"></span>
-          </div>
-        </div>
-      </div>
-      <div class="image-box-caption-item-group image-box-caption-item-group-9">
-        <div class="image-box-caption-item">
-          <div class="image-text-box image-text-box-reverse">
-            <a class="image-text-box-item" href="#none" data-text-en="large intestine" data-text-ko="대장">
-              <span class="text-en">large intestine</span>
-              <span class="text-ko">대장</span>
-            </a>
-            <span class="image-line"></span>
-          </div>
-        </div>
-      </div>
-      <div class="image-box-caption-item-group image-box-caption-item-group-10">
-        <div class="image-box-caption-item">
-          <div class="image-text-box image-text-box-reverse">
-            <a class="image-text-box-item" href="#none" data-text-en="small intestine" data-text-ko="소장">
-              <span class="text-en">small intestine</span>
-              <span class="text-ko">소장</span>
-            </a>
-            <span class="image-line"></span>
-          </div>
-        </div>
-      </div>
-      <div class="image-box-caption-item-group image-box-caption-item-group-11">
-        <div class="image-box-caption-item">
-          <div class="image-text-box image-text-box-reverse">
-            <a class="image-text-box-item" href="#none" data-text-en="rectum" data-text-ko="직장">
-              <span class="text-en">rectum</span>
-              <span class="text-ko">직장</span>
-            </a>
-            <span class="image-line"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </figure>
-
-  <div class="lesson-note-component-wrapper">
-    <div class="lesson-note-component">
-      <div class="lesson-note-component-inner" style="--box-bg-color: #f6ecd9">
-        <div class="icon-boxs">
-          <div>
-            <span class="icon1"></span>
-            <span class="icon2 icon-right"></span>
-          </div>
-          <div>
-            <span class="icon1"></span>
-            <span class="icon2 icon-right"></span>
-          </div>
-          <div>
-            <span class="icon1"></span>
-            <span class="icon2 icon-right"></span>
-          </div>
-          <div>
-            <span class="icon1"></span>
-            <span class="icon2 icon-right"></span>
-          </div>
-        </div>
-        <div class="note-text-box">
-          <p class="font-ko-pub-world-batang text-indent-20">
-            소화기 내과는 음식물을 소화하고 흡수하는 소화기 계통과 관련된 질환을 다루는 곳입니다. 이곳에서는
-            소화기를 구성하는 장기인 식도, 위장, 소장, 대장, 간, 췌장, 담낭 등의 이상 증상에 대한 원인을 찾아내고
-            치료합니다. 소화기 내과 의사들은 주로 식도염, 위염 · 위암, 장염, 간염 · 간 경화증 · 간암, 췌장염 등의 질환을
-            진단하고, 더 나은 치료법을 개발하기 위한 연구를 수행합니다.
-          </p>
-        </div>
-        <div class="icon-boxs">
-          <div class="row-reverse">
-            <span class="icon1"></span>
-            <span class="icon2 icon-left"></span>
-          </div>
-          <div class="row-reverse">
-            <span class="icon1"></span>
-            <span class="icon2 icon-left"></span>
-          </div>
-          <div class="row-reverse">
-            <span class="icon1"></span>
-            <span class="icon2 icon-left"></span>
-          </div>
-          <div class="row-reverse">
-            <span class="icon1"></span>
-            <span class="icon2 icon-left"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
