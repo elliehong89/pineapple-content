@@ -992,7 +992,6 @@ button {
   color: #fff;
   background: var(--box-bg-color, var(--box-bg-color));
   border: 2px solid var(--box-border-color, var(--box-border-color));
-  box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
   border-radius: 10px;
   white-space: nowrap;
   cursor: pointer;
@@ -1054,7 +1053,6 @@ button {
 .qa-list-row {
   display: flex;
   flex-direction: row;
-  gap: 20px;
   align-items: flex-start;
 }
 
