@@ -253,13 +253,20 @@
           <!-- ++++ 버튼 -->
           <div id="BUTTON" class="style-guide-section">
             <h2 class="style-guide-title">▶ 버튼</h2>
-            <h3 class="style-guide-title-sub">1. 버튼 - AI에게 질문하기</h3>
+            <h3 class="style-guide-title-sub">1. 버튼</h3>
 
             <div class="code-copy">
               <button type="button" id="" class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
                 style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
                 <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
-                <span class="ai-button-text">AI에게 질문하기</span>
+                <span class="ai-button-text"></span>
+              </button>
+            </div>
+            <div class="code-copy">
+              <button type="button" id="" class="ai-button lesson-card-ai-button btn-jelly bd-radius-100 btn-question"
+                style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+                <i class="fa-solid fa-question"></i>
+                <span class="ai-button-text"></span>
               </button>
             </div>
           </div>
@@ -704,17 +711,12 @@
                                 소화기 계통의 신체 기관에는 어떤 것들이 있나요?
                               </div> -->
                               <div class="qa-text-box w-100 h-45px">
-                                <textarea class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
-                                  placeholder="소화기 계통의 신체 기관에는 어떤 것들이 있나요?" rows="1"></textarea>
+                                <textarea id="qna-question"
+                                  class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
+                                  placeholder="소화기 계통의 신체 기관에는 어떤 것들이 있나요?" rows="1" readonly></textarea>
                               </div>
                             </div>
                           </div>
-                          <button type="button" id=""
-                            class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
-                            style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
-                            <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
-                            <span class="ai-button-text">AI에게 질문하기</span>
-                          </button>
                         </div>
                         <div></div>
                       </div>
@@ -724,8 +726,8 @@
                           <p class="qa-type-box">A</p>
                           <div class="qa-text-box-wrapper w-100">
                             <div class="qa-text-box w-100">
-                              <textarea class="qa-text-box-textarea qa-text-box-textarea-answer"
-                                placeholder="소화기 계통의 신체 기관에는" rows="3"></textarea>
+                              <textarea id="qna-answer" class="qa-text-box-textarea qa-text-box-textarea-answer"
+                                placeholder="소화기 계통의 신체 기관에는" rows="3" readonly></textarea>
                             </div>
                             <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
                           </div>
@@ -754,17 +756,19 @@
                                                     소화기 계통의 신체 기관에는 어떤 것들이 있나요?
                                                   </div> -->
                               <div class="qa-text-box w-100 h-45px">
-                                <textarea class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
-                                  placeholder="소화기 계통의 신체 기관에는 어떤 것들이 있나요?" rows="1"></textarea>
+                                <textarea id="qna-set-1-question"
+                                  class="qa-text-box-textarea qa-text-box-textarea-question h-none" type="text"
+                                  placeholder="질문을 입력하세요." rows="1"></textarea>
+                                <button type="button" id=""
+                                  class="ai-button lesson-card-ai-button btn-jelly bd-radius-100 btn-question"
+                                  style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
+                                  <i class="fa-solid fa-question"
+                                    style="color: var(--color-text, var(--color-border-ai-btn-pink));"></i>
+                                  <span class="ai-button-text"></span>
+                                </button>
                               </div>
                             </div>
                           </div>
-                          <button type="button" id=""
-                            class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
-                            style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
-                            <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
-                            <span class="ai-button-text">AI에게 질문하기</span>
-                          </button>
                         </div>
                         <div></div>
                       </div>
@@ -774,8 +778,8 @@
                           <p class="qa-type-box">A</p>
                           <div class="qa-text-box-wrapper w-100">
                             <div class="qa-text-box w-100">
-                              <textarea class="qa-text-box-textarea qa-text-box-textarea-answer"
-                                placeholder="소화기 계통의 신체 기관에는" rows="3"></textarea>
+                              <textarea id="qna-set-1-answer" class="qa-text-box-textarea qa-text-box-textarea-answer"
+                                placeholder="" rows="3"></textarea>
                             </div>
                             <span class="bubble-icon icon-right" style="--box-bg-color: #fff"></span>
                           </div>
@@ -794,22 +798,6 @@
                       </div>
                     </div>
                     <div class="lesson-card-component-inner" style="--box-bg-color: #fce9f1">
-
-                      <div class="dp-grid dp-grid-row-62px-1fr-62px dp-grid-row-62px-1fr-62px-responsive">
-                        <div></div>
-                        <div class="qa-list-row qa-list-row-question">
-                          <!-- <p class="qa-type-box">A</p> -->
-                          <div class="qa-text-box-wrapper w-100 dp-flex dp-flex-justify-end">
-                            <button type="button" id=""
-                              class="ai-button lesson-card-ai-button lesson-card-ai-button-custom btn-jelly"
-                              style="--box-bg-color: var(--color-background-ai-btn-pink); --box-border-color: var(--color-border-ai-btn-pink)">
-                              <i class="fa-solid fa-wand-magic-sparkles fa-xl ai-button-icon"></i>
-                              <span class="ai-button-text">AI에게 질문하기</span>
-                            </button>
-                          </div>
-                        </div>
-                        <div></div>
-                      </div>
                       <div class="dp-grid dp-grid-row-62px-1fr-62px dp-grid-row-62px-1fr-responsive">
                         <div></div>
                         <div class="qa-list-row qa-list-row-question">
@@ -817,7 +805,7 @@
                           <div class="qa-text-box-wrapper w-100">
                             <span class="bubble-icon icon-left" style="--box-bg-color: #fff"></span>
                             <div class="qa-text-box w-100">
-                              <textarea class="qa-text-box-textarea h-160" placeholder="텍스트를 입력하세요."
+                              <textarea id="qna-summary" class="qa-text-box-textarea h-160" placeholder="텍스트를 입력하세요."
                                 rows="3"></textarea>
                             </div>
                           </div>
